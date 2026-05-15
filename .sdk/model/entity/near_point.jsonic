@@ -1,0 +1,279 @@
+# Entity: near_point
+
+main: kit: entity: near_point: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "activite_principale"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "activite_principale_naf25"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "annee_categorie_entreprise"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "annee_tranche_effectif_salarie"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "caractere_employeur"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "categorie_entreprise"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "complement"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "date_creation"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "date_fermeture"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "date_mise_a_jour"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "date_mise_a_jour_insee"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "date_mise_a_jour_rne"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "dirigeant"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "etat_administratif"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "finance"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "matching_etablissement"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "nature_juridique"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "nom_complet"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "nom_raison_sociale"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "nombre_etablissement"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "nombre_etablissements_ouvert"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "section_activite_principale"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "siege"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "sigle"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "siren"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "statut_diffusion"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "tranche_effectif_salarie"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "near_point"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: "01.12Z,28.15Z"
+                kind: "query"
+                name: "activite_principale"
+                orig: "activite_principale"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "siege,complements"
+                kind: "query"
+                name: "include"
+                orig: "include"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "lat"
+                orig: "lat"
+                reqd: true
+                type: "`$NUMBER`"
+              }
+              {
+                example: 10
+                kind: "query"
+                name: "limite_matching_etablissement"
+                orig: "limite_matching_etablissement"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "long"
+                orig: "long"
+                reqd: true
+                type: "`$NUMBER`"
+              }
+              {
+                kind: "query"
+                name: "minimal"
+                orig: "minimal"
+                reqd: false
+                type: "`$BOOLEAN`"
+              }
+              {
+                example: 1
+                kind: "query"
+                name: "page"
+                orig: "page"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 1
+                kind: "query"
+                name: "page_etablissement"
+                orig: "page_etablissement"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 10
+                kind: "query"
+                name: "per_page"
+                orig: "per_page"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 5
+                kind: "query"
+                name: "radius"
+                orig: "radius"
+                reqd: false
+                type: "`$NUMBER`"
+              }
+              {
+                example: "A,J,U"
+                kind: "query"
+                name: "section_activite_principale"
+                orig: "section_activite_principale"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "sort_by_size"
+                orig: "sort_by_size"
+                reqd: false
+                type: "`$BOOLEAN`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/near_point"
+          parts: [
+            "near_point"
+          ]
+          select: {
+            exist: [
+              "activite_principale"
+              "include"
+              "lat"
+              "limite_matching_etablissement"
+              "long"
+              "minimal"
+              "page"
+              "page_etablissement"
+              "per_page"
+              "radius"
+              "section_activite_principale"
+              "sort_by_size"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

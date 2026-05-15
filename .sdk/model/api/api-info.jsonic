@@ -1,0 +1,97 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      description: `# Bienvenue sur la documentation interactive d'API Recherche d’entreprises !
+
+L’API Recherche d’Entreprises permet à tout le monde retrouver une entreprise,
+une association, ou un service public en France. Elle propose un grand nombre de
+critères de recherche, en particulier la dénomination, l’adresse et les
+dirigeants ou élus.
+
+## Données accessibles dans l'API
+
+L’API étant totalement ouverte d'accès, elle comporte des limitations. Ainsi
+ne sont pas accessibles dans l'API :
+
+- les prédécesseurs et successeurs d'un établissement
+
+- les entreprises non-diffusibles
+
+- les entreprises qui se sont vues refuser leurs immatriculation au RCS
+
+
+**Attention :** cette API ne permet pas d'accèder aux données complètes de
+la base Sirene, mais uniquement de rechercher une entreprise par sa
+dénomination ou son adresse. Pour savoir comment obtenir les données
+complètes, consultez [notre fiche
+explicative.](https://api.gouv.fr/guides/quelle-api-sirene)
+
+
+## Commencer à utiliser l'API
+
+L'API est accessible à partir de cette adresse : [https://recherche-entreprises.api.gouv.fr](https://recherche-entreprises.api.gouv.fr)
+
+
+**Attention :** Vous devez rajouter votre requête sur l'adresse.
+
+## Limite des requêtes
+
+L'API accepte **au maximum 7 requêtes par seconde** par adresse IP. Une limite de 30 requêtes par seconde par ASN est aussi en place. Il est donc probable de faire face à cette limite sur les cloud publics.
+Cette valeur correspond à une **limite maximale** et ne constitue pas un débit garanti.
+
+
+En cas d'usage excessif, notamment en période de forte activité, l'accès à l'API
+peut être temporairement restreint afin d'assurer un accès équitable à l'ensemble
+des utilisateurs. La priorité est alors donnée aux systèmes internes et aux
+services publics.
+
+
+Lorsque la limite est dépassée, le serveur renvoie une réponse
+**HTTP 429 – Too Many Requests**.
+L'en-tête **\`Retry-After\`** indique le délai à respecter avant d'effectuer
+une nouvelle requête.
+
+
+Il est recommandé d'inclure un en-tête **\`User-Agent\`** explicite et descriptif
+dans toutes les requêtes.
+
+## Monitoring de l'API
+
+Une supervision du service en temps réel est
+disponible [ici](https://annuaire-entreprises.data.gouv.fr/donnees/api#recherche-entreprise).
+
+
+## Données disponibles sur data.gouv
+
+Une partie des données issues de la base de données utilisée par l'API est accessible sur data.gouv. Vous pouvez les consulter [ici](https://www.data.gouv.fr/fr/datasets/donnees-des-entreprises-utilisees-dans-lannuaire-des-entreprises/#/resources).
+
+
+## Infolettre
+
+Vous pouvez vous abonner [ici](https://2f62ff46.sibforms.com/serve/MUIFAO95z3V-BJo1feDe7qoHnkmSCfysBZZFjIFSjvvnqZ1C8aAGCT1-vESBVRjnjM8fKD_Mt7Q0ENMgGon61yySA7u3dn8MS3rdd5Ax_aQ7ORuB5tglGXJ00VEnG5Tp5ggraqa5x6oPoyaleNDDkDmijlzwmSxWRs5zfSubvr3dGQMlxymwf2uU4xY1N51BjN5F5vvNMDu-s9IT) à
+l'infolettre pour être informé des mises à jour de la part de l’équipe.
+
+## Contact
+
+Pour toute question, vous pouvez contacter l'équipe en remplissant ce [formulaire](https://annuaire-entreprises.data.gouv.fr/faq/parcours?question=contact) !
+`
+      license: {
+        name: "MIT License"
+        url: "https://opensource.org/licenses/MIT"
+      }
+      servers: [
+        {
+          description: "Serveur de production"
+          url: "https://recherche-entreprises.api.gouv.fr"
+        }
+      ]
+      title: "API Recherche d’entreprises"
+      version: "1.0.0"
+    }
+  }
+}
+
+}
