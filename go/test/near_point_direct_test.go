@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/company-search-sdk"
-	"github.com/voxgig-sdk/company-search-sdk/core"
+	sdk "github.com/voxgig-sdk/company-search-sdk/go"
+	"github.com/voxgig-sdk/company-search-sdk/go/core"
 )
 
 func TestNearPointDirect(t *testing.T) {

@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/company-search-sdk/core"
+	"github.com/voxgig-sdk/company-search-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/company-search-sdk/go/utility/struct"
 )
 
 type NearPointEntity struct {

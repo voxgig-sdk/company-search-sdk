@@ -1,10 +1,10 @@
 package voxgigcompanysearchsdk
 
 import (
-	"github.com/voxgig-sdk/company-search-sdk/core"
-	"github.com/voxgig-sdk/company-search-sdk/entity"
-	"github.com/voxgig-sdk/company-search-sdk/feature"
-	_ "github.com/voxgig-sdk/company-search-sdk/utility"
+	"github.com/voxgig-sdk/company-search-sdk/go/core"
+	"github.com/voxgig-sdk/company-search-sdk/go/entity"
+	"github.com/voxgig-sdk/company-search-sdk/go/feature"
+	_ "github.com/voxgig-sdk/company-search-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/company-search-sdk/core"
+	"github.com/voxgig-sdk/company-search-sdk/go/core"
 )
 
 type BaseFeature struct {

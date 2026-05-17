@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/company-search-sdk/core"
+import "github.com/voxgig-sdk/company-search-sdk/go/core"
 
 func init() {
 	core.UtilityRegistrar = registerAll
