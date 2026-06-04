@@ -68,14 +68,12 @@ function near_point_direct_setup($mockres)
     $env = Runner::env_override([
         "COMPANYSEARCH_TEST_NEAR_POINT_ENTID" => [],
         "COMPANYSEARCH_TEST_LIVE" => "FALSE",
-        "COMPANYSEARCH_APIKEY" => "NONE",
     ]);
 
     $live = $env["COMPANYSEARCH_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["COMPANYSEARCH_APIKEY"],
         ];
         $client = new CompanySearchSDK($merged_opts);
         return [

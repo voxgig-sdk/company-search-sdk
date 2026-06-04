@@ -14,9 +14,6 @@ local function make_config()
     },
     options = {
       base = "https://recherche-entreprises.api.gouv.fr",
-      auth = {
-        prefix = "Bearer",
-      },
       headers = {
         ["content-type"] = "application/json",
       },

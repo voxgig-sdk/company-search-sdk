@@ -90,8 +90,29 @@ Pour toute question, vous pouvez contacter l'équipe en remplissant ce [formulai
       ]
       title: "API Recherche d’entreprises"
       version: "1.0.0"
+      tagline: "Search French companies, associations, and public services by name, address, or leaders"
+      homepage: "https://recherche-entreprises.api.gouv.fr"
+      docs_url: "https://recherche-entreprises.api.gouv.fr/docs/"
+      license_short: "MIT License (code); data published under Open Licence 2.0"
+      license_md: `- The SDK is distributed under the MIT License.
+- The underlying API and its data are provided by the French government under Open Licence 2.0.
+- No attribution is required for general use, but crediting the data sources (INSEE, INPI) is encouraged.
+- The administration reserves the right to throttle access during server overload.`
+      about_md: `The [API Recherche d'entreprises](https://recherche-entreprises.api.gouv.fr) is a public service operated by the French government ([api.gouv.fr](https://api.gouv.fr)) for searching the registry of French companies, associations, and public services. It is built on top of public datasets maintained by [INSEE](https://www.insee.fr) (the national statistics institute) and [INPI](https://www.inpi.fr) (the industrial property institute).
+
+What you get from the API:
+
+- Full-text search by company name, address, executives, or elected officials
+- Geographic proximity search by latitude/longitude and radius
+- Filtering by NAF/APE activity code, postal code, employee headcount bracket, and entity type
+- Core identifiers and metadata such as company name (\`dénomination\`), \`SIREN\`, \`SIRET\`, and NAF activity code
+
+The API is fully open: no API key, no authentication, and CORS is enabled. The published rate limit is 7 requests per second per IP. Data on predecessor/successor establishments, non-diffusible enterprises, and rejected RCS registrations is not exposed; full SIRENE database access requires a separate channel.`
+      entity_desc: {
+        near_point: "Geographic proximity search returning entities near a coordinate via `GET /near_point` with `lat`, `long`, `radius`, `page`, and `per_page` parameters."
+        search: "Full-text search over French companies, associations, and public services via `GET /search` with parameters like `q`, `page`, `per_page`, and filters for NAF code, postal code, and employee count."
+      }
+      auth: false
     }
   }
-}
-
 }

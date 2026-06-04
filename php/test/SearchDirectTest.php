@@ -68,14 +68,12 @@ function search_direct_setup($mockres)
     $env = Runner::env_override([
         "COMPANYSEARCH_TEST_SEARCH_ENTID" => [],
         "COMPANYSEARCH_TEST_LIVE" => "FALSE",
-        "COMPANYSEARCH_APIKEY" => "NONE",
     ]);
 
     $live = $env["COMPANYSEARCH_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["COMPANYSEARCH_APIKEY"],
         ];
         $client = new CompanySearchSDK($merged_opts);
         return [

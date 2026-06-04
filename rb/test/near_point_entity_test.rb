@@ -83,7 +83,6 @@ def near_point_basic_setup(extra)
     "COMPANYSEARCH_TEST_NEAR_POINT_ENTID" => idmap,
     "COMPANYSEARCH_TEST_LIVE" => "FALSE",
     "COMPANYSEARCH_TEST_EXPLAIN" => "FALSE",
-    "COMPANYSEARCH_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +94,6 @@ def near_point_basic_setup(extra)
   if env["COMPANYSEARCH_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["COMPANYSEARCH_APIKEY"],
       },
       extra || {},
     ])

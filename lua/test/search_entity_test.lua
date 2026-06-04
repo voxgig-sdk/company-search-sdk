@@ -92,7 +92,6 @@ function search_basic_setup(extra)
     ["COMPANYSEARCH_TEST_SEARCH_ENTID"] = idmap,
     ["COMPANYSEARCH_TEST_LIVE"] = "FALSE",
     ["COMPANYSEARCH_TEST_EXPLAIN"] = "FALSE",
-    ["COMPANYSEARCH_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -104,7 +103,6 @@ function search_basic_setup(extra)
   if env["COMPANYSEARCH_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["COMPANYSEARCH_APIKEY"],
       },
       extra or {},
     })
