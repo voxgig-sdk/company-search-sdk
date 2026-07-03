@@ -10,7 +10,7 @@ The Python SDK for the CompanySearch API — an entity-oriented client following
 
 ## Install
 ```bash
-pip install company-search-sdk
+pip install voxgig-sdk-company-search
 ```
 
 Or install from source:

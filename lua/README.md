@@ -10,7 +10,7 @@ The Lua SDK for the CompanySearch API — an entity-oriented client using Lua co
 
 ## Install
 ```bash
-luarocks install company-search-sdk
+luarocks install voxgig-sdk-company-search
 ```
 
 If the module is not yet published, add the source directory to

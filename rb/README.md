@@ -10,13 +10,13 @@ The Ruby SDK for the CompanySearch API — an entity-oriented client using idiom
 
 ## Install
 ```bash
-gem install company-search-sdk
+gem install voxgig-sdk-company-search
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "company-search-sdk"
+gem "voxgig-sdk-company-search"
 ```
 
 Then run:

@@ -10,7 +10,7 @@ The PHP SDK for the CompanySearch API — an entity-oriented client using PHP co
 
 ## Install
 ```bash
-composer require voxgig/company-search-sdk
+composer require voxgig-sdk/company-search
 ```
 
 

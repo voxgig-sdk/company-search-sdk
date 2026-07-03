@@ -10,7 +10,7 @@ The TypeScript SDK for the CompanySearch API — a type-safe, entity-oriented cl
 
 ## Install
 ```bash
-npm install company-search
+npm install @voxgig-sdk/company-search
 ```
 ## Tutorial: your first API call
 

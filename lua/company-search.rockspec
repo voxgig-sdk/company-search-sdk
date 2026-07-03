@@ -8,12 +8,14 @@ source = {
   dir = "company-search-sdk/lua"
 }
 description = {
-  summary = "CompanySearch SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the API Recherche d’entreprises public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/company-search-sdk",
+  issues_url = "https://github.com/voxgig-sdk/company-search-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "company-search" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {
