@@ -1,6 +1,11 @@
 # CompanySearch Python SDK
 
-The Python SDK for the CompanySearch API. Provides an entity-oriented interface following Pythonic conventions.
+
+
+The Python SDK for the CompanySearch API — an entity-oriented client following Pythonic conventions.
+
+> Other languages, the CLI, and MCP server live alongside this one — see
+> the [top-level README](../README.md).
 
 
 ## Install
@@ -23,15 +28,18 @@ loading a specific record.
 ### 1. Create a client
 
 ```python
+import os
 from companysearch_sdk import CompanySearchSDK
 
-client = CompanySearchSDK({})
+client = CompanySearchSDK({
+    "apikey": os.environ.get("COMPANY-SEARCH_APIKEY"),
+})
 ```
 
 ### 2. List nearpoints
 
 ```python
-result, err = client.NearPoint(None).list(None, None)
+result, err = client.NearPoint().list()
 if err:
     raise Exception(err)
 
@@ -83,11 +91,9 @@ print(fetchdef["headers"])
 Create a mock client for unit testing — no server required:
 
 ```python
-client = CompanySearchSDK.test(None, None)
+client = CompanySearchSDK.test()
 
-result, err = client.CompanySearch(None).load(
-    {"id": "test01"}, None
-)
+result, err = client.CompanySearch().load({"id": "test01"})
 # result contains mock response data
 ```
 
@@ -118,6 +124,7 @@ Create a `.env.local` file at the project root:
 
 ```
 COMPANY-SEARCH_TEST_LIVE=TRUE
+COMPANY-SEARCH_APIKEY=<your-key>
 ```
 
 Then run:
@@ -141,6 +148,7 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
+| `apikey` | `str` | API key for authentication. |
 | `base` | `str` | Base URL of the API server. |
 | `prefix` | `str` | URL path prefix prepended to all requests. |
 | `suffix` | `str` | URL path suffix appended to all requests. |

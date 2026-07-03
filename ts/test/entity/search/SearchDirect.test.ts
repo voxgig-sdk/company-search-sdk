@@ -79,12 +79,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'COMPANYSEARCH_TEST_SEARCH_ENTID': {},
     'COMPANYSEARCH_TEST_LIVE': 'FALSE',
+    'COMPANYSEARCH_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.COMPANYSEARCH_TEST_LIVE
 
   if (live) {
     const client = new CompanySearchSDK({
+      apikey: env.COMPANYSEARCH_APIKEY,
     })
 
     let idmap: any = env['COMPANYSEARCH_TEST_SEARCH_ENTID']

@@ -63,12 +63,14 @@ function near_point_direct_setup(mockres)
   local env = runner.env_override({
     ["COMPANYSEARCH_TEST_NEAR_POINT_ENTID"] = {},
     ["COMPANYSEARCH_TEST_LIVE"] = "FALSE",
+    ["COMPANYSEARCH_APIKEY"] = "NONE",
   })
 
   local live = env["COMPANYSEARCH_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["COMPANYSEARCH_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

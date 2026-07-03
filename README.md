@@ -1,21 +1,8 @@
 # CompanySearch SDK
 
-Search French companies, associations, and public services by name, address, or leaders
+API Recherche d’entreprises client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About API Recherche d’entreprises
-
-The [API Recherche d'entreprises](https://recherche-entreprises.api.gouv.fr) is a public service operated by the French government ([api.gouv.fr](https://api.gouv.fr)) for searching the registry of French companies, associations, and public services. It is built on top of public datasets maintained by [INSEE](https://www.insee.fr) (the national statistics institute) and [INPI](https://www.inpi.fr) (the industrial property institute).
-
-What you get from the API:
-
-- Full-text search by company name, address, executives, or elected officials
-- Geographic proximity search by latitude/longitude and radius
-- Filtering by NAF/APE activity code, postal code, employee headcount bracket, and entity type
-- Core identifiers and metadata such as company name (`dénomination`), `SIREN`, `SIRET`, and NAF activity code
-
-The API is fully open: no API key, no authentication, and CORS is enabled. The published rate limit is 7 requests per second per IP. Data on predecessor/successor establishments, non-diffusible enterprises, and rejected RCS registrations is not exposed; full SIRENE database access requires a separate channel.
 
 ## Try it
 
@@ -49,29 +36,31 @@ gem install company-search-sdk
 luarocks install company-search-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { CompanySearchSDK } from 'company-search'
 
-const client = new CompanySearchSDK({})
+const client = new CompanySearchSDK({
+  apikey: process.env.COMPANY-SEARCH_APIKEY,
+})
 
 // List all nearpoints
 const nearpoints = await client.NearPoint().list()
+console.log(nearpoints.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -101,8 +90,8 @@ The API exposes 2 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **NearPoint** | Geographic proximity search returning entities near a coordinate via `GET /near_point` with `lat`, `long`, `radius`, `page`, and `per_page` parameters. | `/near_point` |
-| **Search** | Full-text search over French companies, associations, and public services via `GET /search` with parameters like `q`, `page`, `per_page`, and filters for NAF code, postal code, and employee count. | `/search` |
+| **NearPoint** |  | `/near_point` |
+| **Search** |  | `/search` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -112,12 +101,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from companysearch_sdk import CompanySearchSDK
 
-client = CompanySearchSDK({})
+client = CompanySearchSDK({
+    "apikey": os.environ.get("COMPANY-SEARCH_APIKEY"),
+})
 
 # List all nearpoints
-nearpoints, err = client.NearPoint(None).list(None, None)
+nearpoints, err = client.NearPoint().list()
+print(nearpoints)
 ```
 
 ### PHP
@@ -126,10 +119,13 @@ nearpoints, err = client.NearPoint(None).list(None, None)
 <?php
 require_once 'companysearch_sdk.php';
 
-$client = new CompanySearchSDK([]);
+$client = new CompanySearchSDK([
+    "apikey" => getenv("COMPANY-SEARCH_APIKEY"),
+]);
 
 // List all nearpoints
-[$nearpoints, $err] = $client->NearPoint(null)->list(null, null);
+[$nearpoints, $err] = $client->NearPoint()->list();
+print_r($nearpoints);
 ```
 
 ### Golang
@@ -137,10 +133,13 @@ $client = new CompanySearchSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/company-search-sdk/go"
 
-client := sdk.NewCompanySearchSDK(map[string]any{})
+client := sdk.NewCompanySearchSDK(map[string]any{
+    "apikey": os.Getenv("COMPANY-SEARCH_APIKEY"),
+})
 
 // List all nearpoints
 nearpoints, err := client.NearPoint(nil).List(nil, nil)
+fmt.Println(nearpoints)
 ```
 
 ### Ruby
@@ -148,10 +147,13 @@ nearpoints, err := client.NearPoint(nil).List(nil, nil)
 ```ruby
 require_relative "CompanySearch_sdk"
 
-client = CompanySearchSDK.new({})
+client = CompanySearchSDK.new({
+  "apikey" => ENV["COMPANY-SEARCH_APIKEY"],
+})
 
 # List all nearpoints
-nearpoints, err = client.NearPoint(nil).list(nil, nil)
+nearpoints, err = client.NearPoint().list
+puts nearpoints
 ```
 
 ### Lua
@@ -159,10 +161,13 @@ nearpoints, err = client.NearPoint(nil).list(nil, nil)
 ```lua
 local sdk = require("company-search_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("COMPANY-SEARCH_APIKEY"),
+})
 
 -- List all nearpoints
-local nearpoints, err = client:NearPoint(nil):list(nil, nil)
+local nearpoints, err = client:NearPoint():list()
+print(nearpoints)
 ```
 
 ## Unit testing in offline mode
@@ -181,25 +186,21 @@ const result = await client.NearPoint().load({ id: 'test01' })
 ### Python
 
 ```python
-client = CompanySearchSDK.test(None, None)
-result, err = client.NearPoint(None).load(
-    {"id": "test01"}, None
-)
+client = CompanySearchSDK.test()
+result, err = client.NearPoint().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = CompanySearchSDK::test(null, null);
-[$result, $err] = $client->NearPoint(null)->load(
-    ["id" => "test01"], null
-);
+$client = CompanySearchSDK::test();
+[$result, $err] = $client->NearPoint()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.NearPoint(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -208,19 +209,15 @@ result, err := client.NearPoint(nil).Load(
 ### Ruby
 
 ```ruby
-client = CompanySearchSDK.test(nil, nil)
-result, err = client.NearPoint(nil).load(
-  { "id" => "test01" }, nil
-)
+client = CompanySearchSDK.test
+result, err = client.NearPoint().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:NearPoint(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:NearPoint():load({ id = "test01" })
 ```
 
 ## How it works
@@ -324,16 +321,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the API Recherche d’entreprises
-
-- Upstream: [https://recherche-entreprises.api.gouv.fr](https://recherche-entreprises.api.gouv.fr)
-- API docs: [https://recherche-entreprises.api.gouv.fr/docs/](https://recherche-entreprises.api.gouv.fr/docs/)
-
-- The SDK is distributed under the MIT License.
-- The underlying API and its data are provided by the French government under Open Licence 2.0.
-- No attribution is required for general use, but crediting the data sources (INSEE, INPI) is encouraged.
-- The administration reserves the right to throttle access during server overload.
 
 ---
 

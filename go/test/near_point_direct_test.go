@@ -93,12 +93,14 @@ func near_pointDirectSetup(mockres any) *near_pointDirectSetupResult {
 	env := envOverride(map[string]any{
 		"COMPANYSEARCH_TEST_NEAR_POINT_ENTID": map[string]any{},
 		"COMPANYSEARCH_TEST_LIVE":    "FALSE",
+		"COMPANYSEARCH_APIKEY":       "NONE",
 	})
 
 	live := env["COMPANYSEARCH_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["COMPANYSEARCH_APIKEY"],
 		}
 		client := sdk.NewCompanySearchSDK(mergedOpts)
 

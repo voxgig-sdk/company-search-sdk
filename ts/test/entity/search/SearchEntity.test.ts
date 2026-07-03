@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'COMPANY_SEARCH_TEST_SEARCH_ENTID': idmap,
     'COMPANY_SEARCH_TEST_LIVE': 'FALSE',
     'COMPANY_SEARCH_TEST_EXPLAIN': 'FALSE',
+    'COMPANY_SEARCH_APIKEY': 'NONE',
   })
 
   idmap = env['COMPANY_SEARCH_TEST_SEARCH_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new CompanySearchSDK(merge([
       {
+        apikey: env.COMPANY_SEARCH_APIKEY,
       },
       extra
     ]))
