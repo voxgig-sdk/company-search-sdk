@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch NearPointListMatch
+---@param ctrl? table
+---@return NearPoint[]
+---@return string? err
 function NearPointEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

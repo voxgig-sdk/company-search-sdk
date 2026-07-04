@@ -1,0 +1,142 @@
+<?php
+declare(strict_types=1);
+
+// Typed models for the CompanySearch SDK.
+//
+// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
+// params (op.<name>.points[].args.params[]). Field/param types come from the
+// canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
+// @voxgig/apidef VALID_CANON). Do not edit by hand.
+//
+// These are documentation-grade value objects (PHP 8 typed properties),
+// registered on the composer classmap autoload. The SDK boundary exchanges
+// assoc-arrays; these classes name the shapes for tooling and typed callers.
+
+/** NearPoint entity data model. */
+class NearPoint
+{
+    public ?string $activite_principale = null;
+    public ?string $activite_principale_naf25 = null;
+    public ?string $annee_categorie_entreprise = null;
+    public ?string $annee_tranche_effectif_salarie = null;
+    public ?string $caractere_employeur = null;
+    public ?string $categorie_entreprise = null;
+    public ?array $complement = null;
+    public ?string $date_creation = null;
+    public ?string $date_fermeture = null;
+    public ?string $date_mise_a_jour = null;
+    public ?string $date_mise_a_jour_insee = null;
+    public ?string $date_mise_a_jour_rne = null;
+    public ?array $dirigeant = null;
+    public ?string $etat_administratif = null;
+    public ?array $finance = null;
+    public ?array $matching_etablissement = null;
+    public ?string $nature_juridique = null;
+    public ?string $nom_complet = null;
+    public ?string $nom_raison_sociale = null;
+    public ?int $nombre_etablissement = null;
+    public ?int $nombre_etablissements_ouvert = null;
+    public ?string $section_activite_principale = null;
+    public ?array $siege = null;
+    public ?string $sigle = null;
+    public ?string $siren = null;
+    public ?string $statut_diffusion = null;
+    public ?string $tranche_effectif_salarie = null;
+}
+
+/** Match filter for NearPoint#list (any subset of NearPoint fields). */
+class NearPointListMatch
+{
+    public ?string $activite_principale = null;
+    public ?string $activite_principale_naf25 = null;
+    public ?string $annee_categorie_entreprise = null;
+    public ?string $annee_tranche_effectif_salarie = null;
+    public ?string $caractere_employeur = null;
+    public ?string $categorie_entreprise = null;
+    public ?array $complement = null;
+    public ?string $date_creation = null;
+    public ?string $date_fermeture = null;
+    public ?string $date_mise_a_jour = null;
+    public ?string $date_mise_a_jour_insee = null;
+    public ?string $date_mise_a_jour_rne = null;
+    public ?array $dirigeant = null;
+    public ?string $etat_administratif = null;
+    public ?array $finance = null;
+    public ?array $matching_etablissement = null;
+    public ?string $nature_juridique = null;
+    public ?string $nom_complet = null;
+    public ?string $nom_raison_sociale = null;
+    public ?int $nombre_etablissement = null;
+    public ?int $nombre_etablissements_ouvert = null;
+    public ?string $section_activite_principale = null;
+    public ?array $siege = null;
+    public ?string $sigle = null;
+    public ?string $siren = null;
+    public ?string $statut_diffusion = null;
+    public ?string $tranche_effectif_salarie = null;
+}
+
+/** Search entity data model. */
+class Search
+{
+    public ?string $activite_principale = null;
+    public ?string $activite_principale_naf25 = null;
+    public ?string $annee_categorie_entreprise = null;
+    public ?string $annee_tranche_effectif_salarie = null;
+    public ?string $caractere_employeur = null;
+    public ?string $categorie_entreprise = null;
+    public ?array $complement = null;
+    public ?string $date_creation = null;
+    public ?string $date_fermeture = null;
+    public ?string $date_mise_a_jour = null;
+    public ?string $date_mise_a_jour_insee = null;
+    public ?string $date_mise_a_jour_rne = null;
+    public ?array $dirigeant = null;
+    public ?string $etat_administratif = null;
+    public ?array $finance = null;
+    public ?array $matching_etablissement = null;
+    public ?string $nature_juridique = null;
+    public ?string $nom_complet = null;
+    public ?string $nom_raison_sociale = null;
+    public ?int $nombre_etablissement = null;
+    public ?int $nombre_etablissements_ouvert = null;
+    public ?string $section_activite_principale = null;
+    public ?array $siege = null;
+    public ?string $sigle = null;
+    public ?string $siren = null;
+    public ?string $statut_diffusion = null;
+    public ?string $tranche_effectif_salarie = null;
+}
+
+/** Match filter for Search#list (any subset of Search fields). */
+class SearchListMatch
+{
+    public ?string $activite_principale = null;
+    public ?string $activite_principale_naf25 = null;
+    public ?string $annee_categorie_entreprise = null;
+    public ?string $annee_tranche_effectif_salarie = null;
+    public ?string $caractere_employeur = null;
+    public ?string $categorie_entreprise = null;
+    public ?array $complement = null;
+    public ?string $date_creation = null;
+    public ?string $date_fermeture = null;
+    public ?string $date_mise_a_jour = null;
+    public ?string $date_mise_a_jour_insee = null;
+    public ?string $date_mise_a_jour_rne = null;
+    public ?array $dirigeant = null;
+    public ?string $etat_administratif = null;
+    public ?array $finance = null;
+    public ?array $matching_etablissement = null;
+    public ?string $nature_juridique = null;
+    public ?string $nom_complet = null;
+    public ?string $nom_raison_sociale = null;
+    public ?int $nombre_etablissement = null;
+    public ?int $nombre_etablissements_ouvert = null;
+    public ?string $section_activite_principale = null;
+    public ?array $siege = null;
+    public ?string $sigle = null;
+    public ?string $siren = null;
+    public ?string $statut_diffusion = null;
+    public ?string $tranche_effectif_salarie = null;
+}
+

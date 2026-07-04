@@ -3,6 +3,8 @@
 import { NearPointEntity } from './entity/NearPointEntity'
 import { SearchEntity } from './entity/SearchEntity'
 
+export type * from './CompanySearchTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -203,12 +205,28 @@ class CompanySearchSDK {
 
 
 
+  _near_point?: NearPointEntity
+
+  // Idiomatic facade: `client.near_point.list()` / `client.near_point.load({ id })`.
+  get near_point(): NearPointEntity {
+    return (this._near_point ??= new NearPointEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.near_point` instead. */
   NearPoint(data?: any) {
     const self = this
     return new NearPointEntity(self,data)
   }
 
 
+  _search?: SearchEntity
+
+  // Idiomatic facade: `client.search.list()` / `client.search.load({ id })`.
+  get search(): SearchEntity {
+    return (this._search ??= new SearchEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.search` instead. */
   Search(data?: any) {
     const self = this
     return new SearchEntity(self,data)

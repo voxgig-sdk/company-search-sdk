@@ -15,7 +15,9 @@ import type {
 
 
 // TODO: needs Entity superclass
-class CompanySearchEntityBase {
+// `D` is the entity's typed data model (e.g. Advice); subclasses bind it via
+// `class AdviceEntity extends CompanySearchEntityBase<Advice>`.
+class CompanySearchEntityBase<D = any> {
   name = ''
   name_ = ''
   Name = ''
@@ -58,7 +60,7 @@ class CompanySearchEntityBase {
   }
 
 
-  data(this: any, data?: any) {
+  data(this: any, data?: Partial<D>): D {
     const struct = this._utility.struct
     const featureHook = this._utility.featureHook
 
@@ -74,7 +76,7 @@ class CompanySearchEntityBase {
   }
 
 
-  match(match?: any) {
+  match(this: any, match?: Partial<D>): Partial<D> {
     const struct = this._utility.struct
     const featureHook = this._utility.featureHook
 

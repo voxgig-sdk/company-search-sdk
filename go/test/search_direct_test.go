@@ -93,14 +93,12 @@ func searchDirectSetup(mockres any) *searchDirectSetupResult {
 	env := envOverride(map[string]any{
 		"COMPANYSEARCH_TEST_SEARCH_ENTID": map[string]any{},
 		"COMPANYSEARCH_TEST_LIVE":    "FALSE",
-		"COMPANYSEARCH_APIKEY":       "NONE",
 	})
 
 	live := env["COMPANYSEARCH_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["COMPANYSEARCH_APIKEY"],
 		}
 		client := sdk.NewCompanySearchSDK(mergedOpts)
 

@@ -245,11 +245,17 @@ func (sdk *CompanySearchSDK) Direct(fetchargs map[string]any) (map[string]any, e
 }
 
 
+// NearPoint returns a NearPoint entity bound to this client.
+// Idiomatic usage: client.NearPoint(nil).List(nil, nil) or
+// client.NearPoint(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *CompanySearchSDK) NearPoint(data map[string]any) CompanySearchEntity {
 	return NewNearPointEntityFunc(sdk, data)
 }
 
 
+// Search returns a Search entity bound to this client.
+// Idiomatic usage: client.Search(nil).List(nil, nil) or
+// client.Search(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *CompanySearchSDK) Search(data map[string]any) CompanySearchEntity {
 	return NewSearchEntityFunc(sdk, data)
 }

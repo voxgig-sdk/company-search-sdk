@@ -50,8 +50,7 @@ class TestNearPointEntity:
         near_point_ref01_ent = client.NearPoint(None)
         near_point_ref01_match = {}
 
-        near_point_ref01_list_result, err = near_point_ref01_ent.list(near_point_ref01_match, None)
-        assert err is None
+        near_point_ref01_list_result = near_point_ref01_ent.list(near_point_ref01_match, None)
         assert isinstance(near_point_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _near_point_basic_setup(extra):
         "COMPANYSEARCH_TEST_NEAR_POINT_ENTID": idmap,
         "COMPANYSEARCH_TEST_LIVE": "FALSE",
         "COMPANYSEARCH_TEST_EXPLAIN": "FALSE",
-        "COMPANYSEARCH_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _near_point_basic_setup(extra):
     if env.get("COMPANYSEARCH_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("COMPANYSEARCH_APIKEY"),
             },
             extra or {},
         ])

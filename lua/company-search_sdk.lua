@@ -244,12 +244,38 @@ end
 
 
 
+-- Idiomatic facade: client:near_point():list() / client:near_point():load({ id = ... })
+function CompanySearchSDK:near_point(data)
+  local EntityMod = require("entity.near_point_entity")
+  if data == nil then
+    if self._near_point == nil then
+      self._near_point = EntityMod.new(self, nil)
+    end
+    return self._near_point
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:near_point() instead.
 function CompanySearchSDK:NearPoint(data)
   local EntityMod = require("entity.near_point_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:search():list() / client:search():load({ id = ... })
+function CompanySearchSDK:search(data)
+  local EntityMod = require("entity.search_entity")
+  if data == nil then
+    if self._search == nil then
+      self._search = EntityMod.new(self, nil)
+    end
+    return self._search
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:search() instead.
 function CompanySearchSDK:Search(data)
   local EntityMod = require("entity.search_entity")
   return EntityMod.new(self, data)

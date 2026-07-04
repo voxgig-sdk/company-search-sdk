@@ -9,9 +9,12 @@ The TypeScript SDK for the CompanySearch API — a type-safe, entity-oriented cl
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/company-search
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/company-search-sdk/releases](https://github.com/voxgig-sdk/company-search-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { CompanySearchSDK } from 'company-search'
+import { CompanySearchSDK } from '@voxgig-sdk/company-search'
 
-const client = new CompanySearchSDK({
-  apikey: process.env.COMPANY-SEARCH_APIKEY,
-})
+const client = new CompanySearchSDK()
 ```
 
 ### 2. List nearpoints
 
 ```ts
-const result = await client.NearPoint().list()
+const result = await client.nearpoint.list()
 
 if (result.ok) {
   for (const item of result.data) {
@@ -81,7 +82,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = CompanySearchSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.nearpoint.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -89,7 +90,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new CompanySearchSDK({ apikey: '...' })
+const client = new CompanySearchSDK()
 const testClient = client.tester()
 ```
 
@@ -98,7 +99,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.nearpoint
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -125,7 +126,6 @@ const logger = {
 }
 
 const client = new CompanySearchSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -135,8 +135,7 @@ const client = new CompanySearchSDK({
 Create a `.env.local` file at the project root:
 
 ```
-COMPANY-SEARCH_TEST_LIVE=TRUE
-COMPANY-SEARCH_APIKEY=<your-key>
+COMPANY_SEARCH_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -154,7 +153,6 @@ cd ts && npm test
 
 ```ts
 new CompanySearchSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -165,7 +163,6 @@ new CompanySearchSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -331,7 +328,7 @@ API path: `/search`
 
 ### NearPoint
 
-Create an instance: `const near_point = client.NearPoint()`
+Create an instance: `const near_point = client.near_point`
 
 #### Operations
 
@@ -374,13 +371,13 @@ Create an instance: `const near_point = client.NearPoint()`
 #### Example: List
 
 ```ts
-const near_points = await client.NearPoint().list()
+const near_points = await client.near_point.list()
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.Search()`
+Create an instance: `const search = client.search`
 
 #### Operations
 
@@ -423,7 +420,7 @@ Create an instance: `const search = client.Search()`
 #### Example: List
 
 ```ts
-const searchs = await client.Search().list()
+const searchs = await client.search.list()
 ```
 
 
@@ -484,7 +481,7 @@ company-search/
 Import the SDK from the package root:
 
 ```ts
-import { CompanySearchSDK } from 'company-search'
+import { CompanySearchSDK } from '@voxgig-sdk/company-search'
 ```
 
 ### Entity state
@@ -494,11 +491,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const nearpoint = client.nearpoint
+await nearpoint.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// nearpoint.data() now returns the loaded nearpoint data
+// nearpoint.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

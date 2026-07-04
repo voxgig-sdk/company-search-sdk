@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -122,7 +121,7 @@ Alias for `CompanySearchSDK.test()`.
 ## NearPointEntity
 
 ```ts
-const near_point = client.NearPoint()
+const near_point = client.near_point
 ```
 
 ### Fields
@@ -164,7 +163,7 @@ const near_point = client.NearPoint()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.NearPoint().list()
+const results = await client.near_point.list()
 ```
 
 ### Common Methods
@@ -198,7 +197,7 @@ Return a copy of the entity options.
 ## SearchEntity
 
 ```ts
-const search = client.Search()
+const search = client.search
 ```
 
 ### Fields
@@ -240,7 +239,7 @@ const search = client.Search()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Search().list()
+const results = await client.search.list()
 ```
 
 ### Common Methods

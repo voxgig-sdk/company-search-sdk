@@ -10,26 +10,24 @@ This is an unofficial SDK for the API Recherche d’entreprises public API, gene
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/company-search` | `npm install @voxgig-sdk/company-search` |
-| Python | `voxgig-sdk-company-search` | `pip install voxgig-sdk-company-search` |
-| PHP | `voxgig-sdk/company-search` | `composer require voxgig-sdk/company-search` |
-| Golang | `github.com/voxgig-sdk/company-search-sdk/go` | `go get github.com/voxgig-sdk/company-search-sdk/go` |
-| Ruby | `voxgig-sdk-company-search` | `gem install voxgig-sdk-company-search` |
-| Lua | `voxgig-sdk-company-search` | `luarocks install voxgig-sdk-company-search` |
+| TypeScript | `@voxgig-sdk/company-search` | publish pending — [install from git tag](https://github.com/voxgig-sdk/company-search-sdk/releases) |
+| Python | `voxgig-sdk-company-search` | publish pending — [install from git tag](https://github.com/voxgig-sdk/company-search-sdk/releases) |
+| PHP | `voxgig-sdk/company-search` | publish pending — [install from git tag](https://github.com/voxgig-sdk/company-search-sdk/releases) |
+| Golang | `github.com/voxgig-sdk/company-search-sdk/go` | `go get github.com/voxgig-sdk/company-search-sdk/go@latest` |
+| Ruby | `voxgig-sdk-company-search` | publish pending — [install from git tag](https://github.com/voxgig-sdk/company-search-sdk/releases) |
+| Lua | `voxgig-sdk-company-search` | publish pending — [install from git tag](https://github.com/voxgig-sdk/company-search-sdk/releases) |
 
 ## Quickstart
 
 ### TypeScript
 
 ```ts
-import { CompanySearchSDK } from 'company-search'
+import { CompanySearchSDK } from '@voxgig-sdk/company-search'
 
-const client = new CompanySearchSDK({
-  apikey: process.env.COMPANY-SEARCH_APIKEY,
-})
+const client = new CompanySearchSDK()
 
 // List all nearpoints
-const nearpoints = await client.NearPoint().list()
+const nearpoints = await client.nearpoint.list()
 console.log(nearpoints.data)
 ```
 
@@ -71,8 +69,8 @@ The API exposes 2 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **NearPoint** |  | `/near_point` |
-| **Search** |  | `/search` |
+| **NearPoint** | The NearPoint entity (list). | `/near_point` |
+| **Search** | The Search entity (list). | `/search` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -82,15 +80,12 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
-import os
 from companysearch_sdk import CompanySearchSDK
 
-client = CompanySearchSDK({
-    "apikey": os.environ.get("COMPANY-SEARCH_APIKEY"),
-})
+client = CompanySearchSDK()
 
 # List all nearpoints
-nearpoints, err = client.NearPoint().list()
+nearpoints = client.nearpoint.list()
 print(nearpoints)
 ```
 
@@ -100,12 +95,10 @@ print(nearpoints)
 <?php
 require_once 'companysearch_sdk.php';
 
-$client = new CompanySearchSDK([
-    "apikey" => getenv("COMPANY-SEARCH_APIKEY"),
-]);
+$client = new CompanySearchSDK();
 
-// List all nearpoints
-[$nearpoints, $err] = $client->NearPoint()->list();
+// List all nearpoints (throws on error)
+$nearpoints = $client->nearpoint()->list();
 print_r($nearpoints);
 ```
 
@@ -114,9 +107,7 @@ print_r($nearpoints);
 ```go
 import sdk "github.com/voxgig-sdk/company-search-sdk/go"
 
-client := sdk.NewCompanySearchSDK(map[string]any{
-    "apikey": os.Getenv("COMPANY-SEARCH_APIKEY"),
-})
+client := sdk.New()
 
 // List all nearpoints
 nearpoints, err := client.NearPoint(nil).List(nil, nil)
@@ -128,12 +119,10 @@ fmt.Println(nearpoints)
 ```ruby
 require_relative "CompanySearch_sdk"
 
-client = CompanySearchSDK.new({
-  "apikey" => ENV["COMPANY-SEARCH_APIKEY"],
-})
+client = CompanySearchSDK.new
 
 # List all nearpoints
-nearpoints, err = client.NearPoint().list
+nearpoints = client.nearpoint.list
 puts nearpoints
 ```
 
@@ -142,12 +131,10 @@ puts nearpoints
 ```lua
 local sdk = require("company-search_sdk")
 
-local client = sdk.new({
-  apikey = os.getenv("COMPANY-SEARCH_APIKEY"),
-})
+local client = sdk.new()
 
 -- List all nearpoints
-local nearpoints, err = client:NearPoint():list()
+local nearpoints, err = client:nearpoint():list()
 print(nearpoints)
 ```
 
@@ -160,7 +147,7 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = CompanySearchSDK.test()
-const result = await client.NearPoint().load({ id: 'test01' })
+const result = await client.nearpoint.load({ id: 'test01' })
 // result.ok === true, result.data contains mock data
 ```
 
@@ -168,14 +155,14 @@ const result = await client.NearPoint().load({ id: 'test01' })
 
 ```python
 client = CompanySearchSDK.test()
-result, err = client.NearPoint().load({"id": "test01"})
+result = client.nearpoint.load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
 $client = CompanySearchSDK::test();
-[$result, $err] = $client->NearPoint()->load(["id" => "test01"]);
+$result = $client->nearpoint()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -191,14 +178,14 @@ result, err := client.NearPoint(nil).Load(
 
 ```ruby
 client = CompanySearchSDK.test
-result, err = client.NearPoint().load({ "id" => "test01" })
+result = client.nearpoint.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:NearPoint():load({ id = "test01" })
+local result, err = client:nearpoint():load({ id = "test01" })
 ```
 
 ## How it works
@@ -251,7 +238,7 @@ console.log(result.data)
 
 **Python:**
 ```python
-result, err = client.direct({
+result = client.direct({
     "path": "/api/resource/{id}",
     "method": "GET",
     "params": {"id": "example"},
@@ -260,7 +247,7 @@ result, err = client.direct({
 
 **PHP:**
 ```php
-[$result, $err] = $client->direct([
+$result = $client->direct([
     "path" => "/api/resource/{id}",
     "method" => "GET",
     "params" => ["id" => "example"],
@@ -278,7 +265,7 @@ result, err := client.Direct(map[string]any{
 
 **Ruby:**
 ```ruby
-result, err = client.direct({
+result = client.direct({
   "path" => "/api/resource/{id}",
   "method" => "GET",
   "params" => { "id" => "example" },

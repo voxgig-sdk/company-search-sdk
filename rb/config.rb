@@ -15,9 +15,6 @@ module CompanySearchConfig
       },
       "options" => {
         "base" => "https://recherche-entreprises.api.gouv.fr",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },

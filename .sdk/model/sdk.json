@@ -1196,6 +1196,7 @@
         }
       },
       "info": {
+        "auth": false,
         "description": "# Bienvenue sur la documentation interactive d'API Recherche d’entreprises !\n\nL’API Recherche d’Entreprises permet à tout le monde retrouver une entreprise,\nune association, ou un service public en France. Elle propose un grand nombre de\ncritères de recherche, en particulier la dénomination, l’adresse et les\ndirigeants ou élus.\n\n## Données accessibles dans l'API\n\nL’API étant totalement ouverte d'accès, elle comporte des limitations. Ainsi\nne sont pas accessibles dans l'API :\n\n- les prédécesseurs et successeurs d'un établissement\n\n- les entreprises non-diffusibles\n\n- les entreprises qui se sont vues refuser leurs immatriculation au RCS\n\n\n**Attention :** cette API ne permet pas d'accèder aux données complètes de\nla base Sirene, mais uniquement de rechercher une entreprise par sa\ndénomination ou son adresse. Pour savoir comment obtenir les données\ncomplètes, consultez [notre fiche\nexplicative.](https://api.gouv.fr/guides/quelle-api-sirene)\n\n\n## Commencer à utiliser l'API\n\nL'API est accessible à partir de cette adresse : [https://recherche-entreprises.api.gouv.fr](https://recherche-entreprises.api.gouv.fr)\n\n\n**Attention :** Vous devez rajouter votre requête sur l'adresse.\n\n## Limite des requêtes\n\nL'API accepte **au maximum 7 requêtes par seconde** par adresse IP. Une limite de 30 requêtes par seconde par ASN est aussi en place. Il est donc probable de faire face à cette limite sur les cloud publics.\nCette valeur correspond à une **limite maximale** et ne constitue pas un débit garanti.\n\n\nEn cas d'usage excessif, notamment en période de forte activité, l'accès à l'API\npeut être temporairement restreint afin d'assurer un accès équitable à l'ensemble\ndes utilisateurs. La priorité est alors donnée aux systèmes internes et aux\nservices publics.\n\n\nLorsque la limite est dépassée, le serveur renvoie une réponse\n**HTTP 429 – Too Many Requests**.\nL'en-tête **`Retry-After`** indique le délai à respecter avant d'effectuer\nune nouvelle requête.\n\n\nIl est recommandé d'inclure un en-tête **`User-Agent`** explicite et descriptif\ndans toutes les requêtes.\n\n## Monitoring de l'API\n\nUne supervision du service en temps réel est\ndisponible [ici](https://annuaire-entreprises.data.gouv.fr/donnees/api#recherche-entreprise).\n\n\n## Données disponibles sur data.gouv\n\nUne partie des données issues de la base de données utilisée par l'API est accessible sur data.gouv. Vous pouvez les consulter [ici](https://www.data.gouv.fr/fr/datasets/donnees-des-entreprises-utilisees-dans-lannuaire-des-entreprises/#/resources).\n\n\n## Infolettre\n\nVous pouvez vous abonner [ici](https://2f62ff46.sibforms.com/serve/MUIFAO95z3V-BJo1feDe7qoHnkmSCfysBZZFjIFSjvvnqZ1C8aAGCT1-vESBVRjnjM8fKD_Mt7Q0ENMgGon61yySA7u3dn8MS3rdd5Ax_aQ7ORuB5tglGXJ00VEnG5Tp5ggraqa5x6oPoyaleNDDkDmijlzwmSxWRs5zfSubvr3dGQMlxymwf2uU4xY1N51BjN5F5vvNMDu-s9IT) à\nl'infolettre pour être informé des mises à jour de la part de l’équipe.\n\n## Contact\n\nPour toute question, vous pouvez contacter l'équipe en remplissant ce [formulaire](https://annuaire-entreprises.data.gouv.fr/faq/parcours?question=contact) !\n",
         "license": {
           "name": "MIT License",
@@ -1228,6 +1229,7 @@
               "active": false,
               "name": "",
               "package": "",
+              "state": "pending",
               "url": "",
               "vault": {
                 "alias": "",
@@ -1278,6 +1280,7 @@
               "active": false,
               "name": "",
               "package": "",
+              "state": "pending",
               "url": "",
               "vault": {
                 "alias": "",
@@ -1327,6 +1330,7 @@
               "active": false,
               "name": "",
               "package": "",
+              "state": "pending",
               "url": "",
               "vault": {
                 "alias": "",
@@ -1368,6 +1372,7 @@
               "active": false,
               "name": "luarocks",
               "package": "",
+              "state": "pending",
               "url": "https://luarocks.org",
               "vault": {
                 "alias": "luarocks",
@@ -1404,6 +1409,7 @@
               "active": false,
               "name": "packagist",
               "package": "",
+              "state": "pending",
               "url": "https://packagist.org",
               "vault": {
                 "alias": "packagist",
@@ -1446,6 +1452,7 @@
               "active": false,
               "name": "pypi",
               "package": "",
+              "state": "pending",
               "url": "https://pypi.org",
               "vault": {
                 "alias": "pypi",
@@ -1493,6 +1500,7 @@
               "active": false,
               "name": "rubygems",
               "package": "",
+              "state": "pending",
               "url": "https://rubygems.org",
               "vault": {
                 "alias": "gem",
@@ -1546,6 +1554,7 @@
               "active": false,
               "name": "npm",
               "package": "",
+              "state": "pending",
               "url": "https://registry.npmjs.org",
               "vault": {
                 "alias": "npm",

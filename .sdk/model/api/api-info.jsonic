@@ -4,6 +4,7 @@
 main: {
   kit: {
     info: {
+      auth: false
       description: `# Bienvenue sur la documentation interactive d'API Recherche d’entreprises !
 
 L’API Recherche d’Entreprises permet à tout le monde retrouver une entreprise,

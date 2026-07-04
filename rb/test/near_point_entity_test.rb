@@ -43,8 +43,7 @@ class NearPointEntityTest < Minitest::Test
     near_point_ref01_ent = client.NearPoint(nil)
     near_point_ref01_match = {}
 
-    near_point_ref01_list_result, err = near_point_ref01_ent.list(near_point_ref01_match, nil)
-    assert_nil err
+    near_point_ref01_list_result = near_point_ref01_ent.list(near_point_ref01_match, nil)
     assert near_point_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def near_point_basic_setup(extra)
     "COMPANYSEARCH_TEST_NEAR_POINT_ENTID" => idmap,
     "COMPANYSEARCH_TEST_LIVE" => "FALSE",
     "COMPANYSEARCH_TEST_EXPLAIN" => "FALSE",
-    "COMPANYSEARCH_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def near_point_basic_setup(extra)
   if env["COMPANYSEARCH_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["COMPANYSEARCH_APIKEY"],
       },
       extra || {},
     ])

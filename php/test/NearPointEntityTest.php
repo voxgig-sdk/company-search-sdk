@@ -50,8 +50,7 @@ class NearPointEntityTest extends TestCase
         $near_point_ref01_ent = $client->NearPoint(null);
         $near_point_ref01_match = [];
 
-        [$near_point_ref01_list_result, $err] = $near_point_ref01_ent->list($near_point_ref01_match, null);
-        $this->assertNull($err);
+        $near_point_ref01_list_result = $near_point_ref01_ent->list($near_point_ref01_match, null);
         $this->assertIsArray($near_point_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function near_point_basic_setup($extra)
         "COMPANYSEARCH_TEST_NEAR_POINT_ENTID" => $idmap,
         "COMPANYSEARCH_TEST_LIVE" => "FALSE",
         "COMPANYSEARCH_TEST_EXPLAIN" => "FALSE",
-        "COMPANYSEARCH_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function near_point_basic_setup($extra)
     if ($env["COMPANYSEARCH_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["COMPANYSEARCH_APIKEY"],
             ],
             $extra ?? [],
         ]);

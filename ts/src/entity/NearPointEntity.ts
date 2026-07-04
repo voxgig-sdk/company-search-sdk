@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  NearPoint,
+  NearPointListMatch,
+} from '../CompanySearchTypes'
 
 // TODO: needs Entity superclass
-class NearPointEntity extends CompanySearchEntityBase {
+class NearPointEntity extends CompanySearchEntityBase<NearPoint> {
 
   constructor(client: CompanySearchSDK, entopts: any) {
     super(client, entopts)
@@ -33,7 +37,7 @@ class NearPointEntity extends CompanySearchEntityBase {
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: NearPointListMatch, ctrl?: Control): Promise<NearPoint[]> {
 
     const utility = this._utility
 
@@ -133,7 +137,9 @@ class NearPointEntity extends CompanySearchEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<NearPoint[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }
