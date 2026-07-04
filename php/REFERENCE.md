@@ -89,7 +89,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## NearPointEntity
 
 ```php
-$near_point = $client->near_point();
+$near_point = $client->NearPoint();
 ```
 
 ### Fields
@@ -131,7 +131,7 @@ $near_point = $client->near_point();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->near_point()->list([]);
+$results = $client->NearPoint()->list([]);
 ```
 
 ### Common Methods
@@ -167,7 +167,7 @@ Return the entity name.
 ## SearchEntity
 
 ```php
-$search = $client->search();
+$search = $client->Search();
 ```
 
 ### Fields
@@ -209,7 +209,7 @@ $search = $client->search();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->search()->list([]);
+$results = $client->Search()->list([]);
 ```
 
 ### Common Methods

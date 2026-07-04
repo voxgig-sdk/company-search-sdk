@@ -121,7 +121,7 @@ Alias for `CompanySearchSDK.test()`.
 ## NearPointEntity
 
 ```ts
-const near_point = client.near_point
+const near_point = client.NearPoint()
 ```
 
 ### Fields
@@ -163,7 +163,7 @@ const near_point = client.near_point
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.near_point.list()
+const results = await client.NearPoint().list()
 ```
 
 ### Common Methods
@@ -197,7 +197,7 @@ Return a copy of the entity options.
 ## SearchEntity
 
 ```ts
-const search = client.search
+const search = client.Search()
 ```
 
 ### Fields
@@ -239,7 +239,7 @@ const search = client.search
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.search.list()
+const results = await client.Search().list()
 ```
 
 ### Common Methods

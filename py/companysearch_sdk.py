@@ -220,41 +220,21 @@ class CompanySearchSDK:
         }
 
 
-    @property
-    def near_point(self):
-        """Idiomatic facade: client.near_point.list() / client.near_point.load({"id": ...})."""
-        from entity.near_point_entity import NearPointEntity
-        cached = getattr(self, "_near_point", None)
-        if cached is None:
-            cached = NearPointEntity(self, None)
-            self._near_point = cached
-        return cached
-
-    def NearPoint(self, data=None):
-        # Deprecated: use client.near_point instead.
+    def NearPoint(self, data=None) -> "NearPointEntity":
+        """Entity factory: client.NearPoint().list({}) / client.NearPoint().load({"id": ...})."""
         from entity.near_point_entity import NearPointEntity
         return NearPointEntity(self, data)
 
 
-    @property
-    def search(self):
-        """Idiomatic facade: client.search.list() / client.search.load({"id": ...})."""
-        from entity.search_entity import SearchEntity
-        cached = getattr(self, "_search", None)
-        if cached is None:
-            cached = SearchEntity(self, None)
-            self._search = cached
-        return cached
-
-    def Search(self, data=None):
-        # Deprecated: use client.search instead.
+    def Search(self, data=None) -> "SearchEntity":
+        """Entity factory: client.Search().list({}) / client.Search().load({"id": ...})."""
         from entity.search_entity import SearchEntity
         return SearchEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "CompanySearchSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -274,3 +254,10 @@ class CompanySearchSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.near_point_entity import NearPointEntity
+    from entity.search_entity import SearchEntity

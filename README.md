@@ -26,9 +26,11 @@ import { CompanySearchSDK } from '@voxgig-sdk/company-search'
 
 const client = new CompanySearchSDK()
 
-// List all nearpoints
-const nearpoints = await client.nearpoint.list()
-console.log(nearpoints.data)
+// List all nearpoints (returns NearPoint[])
+const nearpoints = await client.NearPoint().list()
+for (const nearpoint of nearpoints) {
+  console.log(nearpoint)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -84,9 +86,10 @@ from companysearch_sdk import CompanySearchSDK
 
 client = CompanySearchSDK()
 
-# List all nearpoints
-nearpoints = client.nearpoint.list()
-print(nearpoints)
+# List all nearpoints (returns a list, raises on error)
+nearpoints = client.NearPoint().list({})
+for nearpoint in nearpoints:
+    print(nearpoint)
 ```
 
 ### PHP
@@ -97,8 +100,8 @@ require_once 'companysearch_sdk.php';
 
 $client = new CompanySearchSDK();
 
-// List all nearpoints (throws on error)
-$nearpoints = $client->nearpoint()->list();
+// List all nearpoints (returns an array; throws on error)
+$nearpoints = $client->NearPoint()->list();
 print_r($nearpoints);
 ```
 
@@ -121,8 +124,8 @@ require_relative "CompanySearch_sdk"
 
 client = CompanySearchSDK.new
 
-# List all nearpoints
-nearpoints = client.nearpoint.list
+# List all nearpoints (returns an Array; raises on error)
+nearpoints = client.NearPoint.list
 puts nearpoints
 ```
 
@@ -134,7 +137,7 @@ local sdk = require("company-search_sdk")
 local client = sdk.new()
 
 -- List all nearpoints
-local nearpoints, err = client:nearpoint():list()
+local nearpoints, err = client:NearPoint():list()
 print(nearpoints)
 ```
 
@@ -147,22 +150,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = CompanySearchSDK.test()
-const result = await client.nearpoint.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const nearpoint = await client.NearPoint().load({ id: 'test01' })
+// nearpoint is a bare NearPoint populated with mock data
+console.log(nearpoint)
 ```
 
 ### Python
 
 ```python
 client = CompanySearchSDK.test()
-result = client.nearpoint.load({"id": "test01"})
+nearpoint = client.NearPoint().load({"id": "test01"})
+print(nearpoint)
 ```
 
 ### PHP
 
 ```php
-$client = CompanySearchSDK::test();
-$result = $client->nearpoint()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = CompanySearchSDK::test([
+    "entity" => ["nearpoint" => ["test01" => ["id" => "test01"]]],
+]);
+$nearpoint = $client->NearPoint()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -177,15 +185,18 @@ result, err := client.NearPoint(nil).Load(
 ### Ruby
 
 ```ruby
-client = CompanySearchSDK.test
-result = client.nearpoint.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = CompanySearchSDK.test({
+  "entity" => { "nearpoint" => { "test01" => { "id" => "test01" } } },
+})
+nearpoint = client.NearPoint.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:nearpoint():load({ id = "test01" })
+local result, err = client:NearPoint():load({ id = "test01" })
 ```
 
 ## How it works
@@ -233,6 +244,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

@@ -233,10 +233,10 @@ class CompanySearchSDK
 
     private $_near_point = null;
 
-    // Idiomatic facade: $client->near_point()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias NearPoint() (PHP method
-    // names are case-insensitive).
-    public function near_point($data = null)
+    // Canonical facade: $client->NearPoint()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->near_point()
+    // resolves here too.
+    public function NearPoint($data = null)
     {
         require_once __DIR__ . '/entity/near_point_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class CompanySearchSDK
 
     private $_search = null;
 
-    // Idiomatic facade: $client->search()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Search() (PHP method
-    // names are case-insensitive).
-    public function search($data = null)
+    // Canonical facade: $client->Search()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->search()
+    // resolves here too.
+    public function Search($data = null)
     {
         require_once __DIR__ . '/entity/search_entity.php';
         if ($data === null) {

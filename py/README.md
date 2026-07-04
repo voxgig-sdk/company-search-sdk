@@ -31,14 +31,16 @@ from companysearch_sdk import CompanySearchSDK
 client = CompanySearchSDK()
 ```
 
-### 2. List nearpoints
+### 2. List nearpoint records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.nearpoint.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    nearpoints = client.NearPoint().list({})
+    for nearpoint in nearpoints:
+        print(nearpoint)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -86,8 +88,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = CompanySearchSDK.test()
 
-result = client.nearpoint.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+nearpoint = client.NearPoint().load({"id": "test01"})
+# nearpoint contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -283,7 +286,7 @@ API path: `/search`
 
 ### NearPoint
 
-Create an instance: `const near_point = client.near_point`
+Create an instance: `near_point = client.NearPoint()`
 
 #### Operations
 
@@ -325,14 +328,14 @@ Create an instance: `const near_point = client.near_point`
 
 #### Example: List
 
-```ts
-const near_points = await client.near_point.list()
+```python
+near_points = client.NearPoint().list({})
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.search`
+Create an instance: `search = client.Search()`
 
 #### Operations
 
@@ -374,8 +377,8 @@ Create an instance: `const search = client.search`
 
 #### Example: List
 
-```ts
-const searchs = await client.search.list()
+```python
+searchs = client.Search().list({})
 ```
 
 
@@ -449,7 +452,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-nearpoint = client.nearpoint
+nearpoint = client.NearPoint()
 nearpoint.load({"id": "example_id"})
 
 # nearpoint.data_get() now returns the loaded nearpoint data

@@ -208,26 +208,14 @@ class CompanySearchSDK
   end
 
 
-  # Idiomatic facade: client.near_point.list / client.near_point.load({ "id" => ... })
-  def near_point
-    require_relative 'entity/near_point_entity'
-    @near_point ||= NearPointEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.near_point instead.
+  # Canonical facade: client.NearPoint.list / client.NearPoint.load({ "id" => ... })
   def NearPoint(data = nil)
     require_relative 'entity/near_point_entity'
     NearPointEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.search.list / client.search.load({ "id" => ... })
-  def search
-    require_relative 'entity/search_entity'
-    @search ||= SearchEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.search instead.
+  # Canonical facade: client.Search.list / client.Search.load({ "id" => ... })
   def Search(data = nil)
     require_relative 'entity/search_entity'
     SearchEntity.new(self, data)

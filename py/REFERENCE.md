@@ -84,7 +84,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## NearPointEntity
 
 ```python
-near_point = client.near_point
+near_point = client.NearPoint()
 ```
 
 ### Fields
@@ -126,7 +126,9 @@ near_point = client.near_point
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.near_point.list({})
+results = client.NearPoint().list({})
+for near_point in results:
+    print(near_point)
 ```
 
 ### Common Methods
@@ -161,7 +163,7 @@ Return the entity name.
 ## SearchEntity
 
 ```python
-search = client.search
+search = client.Search()
 ```
 
 ### Fields
@@ -203,7 +205,9 @@ search = client.search
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.search.list({})
+results = client.Search().list({})
+for search in results:
+    print(search)
 ```
 
 ### Common Methods

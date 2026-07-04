@@ -87,7 +87,7 @@ same parameters as `direct()`.
 ## NearPointEntity
 
 ```lua
-local near_point = client:near_point(nil)
+local near_point = client:NearPoint(nil)
 ```
 
 ### Fields
@@ -129,7 +129,7 @@ local near_point = client:near_point(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:near_point():list()
+local results, err = client:NearPoint():list()
 ```
 
 ### Common Methods
@@ -165,7 +165,7 @@ Return the entity name.
 ## SearchEntity
 
 ```lua
-local search = client:search(nil)
+local search = client:Search(nil)
 ```
 
 ### Fields
@@ -207,7 +207,7 @@ local search = client:search(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:search():list()
+local results, err = client:Search():list()
 ```
 
 ### Common Methods

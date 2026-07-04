@@ -29,18 +29,16 @@ require_once 'companysearch_sdk.php';
 $client = new CompanySearchSDK();
 ```
 
-### 2. List nearpoints
+### 2. List nearpoint records
 
 ```php
 try {
-    $result = $client->nearpoint()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of NearPoint records — iterate directly.
+    $nearpoints = $client->NearPoint()->list();
+    foreach ($nearpoints as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -86,13 +84,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = CompanySearchSDK::test();
+$client = CompanySearchSDK::test([
+    "entity" => ["nearpoint" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->nearpoint()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$nearpoint = $client->NearPoint()->load(["id" => "test01"]);
+print_r($nearpoint);
 ```
 
 ### Use a custom fetch function
@@ -291,7 +293,7 @@ API path: `/search`
 
 ### NearPoint
 
-Create an instance: `const near_point = client.near_point`
+Create an instance: `$near_point = $client->NearPoint();`
 
 #### Operations
 
@@ -333,14 +335,15 @@ Create an instance: `const near_point = client.near_point`
 
 #### Example: List
 
-```ts
-const near_points = await client.near_point.list()
+```php
+// list() returns an array of NearPoint records (throws on error).
+$near_points = $client->NearPoint()->list();
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.search`
+Create an instance: `$search = $client->Search();`
 
 #### Operations
 
@@ -382,8 +385,9 @@ Create an instance: `const search = client.search`
 
 #### Example: List
 
-```ts
-const searchs = await client.search.list()
+```php
+// list() returns an array of Search records (throws on error).
+$searchs = $client->Search()->list();
 ```
 
 
@@ -458,7 +462,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$nearpoint = $client->nearpoint();
+$nearpoint = $client->NearPoint();
 $nearpoint->load(["id" => "example_id"]);
 
 // $nearpoint->dataGet() now returns the loaded nearpoint data

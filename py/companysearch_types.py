@@ -4,133 +4,133 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class NearPoint:
-    activite_principale: Optional[str] = None
-    activite_principale_naf25: Optional[str] = None
-    annee_categorie_entreprise: Optional[str] = None
-    annee_tranche_effectif_salarie: Optional[str] = None
-    caractere_employeur: Optional[str] = None
-    categorie_entreprise: Optional[str] = None
-    complement: Optional[dict] = None
-    date_creation: Optional[str] = None
-    date_fermeture: Optional[str] = None
-    date_mise_a_jour: Optional[str] = None
-    date_mise_a_jour_insee: Optional[str] = None
-    date_mise_a_jour_rne: Optional[str] = None
-    dirigeant: Optional[list] = None
-    etat_administratif: Optional[str] = None
-    finance: Optional[dict] = None
-    matching_etablissement: Optional[list] = None
-    nature_juridique: Optional[str] = None
-    nom_complet: Optional[str] = None
-    nom_raison_sociale: Optional[str] = None
-    nombre_etablissement: Optional[int] = None
-    nombre_etablissements_ouvert: Optional[int] = None
-    section_activite_principale: Optional[str] = None
-    siege: Optional[dict] = None
-    sigle: Optional[str] = None
-    siren: Optional[str] = None
-    statut_diffusion: Optional[str] = None
-    tranche_effectif_salarie: Optional[str] = None
+class NearPoint(TypedDict, total=False):
+    activite_principale: str
+    activite_principale_naf25: str
+    annee_categorie_entreprise: str
+    annee_tranche_effectif_salarie: str
+    caractere_employeur: str
+    categorie_entreprise: str
+    complement: dict
+    date_creation: str
+    date_fermeture: str
+    date_mise_a_jour: str
+    date_mise_a_jour_insee: str
+    date_mise_a_jour_rne: str
+    dirigeant: list
+    etat_administratif: str
+    finance: dict
+    matching_etablissement: list
+    nature_juridique: str
+    nom_complet: str
+    nom_raison_sociale: str
+    nombre_etablissement: int
+    nombre_etablissements_ouvert: int
+    section_activite_principale: str
+    siege: dict
+    sigle: str
+    siren: str
+    statut_diffusion: str
+    tranche_effectif_salarie: str
 
 
-@dataclass
-class NearPointListMatch:
-    activite_principale: Optional[str] = None
-    activite_principale_naf25: Optional[str] = None
-    annee_categorie_entreprise: Optional[str] = None
-    annee_tranche_effectif_salarie: Optional[str] = None
-    caractere_employeur: Optional[str] = None
-    categorie_entreprise: Optional[str] = None
-    complement: Optional[dict] = None
-    date_creation: Optional[str] = None
-    date_fermeture: Optional[str] = None
-    date_mise_a_jour: Optional[str] = None
-    date_mise_a_jour_insee: Optional[str] = None
-    date_mise_a_jour_rne: Optional[str] = None
-    dirigeant: Optional[list] = None
-    etat_administratif: Optional[str] = None
-    finance: Optional[dict] = None
-    matching_etablissement: Optional[list] = None
-    nature_juridique: Optional[str] = None
-    nom_complet: Optional[str] = None
-    nom_raison_sociale: Optional[str] = None
-    nombre_etablissement: Optional[int] = None
-    nombre_etablissements_ouvert: Optional[int] = None
-    section_activite_principale: Optional[str] = None
-    siege: Optional[dict] = None
-    sigle: Optional[str] = None
-    siren: Optional[str] = None
-    statut_diffusion: Optional[str] = None
-    tranche_effectif_salarie: Optional[str] = None
+class NearPointListMatch(TypedDict, total=False):
+    activite_principale: str
+    activite_principale_naf25: str
+    annee_categorie_entreprise: str
+    annee_tranche_effectif_salarie: str
+    caractere_employeur: str
+    categorie_entreprise: str
+    complement: dict
+    date_creation: str
+    date_fermeture: str
+    date_mise_a_jour: str
+    date_mise_a_jour_insee: str
+    date_mise_a_jour_rne: str
+    dirigeant: list
+    etat_administratif: str
+    finance: dict
+    matching_etablissement: list
+    nature_juridique: str
+    nom_complet: str
+    nom_raison_sociale: str
+    nombre_etablissement: int
+    nombre_etablissements_ouvert: int
+    section_activite_principale: str
+    siege: dict
+    sigle: str
+    siren: str
+    statut_diffusion: str
+    tranche_effectif_salarie: str
 
 
-@dataclass
-class Search:
-    activite_principale: Optional[str] = None
-    activite_principale_naf25: Optional[str] = None
-    annee_categorie_entreprise: Optional[str] = None
-    annee_tranche_effectif_salarie: Optional[str] = None
-    caractere_employeur: Optional[str] = None
-    categorie_entreprise: Optional[str] = None
-    complement: Optional[dict] = None
-    date_creation: Optional[str] = None
-    date_fermeture: Optional[str] = None
-    date_mise_a_jour: Optional[str] = None
-    date_mise_a_jour_insee: Optional[str] = None
-    date_mise_a_jour_rne: Optional[str] = None
-    dirigeant: Optional[list] = None
-    etat_administratif: Optional[str] = None
-    finance: Optional[dict] = None
-    matching_etablissement: Optional[list] = None
-    nature_juridique: Optional[str] = None
-    nom_complet: Optional[str] = None
-    nom_raison_sociale: Optional[str] = None
-    nombre_etablissement: Optional[int] = None
-    nombre_etablissements_ouvert: Optional[int] = None
-    section_activite_principale: Optional[str] = None
-    siege: Optional[dict] = None
-    sigle: Optional[str] = None
-    siren: Optional[str] = None
-    statut_diffusion: Optional[str] = None
-    tranche_effectif_salarie: Optional[str] = None
+class Search(TypedDict, total=False):
+    activite_principale: str
+    activite_principale_naf25: str
+    annee_categorie_entreprise: str
+    annee_tranche_effectif_salarie: str
+    caractere_employeur: str
+    categorie_entreprise: str
+    complement: dict
+    date_creation: str
+    date_fermeture: str
+    date_mise_a_jour: str
+    date_mise_a_jour_insee: str
+    date_mise_a_jour_rne: str
+    dirigeant: list
+    etat_administratif: str
+    finance: dict
+    matching_etablissement: list
+    nature_juridique: str
+    nom_complet: str
+    nom_raison_sociale: str
+    nombre_etablissement: int
+    nombre_etablissements_ouvert: int
+    section_activite_principale: str
+    siege: dict
+    sigle: str
+    siren: str
+    statut_diffusion: str
+    tranche_effectif_salarie: str
 
 
-@dataclass
-class SearchListMatch:
-    activite_principale: Optional[str] = None
-    activite_principale_naf25: Optional[str] = None
-    annee_categorie_entreprise: Optional[str] = None
-    annee_tranche_effectif_salarie: Optional[str] = None
-    caractere_employeur: Optional[str] = None
-    categorie_entreprise: Optional[str] = None
-    complement: Optional[dict] = None
-    date_creation: Optional[str] = None
-    date_fermeture: Optional[str] = None
-    date_mise_a_jour: Optional[str] = None
-    date_mise_a_jour_insee: Optional[str] = None
-    date_mise_a_jour_rne: Optional[str] = None
-    dirigeant: Optional[list] = None
-    etat_administratif: Optional[str] = None
-    finance: Optional[dict] = None
-    matching_etablissement: Optional[list] = None
-    nature_juridique: Optional[str] = None
-    nom_complet: Optional[str] = None
-    nom_raison_sociale: Optional[str] = None
-    nombre_etablissement: Optional[int] = None
-    nombre_etablissements_ouvert: Optional[int] = None
-    section_activite_principale: Optional[str] = None
-    siege: Optional[dict] = None
-    sigle: Optional[str] = None
-    siren: Optional[str] = None
-    statut_diffusion: Optional[str] = None
-    tranche_effectif_salarie: Optional[str] = None
-
+class SearchListMatch(TypedDict, total=False):
+    activite_principale: str
+    activite_principale_naf25: str
+    annee_categorie_entreprise: str
+    annee_tranche_effectif_salarie: str
+    caractere_employeur: str
+    categorie_entreprise: str
+    complement: dict
+    date_creation: str
+    date_fermeture: str
+    date_mise_a_jour: str
+    date_mise_a_jour_insee: str
+    date_mise_a_jour_rne: str
+    dirigeant: list
+    etat_administratif: str
+    finance: dict
+    matching_etablissement: list
+    nature_juridique: str
+    nom_complet: str
+    nom_raison_sociale: str
+    nombre_etablissement: int
+    nombre_etablissements_ouvert: int
+    section_activite_principale: str
+    siege: dict
+    sigle: str
+    siren: str
+    statut_diffusion: str
+    tranche_effectif_salarie: str
