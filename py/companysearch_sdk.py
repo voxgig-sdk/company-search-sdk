@@ -221,13 +221,13 @@ class CompanySearchSDK:
 
 
     def NearPoint(self, data=None) -> "NearPointEntity":
-        """Entity factory: client.NearPoint().list({}) / client.NearPoint().load({"id": ...})."""
+        """Entity factory: client.NearPoint().list() / client.NearPoint().load({"id": ...})."""
         from entity.near_point_entity import NearPointEntity
         return NearPointEntity(self, data)
 
 
     def Search(self, data=None) -> "SearchEntity":
-        """Entity factory: client.Search().list({}) / client.Search().load({"id": ...})."""
+        """Entity factory: client.Search().list() / client.Search().load({"id": ...})."""
         from entity.search_entity import SearchEntity
         return SearchEntity(self, data)
 

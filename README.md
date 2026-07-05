@@ -6,6 +6,21 @@ This is an unofficial SDK for the API Recherche d’entreprises public API, gene
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
 
+## Entities, not endpoints
+
+This SDK exposes the API as a small set of **semantic entities** — NearPoint and Search — that you
+call directly, instead of assembling URL paths and query strings. Entities are
+**Capitalised** to mark them as the primary surface, each with the operations they
+support (`list`):
+
+```ts
+const client = new CompanySearchSDK()
+const items = await client.NearPoint().list()
+```
+
+Thinking in entities keeps the mental model small — for people and AI agents alike —
+rather than reasoning about raw HTTP routes and query parameters.
+
 ## Packages
 
 | Language | Package | Install |
@@ -74,8 +89,8 @@ The API exposes 2 entities:
 | **NearPoint** | The NearPoint entity (list). | `/near_point` |
 | **Search** | The Search entity (list). | `/search` |
 
-Each entity supports the following operations where available: **load**,
-**list**, **create**, **update**, and **remove**.
+The operations available across these entities are **list** — see each entity's
+own list above for exactly which it supports.
 
 ## Quickstart in other languages
 
@@ -87,7 +102,7 @@ from companysearch_sdk import CompanySearchSDK
 client = CompanySearchSDK()
 
 # List all nearpoints (returns a list, raises on error)
-nearpoints = client.NearPoint().list({})
+nearpoints = client.NearPoint().list()
 for nearpoint in nearpoints:
     print(nearpoint)
 ```
@@ -150,7 +165,7 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = CompanySearchSDK.test()
-const nearpoint = await client.NearPoint().load({ id: 'test01' })
+const nearpoint = await client.NearPoint().list()
 // nearpoint is a bare NearPoint populated with mock data
 console.log(nearpoint)
 ```
@@ -159,7 +174,7 @@ console.log(nearpoint)
 
 ```python
 client = CompanySearchSDK.test()
-nearpoint = client.NearPoint().load({"id": "test01"})
+nearpoint = client.NearPoint().list()
 print(nearpoint)
 ```
 
@@ -168,17 +183,17 @@ print(nearpoint)
 ```php
 // Seed fixture data so offline calls resolve without a live server.
 $client = CompanySearchSDK::test([
-    "entity" => ["nearpoint" => ["test01" => ["id" => "test01"]]],
+    "entity" => ["nearpoint" => ["test01" => []]],
 ]);
-$nearpoint = $client->NearPoint()->load(["id" => "test01"]);
+$nearpoint = $client->NearPoint()->list();
 ```
 
 ### Golang
 
 ```go
 client := sdk.Test()
-result, err := client.NearPoint(nil).Load(
-    map[string]any{"id": "test01"}, nil,
+result, err := client.NearPoint(nil).List(
+    nil, nil,
 )
 ```
 
@@ -187,41 +202,19 @@ result, err := client.NearPoint(nil).Load(
 ```ruby
 # Seed fixture data so offline calls resolve without a live server.
 client = CompanySearchSDK.test({
-  "entity" => { "nearpoint" => { "test01" => { "id" => "test01" } } },
+  "entity" => { "nearpoint" => { "test01" => {} } },
 })
-nearpoint = client.NearPoint.load({ "id" => "test01" })
+nearpoint = client.NearPoint.list()
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:NearPoint():load({ id = "test01" })
+local result, err = client:NearPoint():list()
 ```
 
-## How it works
-
-Every SDK call runs the same five-stage pipeline:
-
-1. **Point** — resolve the API endpoint from the operation definition.
-2. **Spec** — build the HTTP specification (URL, method, headers, body).
-3. **Request** — send the HTTP request.
-4. **Response** — receive and parse the response.
-5. **Result** — extract the result data for the caller.
-
-A feature hook fires at each stage (e.g. `PrePoint`, `PreSpec`,
-`PreRequest`), so features can inspect or modify the pipeline without
-forking the SDK.
-
-### Features
-
-| Feature | Purpose |
-| --- | --- |
-| **TestFeature** | In-memory mock transport for testing without a live server |
-
-Pass custom features via the `extend` option at construction time.
-
-### Direct and Prepare
+## Direct and prepare
 
 For endpoints the entity model doesn't cover, use the low-level methods:
 
@@ -294,6 +287,31 @@ local result, err = client:direct({
   params = { id = "example" },
 })
 ```
+
+## Advanced
+
+> Everyday use only needs the sections above. This explains the internals
+> behind every call — relevant when writing custom features.
+
+Every SDK call runs the same five-stage pipeline:
+
+1. **Point** — resolve the API endpoint from the operation definition.
+2. **Spec** — build the HTTP specification (URL, method, headers, body).
+3. **Request** — send the HTTP request.
+4. **Response** — receive and parse the response.
+5. **Result** — extract the result data for the caller.
+
+A feature hook fires at each stage (e.g. `PrePoint`, `PreSpec`,
+`PreRequest`), so features can inspect or modify the pipeline without
+forking the SDK.
+
+### Features
+
+| Feature | Purpose |
+| --- | --- |
+| **TestFeature** | In-memory mock transport for testing without a live server |
+
+Pass custom features via the `extend` option at construction time.
 
 ## Per-language documentation
 

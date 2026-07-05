@@ -35,7 +35,35 @@ export interface NearPoint {
   tranche_effectif_salarie?: string
 }
 
-export type NearPointListMatch = Partial<NearPoint>
+export interface NearPointListMatch {
+  activite_principale?: string
+  activite_principale_naf25?: string
+  annee_categorie_entreprise?: string
+  annee_tranche_effectif_salarie?: string
+  caractere_employeur?: string
+  categorie_entreprise?: string
+  complement?: Record<string, any>
+  date_creation?: string
+  date_fermeture?: string
+  date_mise_a_jour?: string
+  date_mise_a_jour_insee?: string
+  date_mise_a_jour_rne?: string
+  dirigeant?: any[]
+  etat_administratif?: string
+  finance?: Record<string, any>
+  matching_etablissement?: any[]
+  nature_juridique?: string
+  nom_complet?: string
+  nom_raison_sociale?: string
+  nombre_etablissement?: number
+  nombre_etablissements_ouvert?: number
+  section_activite_principale?: string
+  siege?: Record<string, any>
+  sigle?: string
+  siren?: string
+  statut_diffusion?: string
+  tranche_effectif_salarie?: string
+}
 
 export interface Search {
   activite_principale?: string
@@ -67,5 +95,33 @@ export interface Search {
   tranche_effectif_salarie?: string
 }
 
-export type SearchListMatch = Partial<Search>
+export interface SearchListMatch {
+  activite_principale?: string
+  activite_principale_naf25?: string
+  annee_categorie_entreprise?: string
+  annee_tranche_effectif_salarie?: string
+  caractere_employeur?: string
+  categorie_entreprise?: string
+  complement?: Record<string, any>
+  date_creation?: string
+  date_fermeture?: string
+  date_mise_a_jour?: string
+  date_mise_a_jour_insee?: string
+  date_mise_a_jour_rne?: string
+  dirigeant?: any[]
+  etat_administratif?: string
+  finance?: Record<string, any>
+  matching_etablissement?: any[]
+  nature_juridique?: string
+  nom_complet?: string
+  nom_raison_sociale?: string
+  nombre_etablissement?: number
+  nombre_etablissements_ouvert?: number
+  section_activite_principale?: string
+  siege?: Record<string, any>
+  sigle?: string
+  siren?: string
+  statut_diffusion?: string
+  tranche_effectif_salarie?: string
+}
 

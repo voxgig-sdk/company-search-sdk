@@ -121,7 +121,7 @@ NearPoint = Struct.new(
   keyword_init: true
 )
 
-# Match filter for NearPoint#list (any subset of NearPoint fields).
+# Request payload for NearPoint#list.
 #
 # @!attribute [rw] activite_principale
 #   @return [String, nil]
@@ -347,7 +347,7 @@ Search = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Search#list (any subset of Search fields).
+# Request payload for Search#list.
 #
 # @!attribute [rw] activite_principale
 #   @return [String, nil]

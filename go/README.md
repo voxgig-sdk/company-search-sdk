@@ -4,6 +4,8 @@
 
 The Golang SDK for the CompanySearch API — an entity-oriented client using standard Go conventions. No generics required; data flows as `map[string]any`.
 
+It exposes the API as capitalised, semantic **Entities** — e.g. `client.NearPoint(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -60,6 +62,35 @@ func main() {
 ```
 
 
+## Error handling
+
+Every entity operation returns `(value, error)`. Check `err` before
+using the value — there is no exception to catch:
+
+```go
+nearpoints, err := client.NearPoint(nil).List(nil, nil)
+if err != nil {
+    // handle err
+    return
+}
+_ = nearpoints
+```
+
+`Direct` follows the same `(value, error)` convention:
+
+```go
+result, err := client.Direct(map[string]any{
+    "path":   "/api/resource/{id}",
+    "method": "GET",
+    "params": map[string]any{"id": "example_id"},
+})
+if err != nil {
+    // handle err
+}
+_ = result
+```
+
+
 ## How-to guides
 
 ### Make a direct HTTP request
@@ -106,13 +137,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-nearpoint, err := client.NearPoint(nil).Load(
-    map[string]any{"id": "test01"}, nil,
+nearpoint, err := client.NearPoint(nil).List(
+    nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(nearpoint) // the loaded mock data
+fmt.Println(nearpoint) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -198,11 +229,7 @@ All entities implement the `CompanySearchEntity` interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `Load` | `(reqmatch, ctrl map[string]any) (any, error)` | Load a single entity by match criteria. |
 | `List` | `(reqmatch, ctrl map[string]any) (any, error)` | List entities matching the criteria. |
-| `Create` | `(reqdata, ctrl map[string]any) (any, error)` | Create a new entity. |
-| `Update` | `(reqdata, ctrl map[string]any) (any, error)` | Update an existing entity. |
-| `Remove` | `(reqmatch, ctrl map[string]any) (any, error)` | Remove an entity. |
 | `Data` | `(args ...any) any` | Get or set entity data. |
 | `Match` | `(args ...any) any` | Get or set entity match criteria. |
 | `Make` | `() Entity` | Create a new instance with the same options. |
@@ -215,16 +242,15 @@ operation's data **directly** — there is no wrapper:
 
 | Operation | `value` |
 | --- | --- |
-| `Load` / `Create` / `Update` / `Remove` | the entity record (`map[string]any`) |
 | `List` | a `[]any` of entity records |
 
 Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    nearpoint, err := client.NearPoint(nil).Load(map[string]any{"id": "example_id"}, nil)
+    nearpoint, err := client.NearPoint(nil).List(map[string]any{/* fields */}, nil)
     if err != nil { /* handle */ }
-    // nearpoint is the loaded record
+    // nearpoint is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -322,33 +348,33 @@ Create an instance: `near_point := client.NearPoint(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `activite_principale` | ``$STRING`` |  |
-| `activite_principale_naf25` | ``$STRING`` |  |
-| `annee_categorie_entreprise` | ``$STRING`` |  |
-| `annee_tranche_effectif_salarie` | ``$STRING`` |  |
-| `caractere_employeur` | ``$STRING`` |  |
-| `categorie_entreprise` | ``$STRING`` |  |
-| `complement` | ``$OBJECT`` |  |
-| `date_creation` | ``$STRING`` |  |
-| `date_fermeture` | ``$STRING`` |  |
-| `date_mise_a_jour` | ``$STRING`` |  |
-| `date_mise_a_jour_insee` | ``$STRING`` |  |
-| `date_mise_a_jour_rne` | ``$STRING`` |  |
-| `dirigeant` | ``$ARRAY`` |  |
-| `etat_administratif` | ``$STRING`` |  |
-| `finance` | ``$OBJECT`` |  |
-| `matching_etablissement` | ``$ARRAY`` |  |
-| `nature_juridique` | ``$STRING`` |  |
-| `nom_complet` | ``$STRING`` |  |
-| `nom_raison_sociale` | ``$STRING`` |  |
-| `nombre_etablissement` | ``$INTEGER`` |  |
-| `nombre_etablissements_ouvert` | ``$INTEGER`` |  |
-| `section_activite_principale` | ``$STRING`` |  |
-| `siege` | ``$OBJECT`` |  |
-| `sigle` | ``$STRING`` |  |
-| `siren` | ``$STRING`` |  |
-| `statut_diffusion` | ``$STRING`` |  |
-| `tranche_effectif_salarie` | ``$STRING`` |  |
+| `activite_principale` | `string` |  |
+| `activite_principale_naf25` | `string` |  |
+| `annee_categorie_entreprise` | `string` |  |
+| `annee_tranche_effectif_salarie` | `string` |  |
+| `caractere_employeur` | `string` |  |
+| `categorie_entreprise` | `string` |  |
+| `complement` | `map[string]any` |  |
+| `date_creation` | `string` |  |
+| `date_fermeture` | `string` |  |
+| `date_mise_a_jour` | `string` |  |
+| `date_mise_a_jour_insee` | `string` |  |
+| `date_mise_a_jour_rne` | `string` |  |
+| `dirigeant` | `[]any` |  |
+| `etat_administratif` | `string` |  |
+| `finance` | `map[string]any` |  |
+| `matching_etablissement` | `[]any` |  |
+| `nature_juridique` | `string` |  |
+| `nom_complet` | `string` |  |
+| `nom_raison_sociale` | `string` |  |
+| `nombre_etablissement` | `int` |  |
+| `nombre_etablissements_ouvert` | `int` |  |
+| `section_activite_principale` | `string` |  |
+| `siege` | `map[string]any` |  |
+| `sigle` | `string` |  |
+| `siren` | `string` |  |
+| `statut_diffusion` | `string` |  |
+| `tranche_effectif_salarie` | `string` |  |
 
 #### Example: List
 
@@ -375,33 +401,33 @@ Create an instance: `search := client.Search(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `activite_principale` | ``$STRING`` |  |
-| `activite_principale_naf25` | ``$STRING`` |  |
-| `annee_categorie_entreprise` | ``$STRING`` |  |
-| `annee_tranche_effectif_salarie` | ``$STRING`` |  |
-| `caractere_employeur` | ``$STRING`` |  |
-| `categorie_entreprise` | ``$STRING`` |  |
-| `complement` | ``$OBJECT`` |  |
-| `date_creation` | ``$STRING`` |  |
-| `date_fermeture` | ``$STRING`` |  |
-| `date_mise_a_jour` | ``$STRING`` |  |
-| `date_mise_a_jour_insee` | ``$STRING`` |  |
-| `date_mise_a_jour_rne` | ``$STRING`` |  |
-| `dirigeant` | ``$ARRAY`` |  |
-| `etat_administratif` | ``$STRING`` |  |
-| `finance` | ``$OBJECT`` |  |
-| `matching_etablissement` | ``$ARRAY`` |  |
-| `nature_juridique` | ``$STRING`` |  |
-| `nom_complet` | ``$STRING`` |  |
-| `nom_raison_sociale` | ``$STRING`` |  |
-| `nombre_etablissement` | ``$INTEGER`` |  |
-| `nombre_etablissements_ouvert` | ``$INTEGER`` |  |
-| `section_activite_principale` | ``$STRING`` |  |
-| `siege` | ``$OBJECT`` |  |
-| `sigle` | ``$STRING`` |  |
-| `siren` | ``$STRING`` |  |
-| `statut_diffusion` | ``$STRING`` |  |
-| `tranche_effectif_salarie` | ``$STRING`` |  |
+| `activite_principale` | `string` |  |
+| `activite_principale_naf25` | `string` |  |
+| `annee_categorie_entreprise` | `string` |  |
+| `annee_tranche_effectif_salarie` | `string` |  |
+| `caractere_employeur` | `string` |  |
+| `categorie_entreprise` | `string` |  |
+| `complement` | `map[string]any` |  |
+| `date_creation` | `string` |  |
+| `date_fermeture` | `string` |  |
+| `date_mise_a_jour` | `string` |  |
+| `date_mise_a_jour_insee` | `string` |  |
+| `date_mise_a_jour_rne` | `string` |  |
+| `dirigeant` | `[]any` |  |
+| `etat_administratif` | `string` |  |
+| `finance` | `map[string]any` |  |
+| `matching_etablissement` | `[]any` |  |
+| `nature_juridique` | `string` |  |
+| `nom_complet` | `string` |  |
+| `nom_raison_sociale` | `string` |  |
+| `nombre_etablissement` | `int` |  |
+| `nombre_etablissements_ouvert` | `int` |  |
+| `section_activite_principale` | `string` |  |
+| `siege` | `map[string]any` |  |
+| `sigle` | `string` |  |
+| `siren` | `string` |  |
+| `statut_diffusion` | `string` |  |
+| `tranche_effectif_salarie` | `string` |  |
 
 #### Example: List
 
@@ -414,12 +440,16 @@ fmt.Println(searchs) // the array of records
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -436,9 +466,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller. An unexpected panic triggers the
-`PreUnexpected` hook.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -479,14 +509,14 @@ like `core.ToMapAny`.
 
 ### Entity state
 
-Entity instances are stateful. After a successful `Load`, the entity
+Entity instances are stateful. After a successful `List`, the entity
 stores the returned data and match criteria internally.
 
 ```go
 nearpoint := client.NearPoint(nil)
-nearpoint.Load(map[string]any{"id": "example_id"}, nil)
+nearpoint.List(nil, nil)
 
-// nearpoint.Data() now returns the loaded nearpoint data
+// nearpoint.Data() now returns the nearpoint data from the last list
 // nearpoint.Match() returns the last match criteria
 ```
 

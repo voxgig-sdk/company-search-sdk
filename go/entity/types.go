@@ -39,8 +39,7 @@ type NearPoint struct {
 	TrancheEffectifSalarie *string `json:"tranche_effectif_salarie,omitempty"`
 }
 
-// NearPointListMatch mirrors the near_point fields as an all-optional match
-// filter (Go analog of Partial<NearPoint>).
+// NearPointListMatch is the typed request payload for NearPoint.ListTyped.
 type NearPointListMatch struct {
 	ActivitePrincipale *string `json:"activite_principale,omitempty"`
 	ActivitePrincipaleNaf25 *string `json:"activite_principale_naf25,omitempty"`
@@ -102,8 +101,7 @@ type Search struct {
 	TrancheEffectifSalarie *string `json:"tranche_effectif_salarie,omitempty"`
 }
 
-// SearchListMatch mirrors the search fields as an all-optional match
-// filter (Go analog of Partial<Search>).
+// SearchListMatch is the typed request payload for Search.ListTyped.
 type SearchListMatch struct {
 	ActivitePrincipale *string `json:"activite_principale,omitempty"`
 	ActivitePrincipaleNaf25 *string `json:"activite_principale_naf25,omitempty"`

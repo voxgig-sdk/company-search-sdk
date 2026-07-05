@@ -8,7 +8,7 @@ Complete API reference for the CompanySearch Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'company-search_sdk'
+require_relative 'CompanySearch_sdk'
 
 client = CompanySearchSDK.new(options)
 ```
@@ -97,42 +97,42 @@ near_point = client.NearPoint
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `activite_principale` | ``$STRING`` | No |  |
-| `activite_principale_naf25` | ``$STRING`` | No |  |
-| `annee_categorie_entreprise` | ``$STRING`` | No |  |
-| `annee_tranche_effectif_salarie` | ``$STRING`` | No |  |
-| `caractere_employeur` | ``$STRING`` | No |  |
-| `categorie_entreprise` | ``$STRING`` | No |  |
-| `complement` | ``$OBJECT`` | No |  |
-| `date_creation` | ``$STRING`` | No |  |
-| `date_fermeture` | ``$STRING`` | No |  |
-| `date_mise_a_jour` | ``$STRING`` | No |  |
-| `date_mise_a_jour_insee` | ``$STRING`` | No |  |
-| `date_mise_a_jour_rne` | ``$STRING`` | No |  |
-| `dirigeant` | ``$ARRAY`` | No |  |
-| `etat_administratif` | ``$STRING`` | No |  |
-| `finance` | ``$OBJECT`` | No |  |
-| `matching_etablissement` | ``$ARRAY`` | No |  |
-| `nature_juridique` | ``$STRING`` | No |  |
-| `nom_complet` | ``$STRING`` | No |  |
-| `nom_raison_sociale` | ``$STRING`` | No |  |
-| `nombre_etablissement` | ``$INTEGER`` | No |  |
-| `nombre_etablissements_ouvert` | ``$INTEGER`` | No |  |
-| `section_activite_principale` | ``$STRING`` | No |  |
-| `siege` | ``$OBJECT`` | No |  |
-| `sigle` | ``$STRING`` | No |  |
-| `siren` | ``$STRING`` | No |  |
-| `statut_diffusion` | ``$STRING`` | No |  |
-| `tranche_effectif_salarie` | ``$STRING`` | No |  |
+| `activite_principale` | `String` | No |  |
+| `activite_principale_naf25` | `String` | No |  |
+| `annee_categorie_entreprise` | `String` | No |  |
+| `annee_tranche_effectif_salarie` | `String` | No |  |
+| `caractere_employeur` | `String` | No |  |
+| `categorie_entreprise` | `String` | No |  |
+| `complement` | `Hash` | No |  |
+| `date_creation` | `String` | No |  |
+| `date_fermeture` | `String` | No |  |
+| `date_mise_a_jour` | `String` | No |  |
+| `date_mise_a_jour_insee` | `String` | No |  |
+| `date_mise_a_jour_rne` | `String` | No |  |
+| `dirigeant` | `Array` | No |  |
+| `etat_administratif` | `String` | No |  |
+| `finance` | `Hash` | No |  |
+| `matching_etablissement` | `Array` | No |  |
+| `nature_juridique` | `String` | No |  |
+| `nom_complet` | `String` | No |  |
+| `nom_raison_sociale` | `String` | No |  |
+| `nombre_etablissement` | `Integer` | No |  |
+| `nombre_etablissements_ouvert` | `Integer` | No |  |
+| `section_activite_principale` | `String` | No |  |
+| `siege` | `Hash` | No |  |
+| `sigle` | `String` | No |  |
+| `siren` | `String` | No |  |
+| `statut_diffusion` | `String` | No |  |
+| `tranche_effectif_salarie` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.NearPoint.list(nil)
+results = client.NearPoint.list
 ```
 
 ### Common Methods
@@ -175,42 +175,42 @@ search = client.Search
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `activite_principale` | ``$STRING`` | No |  |
-| `activite_principale_naf25` | ``$STRING`` | No |  |
-| `annee_categorie_entreprise` | ``$STRING`` | No |  |
-| `annee_tranche_effectif_salarie` | ``$STRING`` | No |  |
-| `caractere_employeur` | ``$STRING`` | No |  |
-| `categorie_entreprise` | ``$STRING`` | No |  |
-| `complement` | ``$OBJECT`` | No |  |
-| `date_creation` | ``$STRING`` | No |  |
-| `date_fermeture` | ``$STRING`` | No |  |
-| `date_mise_a_jour` | ``$STRING`` | No |  |
-| `date_mise_a_jour_insee` | ``$STRING`` | No |  |
-| `date_mise_a_jour_rne` | ``$STRING`` | No |  |
-| `dirigeant` | ``$ARRAY`` | No |  |
-| `etat_administratif` | ``$STRING`` | No |  |
-| `finance` | ``$OBJECT`` | No |  |
-| `matching_etablissement` | ``$ARRAY`` | No |  |
-| `nature_juridique` | ``$STRING`` | No |  |
-| `nom_complet` | ``$STRING`` | No |  |
-| `nom_raison_sociale` | ``$STRING`` | No |  |
-| `nombre_etablissement` | ``$INTEGER`` | No |  |
-| `nombre_etablissements_ouvert` | ``$INTEGER`` | No |  |
-| `section_activite_principale` | ``$STRING`` | No |  |
-| `siege` | ``$OBJECT`` | No |  |
-| `sigle` | ``$STRING`` | No |  |
-| `siren` | ``$STRING`` | No |  |
-| `statut_diffusion` | ``$STRING`` | No |  |
-| `tranche_effectif_salarie` | ``$STRING`` | No |  |
+| `activite_principale` | `String` | No |  |
+| `activite_principale_naf25` | `String` | No |  |
+| `annee_categorie_entreprise` | `String` | No |  |
+| `annee_tranche_effectif_salarie` | `String` | No |  |
+| `caractere_employeur` | `String` | No |  |
+| `categorie_entreprise` | `String` | No |  |
+| `complement` | `Hash` | No |  |
+| `date_creation` | `String` | No |  |
+| `date_fermeture` | `String` | No |  |
+| `date_mise_a_jour` | `String` | No |  |
+| `date_mise_a_jour_insee` | `String` | No |  |
+| `date_mise_a_jour_rne` | `String` | No |  |
+| `dirigeant` | `Array` | No |  |
+| `etat_administratif` | `String` | No |  |
+| `finance` | `Hash` | No |  |
+| `matching_etablissement` | `Array` | No |  |
+| `nature_juridique` | `String` | No |  |
+| `nom_complet` | `String` | No |  |
+| `nom_raison_sociale` | `String` | No |  |
+| `nombre_etablissement` | `Integer` | No |  |
+| `nombre_etablissements_ouvert` | `Integer` | No |  |
+| `section_activite_principale` | `String` | No |  |
+| `siege` | `Hash` | No |  |
+| `sigle` | `String` | No |  |
+| `siren` | `String` | No |  |
+| `statut_diffusion` | `String` | No |  |
+| `tranche_effectif_salarie` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Search.list(nil)
+results = client.Search.list
 ```
 
 ### Common Methods

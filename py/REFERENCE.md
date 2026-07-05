@@ -8,7 +8,7 @@ Complete API reference for the CompanySearch Python SDK.
 ### Constructor
 
 ```python
-from company-search_sdk import CompanySearchSDK
+from companysearch_sdk import CompanySearchSDK
 
 client = CompanySearchSDK(options)
 ```
@@ -91,42 +91,42 @@ near_point = client.NearPoint()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `activite_principale` | ``$STRING`` | No |  |
-| `activite_principale_naf25` | ``$STRING`` | No |  |
-| `annee_categorie_entreprise` | ``$STRING`` | No |  |
-| `annee_tranche_effectif_salarie` | ``$STRING`` | No |  |
-| `caractere_employeur` | ``$STRING`` | No |  |
-| `categorie_entreprise` | ``$STRING`` | No |  |
-| `complement` | ``$OBJECT`` | No |  |
-| `date_creation` | ``$STRING`` | No |  |
-| `date_fermeture` | ``$STRING`` | No |  |
-| `date_mise_a_jour` | ``$STRING`` | No |  |
-| `date_mise_a_jour_insee` | ``$STRING`` | No |  |
-| `date_mise_a_jour_rne` | ``$STRING`` | No |  |
-| `dirigeant` | ``$ARRAY`` | No |  |
-| `etat_administratif` | ``$STRING`` | No |  |
-| `finance` | ``$OBJECT`` | No |  |
-| `matching_etablissement` | ``$ARRAY`` | No |  |
-| `nature_juridique` | ``$STRING`` | No |  |
-| `nom_complet` | ``$STRING`` | No |  |
-| `nom_raison_sociale` | ``$STRING`` | No |  |
-| `nombre_etablissement` | ``$INTEGER`` | No |  |
-| `nombre_etablissements_ouvert` | ``$INTEGER`` | No |  |
-| `section_activite_principale` | ``$STRING`` | No |  |
-| `siege` | ``$OBJECT`` | No |  |
-| `sigle` | ``$STRING`` | No |  |
-| `siren` | ``$STRING`` | No |  |
-| `statut_diffusion` | ``$STRING`` | No |  |
-| `tranche_effectif_salarie` | ``$STRING`` | No |  |
+| `activite_principale` | `str` | No |  |
+| `activite_principale_naf25` | `str` | No |  |
+| `annee_categorie_entreprise` | `str` | No |  |
+| `annee_tranche_effectif_salarie` | `str` | No |  |
+| `caractere_employeur` | `str` | No |  |
+| `categorie_entreprise` | `str` | No |  |
+| `complement` | `dict` | No |  |
+| `date_creation` | `str` | No |  |
+| `date_fermeture` | `str` | No |  |
+| `date_mise_a_jour` | `str` | No |  |
+| `date_mise_a_jour_insee` | `str` | No |  |
+| `date_mise_a_jour_rne` | `str` | No |  |
+| `dirigeant` | `list` | No |  |
+| `etat_administratif` | `str` | No |  |
+| `finance` | `dict` | No |  |
+| `matching_etablissement` | `list` | No |  |
+| `nature_juridique` | `str` | No |  |
+| `nom_complet` | `str` | No |  |
+| `nom_raison_sociale` | `str` | No |  |
+| `nombre_etablissement` | `int` | No |  |
+| `nombre_etablissements_ouvert` | `int` | No |  |
+| `section_activite_principale` | `str` | No |  |
+| `siege` | `dict` | No |  |
+| `sigle` | `str` | No |  |
+| `siren` | `str` | No |  |
+| `statut_diffusion` | `str` | No |  |
+| `tranche_effectif_salarie` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.NearPoint().list({})
+results = client.NearPoint().list()
 for near_point in results:
     print(near_point)
 ```
@@ -170,42 +170,42 @@ search = client.Search()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `activite_principale` | ``$STRING`` | No |  |
-| `activite_principale_naf25` | ``$STRING`` | No |  |
-| `annee_categorie_entreprise` | ``$STRING`` | No |  |
-| `annee_tranche_effectif_salarie` | ``$STRING`` | No |  |
-| `caractere_employeur` | ``$STRING`` | No |  |
-| `categorie_entreprise` | ``$STRING`` | No |  |
-| `complement` | ``$OBJECT`` | No |  |
-| `date_creation` | ``$STRING`` | No |  |
-| `date_fermeture` | ``$STRING`` | No |  |
-| `date_mise_a_jour` | ``$STRING`` | No |  |
-| `date_mise_a_jour_insee` | ``$STRING`` | No |  |
-| `date_mise_a_jour_rne` | ``$STRING`` | No |  |
-| `dirigeant` | ``$ARRAY`` | No |  |
-| `etat_administratif` | ``$STRING`` | No |  |
-| `finance` | ``$OBJECT`` | No |  |
-| `matching_etablissement` | ``$ARRAY`` | No |  |
-| `nature_juridique` | ``$STRING`` | No |  |
-| `nom_complet` | ``$STRING`` | No |  |
-| `nom_raison_sociale` | ``$STRING`` | No |  |
-| `nombre_etablissement` | ``$INTEGER`` | No |  |
-| `nombre_etablissements_ouvert` | ``$INTEGER`` | No |  |
-| `section_activite_principale` | ``$STRING`` | No |  |
-| `siege` | ``$OBJECT`` | No |  |
-| `sigle` | ``$STRING`` | No |  |
-| `siren` | ``$STRING`` | No |  |
-| `statut_diffusion` | ``$STRING`` | No |  |
-| `tranche_effectif_salarie` | ``$STRING`` | No |  |
+| `activite_principale` | `str` | No |  |
+| `activite_principale_naf25` | `str` | No |  |
+| `annee_categorie_entreprise` | `str` | No |  |
+| `annee_tranche_effectif_salarie` | `str` | No |  |
+| `caractere_employeur` | `str` | No |  |
+| `categorie_entreprise` | `str` | No |  |
+| `complement` | `dict` | No |  |
+| `date_creation` | `str` | No |  |
+| `date_fermeture` | `str` | No |  |
+| `date_mise_a_jour` | `str` | No |  |
+| `date_mise_a_jour_insee` | `str` | No |  |
+| `date_mise_a_jour_rne` | `str` | No |  |
+| `dirigeant` | `list` | No |  |
+| `etat_administratif` | `str` | No |  |
+| `finance` | `dict` | No |  |
+| `matching_etablissement` | `list` | No |  |
+| `nature_juridique` | `str` | No |  |
+| `nom_complet` | `str` | No |  |
+| `nom_raison_sociale` | `str` | No |  |
+| `nombre_etablissement` | `int` | No |  |
+| `nombre_etablissements_ouvert` | `int` | No |  |
+| `section_activite_principale` | `str` | No |  |
+| `siege` | `dict` | No |  |
+| `sigle` | `str` | No |  |
+| `siren` | `str` | No |  |
+| `statut_diffusion` | `str` | No |  |
+| `tranche_effectif_salarie` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Search().list({})
+results = client.Search().list()
 for search in results:
     print(search)
 ```

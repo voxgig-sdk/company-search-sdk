@@ -8,7 +8,7 @@ Complete API reference for the CompanySearch PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/company-search_sdk.php';
+require_once __DIR__ . '/companysearch_sdk.php';
 
 $client = new CompanySearchSDK($options);
 ```
@@ -49,11 +49,11 @@ Create a new `NearPointEntity` instance. Pass `null` for no initial data.
 
 Create a new `SearchEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): CompanySearchUtility`
 
 Return a copy of the SDK utility object.
 
@@ -96,59 +96,59 @@ $near_point = $client->NearPoint();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `activite_principale` | ``$STRING`` | No |  |
-| `activite_principale_naf25` | ``$STRING`` | No |  |
-| `annee_categorie_entreprise` | ``$STRING`` | No |  |
-| `annee_tranche_effectif_salarie` | ``$STRING`` | No |  |
-| `caractere_employeur` | ``$STRING`` | No |  |
-| `categorie_entreprise` | ``$STRING`` | No |  |
-| `complement` | ``$OBJECT`` | No |  |
-| `date_creation` | ``$STRING`` | No |  |
-| `date_fermeture` | ``$STRING`` | No |  |
-| `date_mise_a_jour` | ``$STRING`` | No |  |
-| `date_mise_a_jour_insee` | ``$STRING`` | No |  |
-| `date_mise_a_jour_rne` | ``$STRING`` | No |  |
-| `dirigeant` | ``$ARRAY`` | No |  |
-| `etat_administratif` | ``$STRING`` | No |  |
-| `finance` | ``$OBJECT`` | No |  |
-| `matching_etablissement` | ``$ARRAY`` | No |  |
-| `nature_juridique` | ``$STRING`` | No |  |
-| `nom_complet` | ``$STRING`` | No |  |
-| `nom_raison_sociale` | ``$STRING`` | No |  |
-| `nombre_etablissement` | ``$INTEGER`` | No |  |
-| `nombre_etablissements_ouvert` | ``$INTEGER`` | No |  |
-| `section_activite_principale` | ``$STRING`` | No |  |
-| `siege` | ``$OBJECT`` | No |  |
-| `sigle` | ``$STRING`` | No |  |
-| `siren` | ``$STRING`` | No |  |
-| `statut_diffusion` | ``$STRING`` | No |  |
-| `tranche_effectif_salarie` | ``$STRING`` | No |  |
+| `activite_principale` | `string` | No |  |
+| `activite_principale_naf25` | `string` | No |  |
+| `annee_categorie_entreprise` | `string` | No |  |
+| `annee_tranche_effectif_salarie` | `string` | No |  |
+| `caractere_employeur` | `string` | No |  |
+| `categorie_entreprise` | `string` | No |  |
+| `complement` | `array` | No |  |
+| `date_creation` | `string` | No |  |
+| `date_fermeture` | `string` | No |  |
+| `date_mise_a_jour` | `string` | No |  |
+| `date_mise_a_jour_insee` | `string` | No |  |
+| `date_mise_a_jour_rne` | `string` | No |  |
+| `dirigeant` | `array` | No |  |
+| `etat_administratif` | `string` | No |  |
+| `finance` | `array` | No |  |
+| `matching_etablissement` | `array` | No |  |
+| `nature_juridique` | `string` | No |  |
+| `nom_complet` | `string` | No |  |
+| `nom_raison_sociale` | `string` | No |  |
+| `nombre_etablissement` | `int` | No |  |
+| `nombre_etablissements_ouvert` | `int` | No |  |
+| `section_activite_principale` | `string` | No |  |
+| `siege` | `array` | No |  |
+| `sigle` | `string` | No |  |
+| `siren` | `string` | No |  |
+| `statut_diffusion` | `string` | No |  |
+| `tranche_effectif_salarie` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->NearPoint()->list([]);
+$results = $client->NearPoint()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -157,7 +157,7 @@ Set the entity match criteria.
 Create a new `NearPointEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -174,59 +174,59 @@ $search = $client->Search();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `activite_principale` | ``$STRING`` | No |  |
-| `activite_principale_naf25` | ``$STRING`` | No |  |
-| `annee_categorie_entreprise` | ``$STRING`` | No |  |
-| `annee_tranche_effectif_salarie` | ``$STRING`` | No |  |
-| `caractere_employeur` | ``$STRING`` | No |  |
-| `categorie_entreprise` | ``$STRING`` | No |  |
-| `complement` | ``$OBJECT`` | No |  |
-| `date_creation` | ``$STRING`` | No |  |
-| `date_fermeture` | ``$STRING`` | No |  |
-| `date_mise_a_jour` | ``$STRING`` | No |  |
-| `date_mise_a_jour_insee` | ``$STRING`` | No |  |
-| `date_mise_a_jour_rne` | ``$STRING`` | No |  |
-| `dirigeant` | ``$ARRAY`` | No |  |
-| `etat_administratif` | ``$STRING`` | No |  |
-| `finance` | ``$OBJECT`` | No |  |
-| `matching_etablissement` | ``$ARRAY`` | No |  |
-| `nature_juridique` | ``$STRING`` | No |  |
-| `nom_complet` | ``$STRING`` | No |  |
-| `nom_raison_sociale` | ``$STRING`` | No |  |
-| `nombre_etablissement` | ``$INTEGER`` | No |  |
-| `nombre_etablissements_ouvert` | ``$INTEGER`` | No |  |
-| `section_activite_principale` | ``$STRING`` | No |  |
-| `siege` | ``$OBJECT`` | No |  |
-| `sigle` | ``$STRING`` | No |  |
-| `siren` | ``$STRING`` | No |  |
-| `statut_diffusion` | ``$STRING`` | No |  |
-| `tranche_effectif_salarie` | ``$STRING`` | No |  |
+| `activite_principale` | `string` | No |  |
+| `activite_principale_naf25` | `string` | No |  |
+| `annee_categorie_entreprise` | `string` | No |  |
+| `annee_tranche_effectif_salarie` | `string` | No |  |
+| `caractere_employeur` | `string` | No |  |
+| `categorie_entreprise` | `string` | No |  |
+| `complement` | `array` | No |  |
+| `date_creation` | `string` | No |  |
+| `date_fermeture` | `string` | No |  |
+| `date_mise_a_jour` | `string` | No |  |
+| `date_mise_a_jour_insee` | `string` | No |  |
+| `date_mise_a_jour_rne` | `string` | No |  |
+| `dirigeant` | `array` | No |  |
+| `etat_administratif` | `string` | No |  |
+| `finance` | `array` | No |  |
+| `matching_etablissement` | `array` | No |  |
+| `nature_juridique` | `string` | No |  |
+| `nom_complet` | `string` | No |  |
+| `nom_raison_sociale` | `string` | No |  |
+| `nombre_etablissement` | `int` | No |  |
+| `nombre_etablissements_ouvert` | `int` | No |  |
+| `section_activite_principale` | `string` | No |  |
+| `siege` | `array` | No |  |
+| `sigle` | `string` | No |  |
+| `siren` | `string` | No |  |
+| `statut_diffusion` | `string` | No |  |
+| `tranche_effectif_salarie` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Search()->list([]);
+$results = $client->Search()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -235,7 +235,7 @@ Set the entity match criteria.
 Create a new `SearchEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

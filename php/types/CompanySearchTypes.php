@@ -44,7 +44,7 @@ class NearPoint
     public ?string $tranche_effectif_salarie = null;
 }
 
-/** Match filter for NearPoint#list (any subset of NearPoint fields). */
+/** Request payload for NearPoint#list. */
 class NearPointListMatch
 {
     public ?string $activite_principale = null;
@@ -108,7 +108,7 @@ class Search
     public ?string $tranche_effectif_salarie = null;
 }
 
-/** Match filter for Search#list (any subset of Search fields). */
+/** Request payload for Search#list. */
 class SearchListMatch
 {
     public ?string $activite_principale = null;

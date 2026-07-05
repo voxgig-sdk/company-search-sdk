@@ -94,33 +94,33 @@ local near_point = client:NearPoint(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `activite_principale` | ``$STRING`` | No |  |
-| `activite_principale_naf25` | ``$STRING`` | No |  |
-| `annee_categorie_entreprise` | ``$STRING`` | No |  |
-| `annee_tranche_effectif_salarie` | ``$STRING`` | No |  |
-| `caractere_employeur` | ``$STRING`` | No |  |
-| `categorie_entreprise` | ``$STRING`` | No |  |
-| `complement` | ``$OBJECT`` | No |  |
-| `date_creation` | ``$STRING`` | No |  |
-| `date_fermeture` | ``$STRING`` | No |  |
-| `date_mise_a_jour` | ``$STRING`` | No |  |
-| `date_mise_a_jour_insee` | ``$STRING`` | No |  |
-| `date_mise_a_jour_rne` | ``$STRING`` | No |  |
-| `dirigeant` | ``$ARRAY`` | No |  |
-| `etat_administratif` | ``$STRING`` | No |  |
-| `finance` | ``$OBJECT`` | No |  |
-| `matching_etablissement` | ``$ARRAY`` | No |  |
-| `nature_juridique` | ``$STRING`` | No |  |
-| `nom_complet` | ``$STRING`` | No |  |
-| `nom_raison_sociale` | ``$STRING`` | No |  |
-| `nombre_etablissement` | ``$INTEGER`` | No |  |
-| `nombre_etablissements_ouvert` | ``$INTEGER`` | No |  |
-| `section_activite_principale` | ``$STRING`` | No |  |
-| `siege` | ``$OBJECT`` | No |  |
-| `sigle` | ``$STRING`` | No |  |
-| `siren` | ``$STRING`` | No |  |
-| `statut_diffusion` | ``$STRING`` | No |  |
-| `tranche_effectif_salarie` | ``$STRING`` | No |  |
+| `activite_principale` | `string` | No |  |
+| `activite_principale_naf25` | `string` | No |  |
+| `annee_categorie_entreprise` | `string` | No |  |
+| `annee_tranche_effectif_salarie` | `string` | No |  |
+| `caractere_employeur` | `string` | No |  |
+| `categorie_entreprise` | `string` | No |  |
+| `complement` | `table` | No |  |
+| `date_creation` | `string` | No |  |
+| `date_fermeture` | `string` | No |  |
+| `date_mise_a_jour` | `string` | No |  |
+| `date_mise_a_jour_insee` | `string` | No |  |
+| `date_mise_a_jour_rne` | `string` | No |  |
+| `dirigeant` | `table` | No |  |
+| `etat_administratif` | `string` | No |  |
+| `finance` | `table` | No |  |
+| `matching_etablissement` | `table` | No |  |
+| `nature_juridique` | `string` | No |  |
+| `nom_complet` | `string` | No |  |
+| `nom_raison_sociale` | `string` | No |  |
+| `nombre_etablissement` | `number` | No |  |
+| `nombre_etablissements_ouvert` | `number` | No |  |
+| `section_activite_principale` | `string` | No |  |
+| `siege` | `table` | No |  |
+| `sigle` | `string` | No |  |
+| `siren` | `string` | No |  |
+| `statut_diffusion` | `string` | No |  |
+| `tranche_effectif_salarie` | `string` | No |  |
 
 ### Operations
 
@@ -172,33 +172,33 @@ local search = client:Search(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `activite_principale` | ``$STRING`` | No |  |
-| `activite_principale_naf25` | ``$STRING`` | No |  |
-| `annee_categorie_entreprise` | ``$STRING`` | No |  |
-| `annee_tranche_effectif_salarie` | ``$STRING`` | No |  |
-| `caractere_employeur` | ``$STRING`` | No |  |
-| `categorie_entreprise` | ``$STRING`` | No |  |
-| `complement` | ``$OBJECT`` | No |  |
-| `date_creation` | ``$STRING`` | No |  |
-| `date_fermeture` | ``$STRING`` | No |  |
-| `date_mise_a_jour` | ``$STRING`` | No |  |
-| `date_mise_a_jour_insee` | ``$STRING`` | No |  |
-| `date_mise_a_jour_rne` | ``$STRING`` | No |  |
-| `dirigeant` | ``$ARRAY`` | No |  |
-| `etat_administratif` | ``$STRING`` | No |  |
-| `finance` | ``$OBJECT`` | No |  |
-| `matching_etablissement` | ``$ARRAY`` | No |  |
-| `nature_juridique` | ``$STRING`` | No |  |
-| `nom_complet` | ``$STRING`` | No |  |
-| `nom_raison_sociale` | ``$STRING`` | No |  |
-| `nombre_etablissement` | ``$INTEGER`` | No |  |
-| `nombre_etablissements_ouvert` | ``$INTEGER`` | No |  |
-| `section_activite_principale` | ``$STRING`` | No |  |
-| `siege` | ``$OBJECT`` | No |  |
-| `sigle` | ``$STRING`` | No |  |
-| `siren` | ``$STRING`` | No |  |
-| `statut_diffusion` | ``$STRING`` | No |  |
-| `tranche_effectif_salarie` | ``$STRING`` | No |  |
+| `activite_principale` | `string` | No |  |
+| `activite_principale_naf25` | `string` | No |  |
+| `annee_categorie_entreprise` | `string` | No |  |
+| `annee_tranche_effectif_salarie` | `string` | No |  |
+| `caractere_employeur` | `string` | No |  |
+| `categorie_entreprise` | `string` | No |  |
+| `complement` | `table` | No |  |
+| `date_creation` | `string` | No |  |
+| `date_fermeture` | `string` | No |  |
+| `date_mise_a_jour` | `string` | No |  |
+| `date_mise_a_jour_insee` | `string` | No |  |
+| `date_mise_a_jour_rne` | `string` | No |  |
+| `dirigeant` | `table` | No |  |
+| `etat_administratif` | `string` | No |  |
+| `finance` | `table` | No |  |
+| `matching_etablissement` | `table` | No |  |
+| `nature_juridique` | `string` | No |  |
+| `nom_complet` | `string` | No |  |
+| `nom_raison_sociale` | `string` | No |  |
+| `nombre_etablissement` | `number` | No |  |
+| `nombre_etablissements_ouvert` | `number` | No |  |
+| `section_activite_principale` | `string` | No |  |
+| `siege` | `table` | No |  |
+| `sigle` | `string` | No |  |
+| `siren` | `string` | No |  |
+| `statut_diffusion` | `string` | No |  |
+| `tranche_effectif_salarie` | `string` | No |  |
 
 ### Operations
 
