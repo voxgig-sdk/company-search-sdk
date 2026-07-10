@@ -94,7 +94,8 @@ same parameters as `Direct()`.
 ## NearPointEntity
 
 ```go
-near_point := client.NearPoint(nil)
+nearPoint := client.NearPoint(nil)
+fmt.Println(nearPoint.GetName()) // "near_point"
 ```
 
 ### Fields
@@ -137,6 +138,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.NearPoint(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -167,6 +172,7 @@ Return the entity name.
 
 ```go
 search := client.Search(nil)
+fmt.Println(search.GetName()) // "search"
 ```
 
 ### Fields
@@ -209,6 +215,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Search(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods

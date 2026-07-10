@@ -89,9 +89,9 @@ Pour toute question, vous pouvez contacter l'équipe en remplissant ce [formulai
           url: "https://recherche-entreprises.api.gouv.fr"
         }
       ]
+      summary: "L’API Recherche d’Entreprises permet à tout le monde retrouver une entreprise, une association, ou un service public en France."
       title: "API Recherche d’entreprises"
       version: "1.0.0"
+      website: "https://recherche-entreprises.api.gouv.fr"
     }
   }
-}
-

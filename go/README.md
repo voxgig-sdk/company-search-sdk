@@ -50,12 +50,12 @@ import (
 func main() {
     client := sdk.New()
 
-    // List nearpoint records — the value is the array of records itself.
-    nearpoints, err := client.NearPoint(nil).List(nil, nil)
+    // List nearPoint records — the value is the array of records itself.
+    nearPoints, err := client.NearPoint(nil).List(nil, nil)
     if err != nil {
         panic(err)
     }
-    for _, item := range nearpoints.([]any) {
+    for _, item := range nearPoints.([]any) {
         fmt.Println(item)
     }
 }
@@ -137,13 +137,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-nearpoint, err := client.NearPoint(nil).List(
+nearPoint, err := client.NearPoint(nil).List(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(nearpoint) // the returned mock data
+fmt.Println(nearPoint) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -248,9 +248,9 @@ Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    nearpoint, err := client.NearPoint(nil).List(map[string]any{/* fields */}, nil)
+    nearPoint, err := client.NearPoint(nil).List(map[string]any{/* fields */}, nil)
     if err != nil { /* handle */ }
-    // nearpoint is the returned record
+    // nearPoint is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -336,7 +336,7 @@ API path: `/search`
 
 ### NearPoint
 
-Create an instance: `near_point := client.NearPoint(nil)`
+Create an instance: `nearPoint := client.NearPoint(nil)`
 
 #### Operations
 
@@ -379,11 +379,11 @@ Create an instance: `near_point := client.NearPoint(nil)`
 #### Example: List
 
 ```go
-near_points, err := client.NearPoint(nil).List(nil, nil)
+nearPoints, err := client.NearPoint(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(near_points) // the array of records
+fmt.Println(nearPoints) // the array of records
 ```
 
 

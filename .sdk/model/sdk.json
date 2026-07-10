@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -1202,14 +1199,17 @@
           "name": "MIT License",
           "url": "https://opensource.org/licenses/MIT"
         },
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Serveur de production",
             "url": "https://recherche-entreprises.api.gouv.fr"
           }
         ],
+        "summary": "L’API Recherche d’Entreprises permet à tout le monde retrouver une entreprise, une association, ou un service public en France.",
         "title": "API Recherche d’entreprises",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://recherche-entreprises.api.gouv.fr"
       },
       "option": {},
       "target": {
@@ -1262,6 +1262,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -1312,6 +1315,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
