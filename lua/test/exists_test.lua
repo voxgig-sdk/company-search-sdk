@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- CompanySearch SDK exists test
 
 local sdk = require("company-search_sdk")
 
