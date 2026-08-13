@@ -8,12 +8,14 @@ guide: {
   entity: near_point: {
     path: "/near_point": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.results`")|top
     }
   }
 
   entity: search: {
     path: "/search": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.results`")|top
     }
   }
 

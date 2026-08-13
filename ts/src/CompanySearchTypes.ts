@@ -12,21 +12,21 @@ export interface NearPoint {
   annee_tranche_effectif_salarie?: string
   caractere_employeur?: string
   categorie_entreprise?: string
-  complement?: Record<string, any>
+  complements?: Record<string, any>
   date_creation?: string
   date_fermeture?: string
   date_mise_a_jour?: string
   date_mise_a_jour_insee?: string
   date_mise_a_jour_rne?: string
-  dirigeant?: any[]
+  dirigeants?: any[]
   etat_administratif?: string
-  finance?: Record<string, any>
-  matching_etablissement?: any[]
+  finances?: Record<string, any>
+  matching_etablissements?: any[]
   nature_juridique?: string
   nom_complet?: string
   nom_raison_sociale?: string
-  nombre_etablissement?: number
-  nombre_etablissements_ouvert?: number
+  nombre_etablissements?: number
+  nombre_etablissements_ouverts?: number
   section_activite_principale?: string
   siege?: Record<string, any>
   sigle?: string
@@ -42,21 +42,21 @@ export interface NearPointListMatch {
   annee_tranche_effectif_salarie?: string
   caractere_employeur?: string
   categorie_entreprise?: string
-  complement?: Record<string, any>
+  complements?: Record<string, any>
   date_creation?: string
   date_fermeture?: string
   date_mise_a_jour?: string
   date_mise_a_jour_insee?: string
   date_mise_a_jour_rne?: string
-  dirigeant?: any[]
+  dirigeants?: any[]
   etat_administratif?: string
-  finance?: Record<string, any>
-  matching_etablissement?: any[]
+  finances?: Record<string, any>
+  matching_etablissements?: any[]
   nature_juridique?: string
   nom_complet?: string
   nom_raison_sociale?: string
-  nombre_etablissement?: number
-  nombre_etablissements_ouvert?: number
+  nombre_etablissements?: number
+  nombre_etablissements_ouverts?: number
   section_activite_principale?: string
   siege?: Record<string, any>
   sigle?: string
@@ -72,21 +72,21 @@ export interface Search {
   annee_tranche_effectif_salarie?: string
   caractere_employeur?: string
   categorie_entreprise?: string
-  complement?: Record<string, any>
+  complements?: Record<string, any>
   date_creation?: string
   date_fermeture?: string
   date_mise_a_jour?: string
   date_mise_a_jour_insee?: string
   date_mise_a_jour_rne?: string
-  dirigeant?: any[]
+  dirigeants?: any[]
   etat_administratif?: string
-  finance?: Record<string, any>
-  matching_etablissement?: any[]
+  finances?: Record<string, any>
+  matching_etablissements?: any[]
   nature_juridique?: string
   nom_complet?: string
   nom_raison_sociale?: string
-  nombre_etablissement?: number
-  nombre_etablissements_ouvert?: number
+  nombre_etablissements?: number
+  nombre_etablissements_ouverts?: number
   section_activite_principale?: string
   siege?: Record<string, any>
   sigle?: string
@@ -102,21 +102,21 @@ export interface SearchListMatch {
   annee_tranche_effectif_salarie?: string
   caractere_employeur?: string
   categorie_entreprise?: string
-  complement?: Record<string, any>
+  complements?: Record<string, any>
   date_creation?: string
   date_fermeture?: string
   date_mise_a_jour?: string
   date_mise_a_jour_insee?: string
   date_mise_a_jour_rne?: string
-  dirigeant?: any[]
+  dirigeants?: any[]
   etat_administratif?: string
-  finance?: Record<string, any>
-  matching_etablissement?: any[]
+  finances?: Record<string, any>
+  matching_etablissements?: any[]
   nature_juridique?: string
   nom_complet?: string
   nom_raison_sociale?: string
-  nombre_etablissement?: number
-  nombre_etablissements_ouvert?: number
+  nombre_etablissements?: number
+  nombre_etablissements_ouverts?: number
   section_activite_principale?: string
   siege?: Record<string, any>
   sigle?: string

@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = CompanySearchSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 nearpoint = client.NearPoint.list()
 puts nearpoint
 ```
@@ -243,21 +244,21 @@ returns a result `Hash` with these keys:
 | `annee_tranche_effectif_salarie` |  |
 | `caractere_employeur` |  |
 | `categorie_entreprise` |  |
-| `complement` |  |
+| `complements` |  |
 | `date_creation` |  |
 | `date_fermeture` |  |
 | `date_mise_a_jour` |  |
 | `date_mise_a_jour_insee` |  |
 | `date_mise_a_jour_rne` |  |
-| `dirigeant` |  |
+| `dirigeants` |  |
 | `etat_administratif` |  |
-| `finance` |  |
-| `matching_etablissement` |  |
+| `finances` |  |
+| `matching_etablissements` |  |
 | `nature_juridique` |  |
 | `nom_complet` |  |
 | `nom_raison_sociale` |  |
-| `nombre_etablissement` |  |
-| `nombre_etablissements_ouvert` |  |
+| `nombre_etablissements` |  |
+| `nombre_etablissements_ouverts` |  |
 | `section_activite_principale` |  |
 | `siege` |  |
 | `sigle` |  |
@@ -279,21 +280,21 @@ API path: `/near_point`
 | `annee_tranche_effectif_salarie` |  |
 | `caractere_employeur` |  |
 | `categorie_entreprise` |  |
-| `complement` |  |
+| `complements` |  |
 | `date_creation` |  |
 | `date_fermeture` |  |
 | `date_mise_a_jour` |  |
 | `date_mise_a_jour_insee` |  |
 | `date_mise_a_jour_rne` |  |
-| `dirigeant` |  |
+| `dirigeants` |  |
 | `etat_administratif` |  |
-| `finance` |  |
-| `matching_etablissement` |  |
+| `finances` |  |
+| `matching_etablissements` |  |
 | `nature_juridique` |  |
 | `nom_complet` |  |
 | `nom_raison_sociale` |  |
-| `nombre_etablissement` |  |
-| `nombre_etablissements_ouvert` |  |
+| `nombre_etablissements` |  |
+| `nombre_etablissements_ouverts` |  |
 | `section_activite_principale` |  |
 | `siege` |  |
 | `sigle` |  |
@@ -330,21 +331,21 @@ Create an instance: `near_point = client.NearPoint`
 | `annee_tranche_effectif_salarie` | `String` |  |
 | `caractere_employeur` | `String` |  |
 | `categorie_entreprise` | `String` |  |
-| `complement` | `Hash` |  |
+| `complements` | `Hash` |  |
 | `date_creation` | `String` |  |
 | `date_fermeture` | `String` |  |
 | `date_mise_a_jour` | `String` |  |
 | `date_mise_a_jour_insee` | `String` |  |
 | `date_mise_a_jour_rne` | `String` |  |
-| `dirigeant` | `Array` |  |
+| `dirigeants` | `Array` |  |
 | `etat_administratif` | `String` |  |
-| `finance` | `Hash` |  |
-| `matching_etablissement` | `Array` |  |
+| `finances` | `Hash` |  |
+| `matching_etablissements` | `Array` |  |
 | `nature_juridique` | `String` |  |
 | `nom_complet` | `String` |  |
 | `nom_raison_sociale` | `String` |  |
-| `nombre_etablissement` | `Integer` |  |
-| `nombre_etablissements_ouvert` | `Integer` |  |
+| `nombre_etablissements` | `Integer` |  |
+| `nombre_etablissements_ouverts` | `Integer` |  |
 | `section_activite_principale` | `String` |  |
 | `siege` | `Hash` |  |
 | `sigle` | `String` |  |
@@ -380,21 +381,21 @@ Create an instance: `search = client.Search`
 | `annee_tranche_effectif_salarie` | `String` |  |
 | `caractere_employeur` | `String` |  |
 | `categorie_entreprise` | `String` |  |
-| `complement` | `Hash` |  |
+| `complements` | `Hash` |  |
 | `date_creation` | `String` |  |
 | `date_fermeture` | `String` |  |
 | `date_mise_a_jour` | `String` |  |
 | `date_mise_a_jour_insee` | `String` |  |
 | `date_mise_a_jour_rne` | `String` |  |
-| `dirigeant` | `Array` |  |
+| `dirigeants` | `Array` |  |
 | `etat_administratif` | `String` |  |
-| `finance` | `Hash` |  |
-| `matching_etablissement` | `Array` |  |
+| `finances` | `Hash` |  |
+| `matching_etablissements` | `Array` |  |
 | `nature_juridique` | `String` |  |
 | `nom_complet` | `String` |  |
 | `nom_raison_sociale` | `String` |  |
-| `nombre_etablissement` | `Integer` |  |
-| `nombre_etablissements_ouvert` | `Integer` |  |
+| `nombre_etablissements` | `Integer` |  |
+| `nombre_etablissements_ouverts` | `Integer` |  |
 | `section_activite_principale` | `String` |  |
 | `siege` | `Hash` |  |
 | `sigle` | `String` |  |

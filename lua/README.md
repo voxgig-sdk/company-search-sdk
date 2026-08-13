@@ -219,9 +219,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local near_point, err = client:NearPoint():load()
+    local near_point, err = client:NearPoint():list()
     if err then error(err) end
-    -- near_point is the loaded record
+    -- near_point is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -238,21 +238,21 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | `annee_tranche_effectif_salarie` |  |
 | `caractere_employeur` |  |
 | `categorie_entreprise` |  |
-| `complement` |  |
+| `complements` |  |
 | `date_creation` |  |
 | `date_fermeture` |  |
 | `date_mise_a_jour` |  |
 | `date_mise_a_jour_insee` |  |
 | `date_mise_a_jour_rne` |  |
-| `dirigeant` |  |
+| `dirigeants` |  |
 | `etat_administratif` |  |
-| `finance` |  |
-| `matching_etablissement` |  |
+| `finances` |  |
+| `matching_etablissements` |  |
 | `nature_juridique` |  |
 | `nom_complet` |  |
 | `nom_raison_sociale` |  |
-| `nombre_etablissement` |  |
-| `nombre_etablissements_ouvert` |  |
+| `nombre_etablissements` |  |
+| `nombre_etablissements_ouverts` |  |
 | `section_activite_principale` |  |
 | `siege` |  |
 | `sigle` |  |
@@ -274,21 +274,21 @@ API path: `/near_point`
 | `annee_tranche_effectif_salarie` |  |
 | `caractere_employeur` |  |
 | `categorie_entreprise` |  |
-| `complement` |  |
+| `complements` |  |
 | `date_creation` |  |
 | `date_fermeture` |  |
 | `date_mise_a_jour` |  |
 | `date_mise_a_jour_insee` |  |
 | `date_mise_a_jour_rne` |  |
-| `dirigeant` |  |
+| `dirigeants` |  |
 | `etat_administratif` |  |
-| `finance` |  |
-| `matching_etablissement` |  |
+| `finances` |  |
+| `matching_etablissements` |  |
 | `nature_juridique` |  |
 | `nom_complet` |  |
 | `nom_raison_sociale` |  |
-| `nombre_etablissement` |  |
-| `nombre_etablissements_ouvert` |  |
+| `nombre_etablissements` |  |
+| `nombre_etablissements_ouverts` |  |
 | `section_activite_principale` |  |
 | `siege` |  |
 | `sigle` |  |
@@ -325,21 +325,21 @@ Create an instance: `local near_point = client:NearPoint(nil)`
 | `annee_tranche_effectif_salarie` | `string` |  |
 | `caractere_employeur` | `string` |  |
 | `categorie_entreprise` | `string` |  |
-| `complement` | `table` |  |
+| `complements` | `table` |  |
 | `date_creation` | `string` |  |
 | `date_fermeture` | `string` |  |
 | `date_mise_a_jour` | `string` |  |
 | `date_mise_a_jour_insee` | `string` |  |
 | `date_mise_a_jour_rne` | `string` |  |
-| `dirigeant` | `table` |  |
+| `dirigeants` | `table` |  |
 | `etat_administratif` | `string` |  |
-| `finance` | `table` |  |
-| `matching_etablissement` | `table` |  |
+| `finances` | `table` |  |
+| `matching_etablissements` | `table` |  |
 | `nature_juridique` | `string` |  |
 | `nom_complet` | `string` |  |
 | `nom_raison_sociale` | `string` |  |
-| `nombre_etablissement` | `number` |  |
-| `nombre_etablissements_ouvert` | `number` |  |
+| `nombre_etablissements` | `number` |  |
+| `nombre_etablissements_ouverts` | `number` |  |
 | `section_activite_principale` | `string` |  |
 | `siege` | `table` |  |
 | `sigle` | `string` |  |
@@ -374,21 +374,21 @@ Create an instance: `local search = client:Search(nil)`
 | `annee_tranche_effectif_salarie` | `string` |  |
 | `caractere_employeur` | `string` |  |
 | `categorie_entreprise` | `string` |  |
-| `complement` | `table` |  |
+| `complements` | `table` |  |
 | `date_creation` | `string` |  |
 | `date_fermeture` | `string` |  |
 | `date_mise_a_jour` | `string` |  |
 | `date_mise_a_jour_insee` | `string` |  |
 | `date_mise_a_jour_rne` | `string` |  |
-| `dirigeant` | `table` |  |
+| `dirigeants` | `table` |  |
 | `etat_administratif` | `string` |  |
-| `finance` | `table` |  |
-| `matching_etablissement` | `table` |  |
+| `finances` | `table` |  |
+| `matching_etablissements` | `table` |  |
 | `nature_juridique` | `string` |  |
 | `nom_complet` | `string` |  |
 | `nom_raison_sociale` | `string` |  |
-| `nombre_etablissement` | `number` |  |
-| `nombre_etablissements_ouvert` | `number` |  |
+| `nombre_etablissements` | `number` |  |
+| `nombre_etablissements_ouverts` | `number` |  |
 | `section_activite_principale` | `string` |  |
 | `siege` | `table` |  |
 | `sigle` | `string` |  |

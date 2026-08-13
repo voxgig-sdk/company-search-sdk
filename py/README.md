@@ -124,7 +124,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = CompanySearchSDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 nearpoint = client.NearPoint().list()
 # nearpoint contains the mock response record
 ```
@@ -221,7 +222,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -249,21 +250,21 @@ On error, `ok` is `False` and `err` contains the error value.
 | `annee_tranche_effectif_salarie` |  |
 | `caractere_employeur` |  |
 | `categorie_entreprise` |  |
-| `complement` |  |
+| `complements` |  |
 | `date_creation` |  |
 | `date_fermeture` |  |
 | `date_mise_a_jour` |  |
 | `date_mise_a_jour_insee` |  |
 | `date_mise_a_jour_rne` |  |
-| `dirigeant` |  |
+| `dirigeants` |  |
 | `etat_administratif` |  |
-| `finance` |  |
-| `matching_etablissement` |  |
+| `finances` |  |
+| `matching_etablissements` |  |
 | `nature_juridique` |  |
 | `nom_complet` |  |
 | `nom_raison_sociale` |  |
-| `nombre_etablissement` |  |
-| `nombre_etablissements_ouvert` |  |
+| `nombre_etablissements` |  |
+| `nombre_etablissements_ouverts` |  |
 | `section_activite_principale` |  |
 | `siege` |  |
 | `sigle` |  |
@@ -285,21 +286,21 @@ API path: `/near_point`
 | `annee_tranche_effectif_salarie` |  |
 | `caractere_employeur` |  |
 | `categorie_entreprise` |  |
-| `complement` |  |
+| `complements` |  |
 | `date_creation` |  |
 | `date_fermeture` |  |
 | `date_mise_a_jour` |  |
 | `date_mise_a_jour_insee` |  |
 | `date_mise_a_jour_rne` |  |
-| `dirigeant` |  |
+| `dirigeants` |  |
 | `etat_administratif` |  |
-| `finance` |  |
-| `matching_etablissement` |  |
+| `finances` |  |
+| `matching_etablissements` |  |
 | `nature_juridique` |  |
 | `nom_complet` |  |
 | `nom_raison_sociale` |  |
-| `nombre_etablissement` |  |
-| `nombre_etablissements_ouvert` |  |
+| `nombre_etablissements` |  |
+| `nombre_etablissements_ouverts` |  |
 | `section_activite_principale` |  |
 | `siege` |  |
 | `sigle` |  |
@@ -336,21 +337,21 @@ Create an instance: `near_point = client.NearPoint()`
 | `annee_tranche_effectif_salarie` | `str` |  |
 | `caractere_employeur` | `str` |  |
 | `categorie_entreprise` | `str` |  |
-| `complement` | `dict` |  |
+| `complements` | `dict` |  |
 | `date_creation` | `str` |  |
 | `date_fermeture` | `str` |  |
 | `date_mise_a_jour` | `str` |  |
 | `date_mise_a_jour_insee` | `str` |  |
 | `date_mise_a_jour_rne` | `str` |  |
-| `dirigeant` | `list` |  |
+| `dirigeants` | `list` |  |
 | `etat_administratif` | `str` |  |
-| `finance` | `dict` |  |
-| `matching_etablissement` | `list` |  |
+| `finances` | `dict` |  |
+| `matching_etablissements` | `list` |  |
 | `nature_juridique` | `str` |  |
 | `nom_complet` | `str` |  |
 | `nom_raison_sociale` | `str` |  |
-| `nombre_etablissement` | `int` |  |
-| `nombre_etablissements_ouvert` | `int` |  |
+| `nombre_etablissements` | `int` |  |
+| `nombre_etablissements_ouverts` | `int` |  |
 | `section_activite_principale` | `str` |  |
 | `siege` | `dict` |  |
 | `sigle` | `str` |  |
@@ -385,21 +386,21 @@ Create an instance: `search = client.Search()`
 | `annee_tranche_effectif_salarie` | `str` |  |
 | `caractere_employeur` | `str` |  |
 | `categorie_entreprise` | `str` |  |
-| `complement` | `dict` |  |
+| `complements` | `dict` |  |
 | `date_creation` | `str` |  |
 | `date_fermeture` | `str` |  |
 | `date_mise_a_jour` | `str` |  |
 | `date_mise_a_jour_insee` | `str` |  |
 | `date_mise_a_jour_rne` | `str` |  |
-| `dirigeant` | `list` |  |
+| `dirigeants` | `list` |  |
 | `etat_administratif` | `str` |  |
-| `finance` | `dict` |  |
-| `matching_etablissement` | `list` |  |
+| `finances` | `dict` |  |
+| `matching_etablissements` | `list` |  |
 | `nature_juridique` | `str` |  |
 | `nom_complet` | `str` |  |
 | `nom_raison_sociale` | `str` |  |
-| `nombre_etablissement` | `int` |  |
-| `nombre_etablissements_ouvert` | `int` |  |
+| `nombre_etablissements` | `int` |  |
+| `nombre_etablissements_ouverts` | `int` |  |
 | `section_activite_principale` | `str` |  |
 | `siege` | `dict` |  |
 | `sigle` | `str` |  |

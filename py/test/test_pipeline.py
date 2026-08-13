@@ -16,11 +16,11 @@
 import pytest
 
 from companysearch_sdk import CompanySearchSDK
-from core.error import CompanySearchError
-from core.result import CompanySearchResult
-from core.response import CompanySearchResponse
-from core.spec import CompanySearchSpec
-from feature.base_feature import CompanySearchBaseFeature
+from companysearch_sdk.core.error import CompanySearchError
+from companysearch_sdk.core.result import CompanySearchResult
+from companysearch_sdk.core.response import CompanySearchResponse
+from companysearch_sdk.core.spec import CompanySearchSpec
+from companysearch_sdk.feature.base_feature import CompanySearchBaseFeature
 
 
 def _client():

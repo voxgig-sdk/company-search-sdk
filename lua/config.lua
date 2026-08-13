@@ -69,7 +69,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "complement",
+            ["name"] = "complements",
             ["req"] = false,
             ["type"] = "`$OBJECT`",
             ["index$"] = 6,
@@ -111,7 +111,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "dirigeant",
+            ["name"] = "dirigeants",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 12,
@@ -125,14 +125,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "finance",
+            ["name"] = "finances",
             ["req"] = false,
             ["type"] = "`$OBJECT`",
             ["index$"] = 14,
           },
           {
             ["active"] = true,
-            ["name"] = "matching_etablissement",
+            ["name"] = "matching_etablissements",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 15,
@@ -160,14 +160,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "nombre_etablissement",
+            ["name"] = "nombre_etablissements",
             ["req"] = false,
             ["type"] = "`$INTEGER`",
             ["index$"] = 19,
           },
           {
             ["active"] = true,
-            ["name"] = "nombre_etablissements_ouvert",
+            ["name"] = "nombre_etablissements_ouverts",
             ["req"] = false,
             ["type"] = "`$INTEGER`",
             ["index$"] = 20,
@@ -331,6 +331,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/near_point",
                 ["parts"] = {
@@ -354,7 +355,7 @@ local function make_config()
                 },
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.results`",
                 },
                 ["index$"] = 0,
               },
@@ -412,7 +413,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "complement",
+            ["name"] = "complements",
             ["req"] = false,
             ["type"] = "`$OBJECT`",
             ["index$"] = 6,
@@ -454,7 +455,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "dirigeant",
+            ["name"] = "dirigeants",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 12,
@@ -468,14 +469,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "finance",
+            ["name"] = "finances",
             ["req"] = false,
             ["type"] = "`$OBJECT`",
             ["index$"] = 14,
           },
           {
             ["active"] = true,
-            ["name"] = "matching_etablissement",
+            ["name"] = "matching_etablissements",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 15,
@@ -503,14 +504,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "nombre_etablissement",
+            ["name"] = "nombre_etablissements",
             ["req"] = false,
             ["type"] = "`$INTEGER`",
             ["index$"] = 19,
           },
           {
             ["active"] = true,
-            ["name"] = "nombre_etablissements_ouvert",
+            ["name"] = "nombre_etablissements_ouverts",
             ["req"] = false,
             ["type"] = "`$INTEGER`",
             ["index$"] = 20,
@@ -1022,6 +1023,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/search",
                 ["parts"] = {
@@ -1086,7 +1088,7 @@ local function make_config()
                 },
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.results`",
                 },
                 ["index$"] = 0,
               },

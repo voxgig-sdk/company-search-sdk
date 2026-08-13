@@ -35,7 +35,9 @@ const client = new CompanySearchSDK()
 
 ### 2. List nearpoint records
 
-`list()` resolves to an array of NearPoint objects — iterate it directly:
+`list()` resolves to an array of NearPoint ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const nearpoints = await client.NearPoint().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = CompanySearchSDK.test()
 
 const nearpoint = await client.NearPoint().list()
-// nearpoint is a bare entity populated with mock response data
+// nearpoint is the entity, populated with mock response data
+// — call nearpoint.data() for the record itself
 console.log(nearpoint)
 ```
 
@@ -291,21 +294,21 @@ The `prepare()` method returns:
 | `annee_tranche_effectif_salarie` |  |
 | `caractere_employeur` |  |
 | `categorie_entreprise` |  |
-| `complement` |  |
+| `complements` |  |
 | `date_creation` |  |
 | `date_fermeture` |  |
 | `date_mise_a_jour` |  |
 | `date_mise_a_jour_insee` |  |
 | `date_mise_a_jour_rne` |  |
-| `dirigeant` |  |
+| `dirigeants` |  |
 | `etat_administratif` |  |
-| `finance` |  |
-| `matching_etablissement` |  |
+| `finances` |  |
+| `matching_etablissements` |  |
 | `nature_juridique` |  |
 | `nom_complet` |  |
 | `nom_raison_sociale` |  |
-| `nombre_etablissement` |  |
-| `nombre_etablissements_ouvert` |  |
+| `nombre_etablissements` |  |
+| `nombre_etablissements_ouverts` |  |
 | `section_activite_principale` |  |
 | `siege` |  |
 | `sigle` |  |
@@ -327,21 +330,21 @@ API path: `/near_point`
 | `annee_tranche_effectif_salarie` |  |
 | `caractere_employeur` |  |
 | `categorie_entreprise` |  |
-| `complement` |  |
+| `complements` |  |
 | `date_creation` |  |
 | `date_fermeture` |  |
 | `date_mise_a_jour` |  |
 | `date_mise_a_jour_insee` |  |
 | `date_mise_a_jour_rne` |  |
-| `dirigeant` |  |
+| `dirigeants` |  |
 | `etat_administratif` |  |
-| `finance` |  |
-| `matching_etablissement` |  |
+| `finances` |  |
+| `matching_etablissements` |  |
 | `nature_juridique` |  |
 | `nom_complet` |  |
 | `nom_raison_sociale` |  |
-| `nombre_etablissement` |  |
-| `nombre_etablissements_ouvert` |  |
+| `nombre_etablissements` |  |
+| `nombre_etablissements_ouverts` |  |
 | `section_activite_principale` |  |
 | `siege` |  |
 | `sigle` |  |
@@ -378,21 +381,21 @@ Create an instance: `const near_point = client.NearPoint()`
 | `annee_tranche_effectif_salarie` | `string` |  |
 | `caractere_employeur` | `string` |  |
 | `categorie_entreprise` | `string` |  |
-| `complement` | `Record<string, any>` |  |
+| `complements` | `Record<string, any>` |  |
 | `date_creation` | `string` |  |
 | `date_fermeture` | `string` |  |
 | `date_mise_a_jour` | `string` |  |
 | `date_mise_a_jour_insee` | `string` |  |
 | `date_mise_a_jour_rne` | `string` |  |
-| `dirigeant` | `any[]` |  |
+| `dirigeants` | `any[]` |  |
 | `etat_administratif` | `string` |  |
-| `finance` | `Record<string, any>` |  |
-| `matching_etablissement` | `any[]` |  |
+| `finances` | `Record<string, any>` |  |
+| `matching_etablissements` | `any[]` |  |
 | `nature_juridique` | `string` |  |
 | `nom_complet` | `string` |  |
 | `nom_raison_sociale` | `string` |  |
-| `nombre_etablissement` | `number` |  |
-| `nombre_etablissements_ouvert` | `number` |  |
+| `nombre_etablissements` | `number` |  |
+| `nombre_etablissements_ouverts` | `number` |  |
 | `section_activite_principale` | `string` |  |
 | `siege` | `Record<string, any>` |  |
 | `sigle` | `string` |  |
@@ -427,21 +430,21 @@ Create an instance: `const search = client.Search()`
 | `annee_tranche_effectif_salarie` | `string` |  |
 | `caractere_employeur` | `string` |  |
 | `categorie_entreprise` | `string` |  |
-| `complement` | `Record<string, any>` |  |
+| `complements` | `Record<string, any>` |  |
 | `date_creation` | `string` |  |
 | `date_fermeture` | `string` |  |
 | `date_mise_a_jour` | `string` |  |
 | `date_mise_a_jour_insee` | `string` |  |
 | `date_mise_a_jour_rne` | `string` |  |
-| `dirigeant` | `any[]` |  |
+| `dirigeants` | `any[]` |  |
 | `etat_administratif` | `string` |  |
-| `finance` | `Record<string, any>` |  |
-| `matching_etablissement` | `any[]` |  |
+| `finances` | `Record<string, any>` |  |
+| `matching_etablissements` | `any[]` |  |
 | `nature_juridique` | `string` |  |
 | `nom_complet` | `string` |  |
 | `nom_raison_sociale` | `string` |  |
-| `nombre_etablissement` | `number` |  |
-| `nombre_etablissements_ouvert` | `number` |  |
+| `nombre_etablissements` | `number` |  |
+| `nombre_etablissements_ouverts` | `number` |  |
 | `section_activite_principale` | `string` |  |
 | `siege` | `Record<string, any>` |  |
 | `sigle` | `string` |  |

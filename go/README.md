@@ -267,21 +267,21 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | `"annee_tranche_effectif_salarie"` |  |
 | `"caractere_employeur"` |  |
 | `"categorie_entreprise"` |  |
-| `"complement"` |  |
+| `"complements"` |  |
 | `"date_creation"` |  |
 | `"date_fermeture"` |  |
 | `"date_mise_a_jour"` |  |
 | `"date_mise_a_jour_insee"` |  |
 | `"date_mise_a_jour_rne"` |  |
-| `"dirigeant"` |  |
+| `"dirigeants"` |  |
 | `"etat_administratif"` |  |
-| `"finance"` |  |
-| `"matching_etablissement"` |  |
+| `"finances"` |  |
+| `"matching_etablissements"` |  |
 | `"nature_juridique"` |  |
 | `"nom_complet"` |  |
 | `"nom_raison_sociale"` |  |
-| `"nombre_etablissement"` |  |
-| `"nombre_etablissements_ouvert"` |  |
+| `"nombre_etablissements"` |  |
+| `"nombre_etablissements_ouverts"` |  |
 | `"section_activite_principale"` |  |
 | `"siege"` |  |
 | `"sigle"` |  |
@@ -303,21 +303,21 @@ API path: `/near_point`
 | `"annee_tranche_effectif_salarie"` |  |
 | `"caractere_employeur"` |  |
 | `"categorie_entreprise"` |  |
-| `"complement"` |  |
+| `"complements"` |  |
 | `"date_creation"` |  |
 | `"date_fermeture"` |  |
 | `"date_mise_a_jour"` |  |
 | `"date_mise_a_jour_insee"` |  |
 | `"date_mise_a_jour_rne"` |  |
-| `"dirigeant"` |  |
+| `"dirigeants"` |  |
 | `"etat_administratif"` |  |
-| `"finance"` |  |
-| `"matching_etablissement"` |  |
+| `"finances"` |  |
+| `"matching_etablissements"` |  |
 | `"nature_juridique"` |  |
 | `"nom_complet"` |  |
 | `"nom_raison_sociale"` |  |
-| `"nombre_etablissement"` |  |
-| `"nombre_etablissements_ouvert"` |  |
+| `"nombre_etablissements"` |  |
+| `"nombre_etablissements_ouverts"` |  |
 | `"section_activite_principale"` |  |
 | `"siege"` |  |
 | `"sigle"` |  |
@@ -354,21 +354,21 @@ Create an instance: `nearPoint := client.NearPoint(nil)`
 | `annee_tranche_effectif_salarie` | `string` |  |
 | `caractere_employeur` | `string` |  |
 | `categorie_entreprise` | `string` |  |
-| `complement` | `map[string]any` |  |
+| `complements` | `map[string]any` |  |
 | `date_creation` | `string` |  |
 | `date_fermeture` | `string` |  |
 | `date_mise_a_jour` | `string` |  |
 | `date_mise_a_jour_insee` | `string` |  |
 | `date_mise_a_jour_rne` | `string` |  |
-| `dirigeant` | `[]any` |  |
+| `dirigeants` | `[]any` |  |
 | `etat_administratif` | `string` |  |
-| `finance` | `map[string]any` |  |
-| `matching_etablissement` | `[]any` |  |
+| `finances` | `map[string]any` |  |
+| `matching_etablissements` | `[]any` |  |
 | `nature_juridique` | `string` |  |
 | `nom_complet` | `string` |  |
 | `nom_raison_sociale` | `string` |  |
-| `nombre_etablissement` | `int` |  |
-| `nombre_etablissements_ouvert` | `int` |  |
+| `nombre_etablissements` | `int` |  |
+| `nombre_etablissements_ouverts` | `int` |  |
 | `section_activite_principale` | `string` |  |
 | `siege` | `map[string]any` |  |
 | `sigle` | `string` |  |
@@ -407,21 +407,21 @@ Create an instance: `search := client.Search(nil)`
 | `annee_tranche_effectif_salarie` | `string` |  |
 | `caractere_employeur` | `string` |  |
 | `categorie_entreprise` | `string` |  |
-| `complement` | `map[string]any` |  |
+| `complements` | `map[string]any` |  |
 | `date_creation` | `string` |  |
 | `date_fermeture` | `string` |  |
 | `date_mise_a_jour` | `string` |  |
 | `date_mise_a_jour_insee` | `string` |  |
 | `date_mise_a_jour_rne` | `string` |  |
-| `dirigeant` | `[]any` |  |
+| `dirigeants` | `[]any` |  |
 | `etat_administratif` | `string` |  |
-| `finance` | `map[string]any` |  |
-| `matching_etablissement` | `[]any` |  |
+| `finances` | `map[string]any` |  |
+| `matching_etablissements` | `[]any` |  |
 | `nature_juridique` | `string` |  |
 | `nom_complet` | `string` |  |
 | `nom_raison_sociale` | `string` |  |
-| `nombre_etablissement` | `int` |  |
-| `nombre_etablissements_ouvert` | `int` |  |
+| `nombre_etablissements` | `int` |  |
+| `nombre_etablissements_ouverts` | `int` |  |
 | `section_activite_principale` | `string` |  |
 | `siege` | `map[string]any` |  |
 | `sigle` | `string` |  |

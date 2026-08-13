@@ -36,7 +36,7 @@ main: kit: entity: search: {
       type: "`$STRING`"
     }
     {
-      name: "complement"
+      name: "complements"
       req: false
       type: "`$OBJECT`"
     }
@@ -66,7 +66,7 @@ main: kit: entity: search: {
       type: "`$STRING`"
     }
     {
-      name: "dirigeant"
+      name: "dirigeants"
       req: false
       type: "`$ARRAY`"
     }
@@ -76,12 +76,12 @@ main: kit: entity: search: {
       type: "`$STRING`"
     }
     {
-      name: "finance"
+      name: "finances"
       req: false
       type: "`$OBJECT`"
     }
     {
-      name: "matching_etablissement"
+      name: "matching_etablissements"
       req: false
       type: "`$ARRAY`"
     }
@@ -101,12 +101,12 @@ main: kit: entity: search: {
       type: "`$STRING`"
     }
     {
-      name: "nombre_etablissement"
+      name: "nombre_etablissements"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "nombre_etablissements_ouvert"
+      name: "nombre_etablissements_ouverts"
       req: false
       type: "`$INTEGER`"
     }
@@ -615,7 +615,7 @@ main: kit: entity: search: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.results`"
           }
         }
       ]

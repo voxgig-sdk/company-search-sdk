@@ -37,7 +37,7 @@ class NearPointEntity extends CompanySearchEntityBase<NearPoint> {
 
 
 
-  async list(this: any, reqmatch?: NearPointListMatch, ctrl?: Control): Promise<NearPoint[]> {
+  async list(this: any, reqmatch?: NearPointListMatch, ctrl?: Control): Promise<NearPointEntity[]> {
 
     const utility = this._utility
 

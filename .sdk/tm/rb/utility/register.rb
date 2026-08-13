@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ CompanySearchUtility.registrar = ->(u) {
   u.prepare_params = CompanySearchUtilities::PrepareParams
   u.prepare_path = CompanySearchUtilities::PreparePath
   u.prepare_query = CompanySearchUtilities::PrepareQuery
+  u.graphql_body = CompanySearchUtilities::GraphqlBody
+  u.graphql_errors = CompanySearchUtilities::GraphqlErrors
   u.result_basic = CompanySearchUtilities::ResultBasic
   u.result_body = CompanySearchUtilities::ResultBody
   u.result_headers = CompanySearchUtilities::ResultHeaders

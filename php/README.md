@@ -125,7 +125,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = CompanySearchSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $nearpoint = $client->NearPoint()->list();
 print_r($nearpoint);
 ```
@@ -225,7 +226,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -253,21 +254,21 @@ On error, `ok` is `false` and `$err` contains the error value.
 | `annee_tranche_effectif_salarie` |  |
 | `caractere_employeur` |  |
 | `categorie_entreprise` |  |
-| `complement` |  |
+| `complements` |  |
 | `date_creation` |  |
 | `date_fermeture` |  |
 | `date_mise_a_jour` |  |
 | `date_mise_a_jour_insee` |  |
 | `date_mise_a_jour_rne` |  |
-| `dirigeant` |  |
+| `dirigeants` |  |
 | `etat_administratif` |  |
-| `finance` |  |
-| `matching_etablissement` |  |
+| `finances` |  |
+| `matching_etablissements` |  |
 | `nature_juridique` |  |
 | `nom_complet` |  |
 | `nom_raison_sociale` |  |
-| `nombre_etablissement` |  |
-| `nombre_etablissements_ouvert` |  |
+| `nombre_etablissements` |  |
+| `nombre_etablissements_ouverts` |  |
 | `section_activite_principale` |  |
 | `siege` |  |
 | `sigle` |  |
@@ -289,21 +290,21 @@ API path: `/near_point`
 | `annee_tranche_effectif_salarie` |  |
 | `caractere_employeur` |  |
 | `categorie_entreprise` |  |
-| `complement` |  |
+| `complements` |  |
 | `date_creation` |  |
 | `date_fermeture` |  |
 | `date_mise_a_jour` |  |
 | `date_mise_a_jour_insee` |  |
 | `date_mise_a_jour_rne` |  |
-| `dirigeant` |  |
+| `dirigeants` |  |
 | `etat_administratif` |  |
-| `finance` |  |
-| `matching_etablissement` |  |
+| `finances` |  |
+| `matching_etablissements` |  |
 | `nature_juridique` |  |
 | `nom_complet` |  |
 | `nom_raison_sociale` |  |
-| `nombre_etablissement` |  |
-| `nombre_etablissements_ouvert` |  |
+| `nombre_etablissements` |  |
+| `nombre_etablissements_ouverts` |  |
 | `section_activite_principale` |  |
 | `siege` |  |
 | `sigle` |  |
@@ -340,21 +341,21 @@ Create an instance: `$near_point = $client->NearPoint();`
 | `annee_tranche_effectif_salarie` | `string` |  |
 | `caractere_employeur` | `string` |  |
 | `categorie_entreprise` | `string` |  |
-| `complement` | `array` |  |
+| `complements` | `array` |  |
 | `date_creation` | `string` |  |
 | `date_fermeture` | `string` |  |
 | `date_mise_a_jour` | `string` |  |
 | `date_mise_a_jour_insee` | `string` |  |
 | `date_mise_a_jour_rne` | `string` |  |
-| `dirigeant` | `array` |  |
+| `dirigeants` | `array` |  |
 | `etat_administratif` | `string` |  |
-| `finance` | `array` |  |
-| `matching_etablissement` | `array` |  |
+| `finances` | `array` |  |
+| `matching_etablissements` | `array` |  |
 | `nature_juridique` | `string` |  |
 | `nom_complet` | `string` |  |
 | `nom_raison_sociale` | `string` |  |
-| `nombre_etablissement` | `int` |  |
-| `nombre_etablissements_ouvert` | `int` |  |
+| `nombre_etablissements` | `int` |  |
+| `nombre_etablissements_ouverts` | `int` |  |
 | `section_activite_principale` | `string` |  |
 | `siege` | `array` |  |
 | `sigle` | `string` |  |
@@ -390,21 +391,21 @@ Create an instance: `$search = $client->Search();`
 | `annee_tranche_effectif_salarie` | `string` |  |
 | `caractere_employeur` | `string` |  |
 | `categorie_entreprise` | `string` |  |
-| `complement` | `array` |  |
+| `complements` | `array` |  |
 | `date_creation` | `string` |  |
 | `date_fermeture` | `string` |  |
 | `date_mise_a_jour` | `string` |  |
 | `date_mise_a_jour_insee` | `string` |  |
 | `date_mise_a_jour_rne` | `string` |  |
-| `dirigeant` | `array` |  |
+| `dirigeants` | `array` |  |
 | `etat_administratif` | `string` |  |
-| `finance` | `array` |  |
-| `matching_etablissement` | `array` |  |
+| `finances` | `array` |  |
+| `matching_etablissements` | `array` |  |
 | `nature_juridique` | `string` |  |
 | `nom_complet` | `string` |  |
 | `nom_raison_sociale` | `string` |  |
-| `nombre_etablissement` | `int` |  |
-| `nombre_etablissements_ouvert` | `int` |  |
+| `nombre_etablissements` | `int` |  |
+| `nombre_etablissements_ouverts` | `int` |  |
 | `section_activite_principale` | `string` |  |
 | `siege` | `array` |  |
 | `sigle` | `string` |  |

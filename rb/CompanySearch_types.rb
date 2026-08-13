@@ -28,7 +28,7 @@
 # @!attribute [rw] categorie_entreprise
 #   @return [String, nil]
 #
-# @!attribute [rw] complement
+# @!attribute [rw] complements
 #   @return [Hash, nil]
 #
 # @!attribute [rw] date_creation
@@ -46,16 +46,16 @@
 # @!attribute [rw] date_mise_a_jour_rne
 #   @return [String, nil]
 #
-# @!attribute [rw] dirigeant
+# @!attribute [rw] dirigeants
 #   @return [Array, nil]
 #
 # @!attribute [rw] etat_administratif
 #   @return [String, nil]
 #
-# @!attribute [rw] finance
+# @!attribute [rw] finances
 #   @return [Hash, nil]
 #
-# @!attribute [rw] matching_etablissement
+# @!attribute [rw] matching_etablissements
 #   @return [Array, nil]
 #
 # @!attribute [rw] nature_juridique
@@ -67,10 +67,10 @@
 # @!attribute [rw] nom_raison_sociale
 #   @return [String, nil]
 #
-# @!attribute [rw] nombre_etablissement
+# @!attribute [rw] nombre_etablissements
 #   @return [Integer, nil]
 #
-# @!attribute [rw] nombre_etablissements_ouvert
+# @!attribute [rw] nombre_etablissements_ouverts
 #   @return [Integer, nil]
 #
 # @!attribute [rw] section_activite_principale
@@ -97,21 +97,21 @@ NearPoint = Struct.new(
   :annee_tranche_effectif_salarie,
   :caractere_employeur,
   :categorie_entreprise,
-  :complement,
+  :complements,
   :date_creation,
   :date_fermeture,
   :date_mise_a_jour,
   :date_mise_a_jour_insee,
   :date_mise_a_jour_rne,
-  :dirigeant,
+  :dirigeants,
   :etat_administratif,
-  :finance,
-  :matching_etablissement,
+  :finances,
+  :matching_etablissements,
   :nature_juridique,
   :nom_complet,
   :nom_raison_sociale,
-  :nombre_etablissement,
-  :nombre_etablissements_ouvert,
+  :nombre_etablissements,
+  :nombre_etablissements_ouverts,
   :section_activite_principale,
   :siege,
   :sigle,
@@ -141,7 +141,7 @@ NearPoint = Struct.new(
 # @!attribute [rw] categorie_entreprise
 #   @return [String, nil]
 #
-# @!attribute [rw] complement
+# @!attribute [rw] complements
 #   @return [Hash, nil]
 #
 # @!attribute [rw] date_creation
@@ -159,16 +159,16 @@ NearPoint = Struct.new(
 # @!attribute [rw] date_mise_a_jour_rne
 #   @return [String, nil]
 #
-# @!attribute [rw] dirigeant
+# @!attribute [rw] dirigeants
 #   @return [Array, nil]
 #
 # @!attribute [rw] etat_administratif
 #   @return [String, nil]
 #
-# @!attribute [rw] finance
+# @!attribute [rw] finances
 #   @return [Hash, nil]
 #
-# @!attribute [rw] matching_etablissement
+# @!attribute [rw] matching_etablissements
 #   @return [Array, nil]
 #
 # @!attribute [rw] nature_juridique
@@ -180,10 +180,10 @@ NearPoint = Struct.new(
 # @!attribute [rw] nom_raison_sociale
 #   @return [String, nil]
 #
-# @!attribute [rw] nombre_etablissement
+# @!attribute [rw] nombre_etablissements
 #   @return [Integer, nil]
 #
-# @!attribute [rw] nombre_etablissements_ouvert
+# @!attribute [rw] nombre_etablissements_ouverts
 #   @return [Integer, nil]
 #
 # @!attribute [rw] section_activite_principale
@@ -210,21 +210,21 @@ NearPointListMatch = Struct.new(
   :annee_tranche_effectif_salarie,
   :caractere_employeur,
   :categorie_entreprise,
-  :complement,
+  :complements,
   :date_creation,
   :date_fermeture,
   :date_mise_a_jour,
   :date_mise_a_jour_insee,
   :date_mise_a_jour_rne,
-  :dirigeant,
+  :dirigeants,
   :etat_administratif,
-  :finance,
-  :matching_etablissement,
+  :finances,
+  :matching_etablissements,
   :nature_juridique,
   :nom_complet,
   :nom_raison_sociale,
-  :nombre_etablissement,
-  :nombre_etablissements_ouvert,
+  :nombre_etablissements,
+  :nombre_etablissements_ouverts,
   :section_activite_principale,
   :siege,
   :sigle,
@@ -254,7 +254,7 @@ NearPointListMatch = Struct.new(
 # @!attribute [rw] categorie_entreprise
 #   @return [String, nil]
 #
-# @!attribute [rw] complement
+# @!attribute [rw] complements
 #   @return [Hash, nil]
 #
 # @!attribute [rw] date_creation
@@ -272,16 +272,16 @@ NearPointListMatch = Struct.new(
 # @!attribute [rw] date_mise_a_jour_rne
 #   @return [String, nil]
 #
-# @!attribute [rw] dirigeant
+# @!attribute [rw] dirigeants
 #   @return [Array, nil]
 #
 # @!attribute [rw] etat_administratif
 #   @return [String, nil]
 #
-# @!attribute [rw] finance
+# @!attribute [rw] finances
 #   @return [Hash, nil]
 #
-# @!attribute [rw] matching_etablissement
+# @!attribute [rw] matching_etablissements
 #   @return [Array, nil]
 #
 # @!attribute [rw] nature_juridique
@@ -293,10 +293,10 @@ NearPointListMatch = Struct.new(
 # @!attribute [rw] nom_raison_sociale
 #   @return [String, nil]
 #
-# @!attribute [rw] nombre_etablissement
+# @!attribute [rw] nombre_etablissements
 #   @return [Integer, nil]
 #
-# @!attribute [rw] nombre_etablissements_ouvert
+# @!attribute [rw] nombre_etablissements_ouverts
 #   @return [Integer, nil]
 #
 # @!attribute [rw] section_activite_principale
@@ -323,21 +323,21 @@ Search = Struct.new(
   :annee_tranche_effectif_salarie,
   :caractere_employeur,
   :categorie_entreprise,
-  :complement,
+  :complements,
   :date_creation,
   :date_fermeture,
   :date_mise_a_jour,
   :date_mise_a_jour_insee,
   :date_mise_a_jour_rne,
-  :dirigeant,
+  :dirigeants,
   :etat_administratif,
-  :finance,
-  :matching_etablissement,
+  :finances,
+  :matching_etablissements,
   :nature_juridique,
   :nom_complet,
   :nom_raison_sociale,
-  :nombre_etablissement,
-  :nombre_etablissements_ouvert,
+  :nombre_etablissements,
+  :nombre_etablissements_ouverts,
   :section_activite_principale,
   :siege,
   :sigle,
@@ -367,7 +367,7 @@ Search = Struct.new(
 # @!attribute [rw] categorie_entreprise
 #   @return [String, nil]
 #
-# @!attribute [rw] complement
+# @!attribute [rw] complements
 #   @return [Hash, nil]
 #
 # @!attribute [rw] date_creation
@@ -385,16 +385,16 @@ Search = Struct.new(
 # @!attribute [rw] date_mise_a_jour_rne
 #   @return [String, nil]
 #
-# @!attribute [rw] dirigeant
+# @!attribute [rw] dirigeants
 #   @return [Array, nil]
 #
 # @!attribute [rw] etat_administratif
 #   @return [String, nil]
 #
-# @!attribute [rw] finance
+# @!attribute [rw] finances
 #   @return [Hash, nil]
 #
-# @!attribute [rw] matching_etablissement
+# @!attribute [rw] matching_etablissements
 #   @return [Array, nil]
 #
 # @!attribute [rw] nature_juridique
@@ -406,10 +406,10 @@ Search = Struct.new(
 # @!attribute [rw] nom_raison_sociale
 #   @return [String, nil]
 #
-# @!attribute [rw] nombre_etablissement
+# @!attribute [rw] nombre_etablissements
 #   @return [Integer, nil]
 #
-# @!attribute [rw] nombre_etablissements_ouvert
+# @!attribute [rw] nombre_etablissements_ouverts
 #   @return [Integer, nil]
 #
 # @!attribute [rw] section_activite_principale
@@ -436,21 +436,21 @@ SearchListMatch = Struct.new(
   :annee_tranche_effectif_salarie,
   :caractere_employeur,
   :categorie_entreprise,
-  :complement,
+  :complements,
   :date_creation,
   :date_fermeture,
   :date_mise_a_jour,
   :date_mise_a_jour_insee,
   :date_mise_a_jour_rne,
-  :dirigeant,
+  :dirigeants,
   :etat_administratif,
-  :finance,
-  :matching_etablissement,
+  :finances,
+  :matching_etablissements,
   :nature_juridique,
   :nom_complet,
   :nom_raison_sociale,
-  :nombre_etablissement,
-  :nombre_etablissements_ouvert,
+  :nombre_etablissements,
+  :nombre_etablissements_ouverts,
   :section_activite_principale,
   :siege,
   :sigle,

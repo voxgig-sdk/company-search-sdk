@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = CompanySearchSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = CompanySearchSDK.test({
+  entity: {
+    near_point: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const nearpoints = await client.NearPoint().list()
-// nearpoints is an array of bare NearPoint records populated with mock data
+// nearpoints is an array of NearPoint entities, populated with mock data
+// — call nearpoints[0].data() for the record itself
 console.log(nearpoints)
 ```
 
@@ -110,7 +119,7 @@ import { CompanySearchSDK } from '@voxgig-sdk/company-search'
 
 const client = new CompanySearchSDK()
 
-// List all nearpoints (returns NearPoint[])
+// List all nearpoints (returns NearPointEntity[] — .data() for the record)
 const nearpoints = await client.NearPoint().list()
 for (const nearpoint of nearpoints) {
   console.log(nearpoint)
@@ -344,6 +353,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://recherche-entreprises.api.gouv.fr](https://recherche-entreprises.api.gouv.fr)
 

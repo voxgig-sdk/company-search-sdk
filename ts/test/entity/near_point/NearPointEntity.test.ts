@@ -26,8 +26,8 @@ import {
 describe('NearPointEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when COMPANYSEARCH_TEST_LIVE=TRUE.
-  afterEach(liveDelay('COMPANYSEARCH_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when COMPANY_SEARCH_TEST_LIVE=TRUE.
+  afterEach(liveDelay('COMPANY_SEARCH_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = CompanySearchSDK.test()
@@ -63,7 +63,7 @@ describe('NearPointEntity', async () => {
     const near_point_ref01_ent = client.NearPoint()
     const near_point_ref01_match: any = {}
 
-    const near_point_ref01_list = await near_point_ref01_ent.list(near_point_ref01_match)
+    const near_point_ref01_list = (await near_point_ref01_ent.list(near_point_ref01_match)).map((e: any) => e.data())
 
 
   })

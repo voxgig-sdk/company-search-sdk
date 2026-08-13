@@ -134,21 +134,21 @@ const near_point = client.NearPoint()
 | `annee_tranche_effectif_salarie` | `string` | No |  |
 | `caractere_employeur` | `string` | No |  |
 | `categorie_entreprise` | `string` | No |  |
-| `complement` | `Record<string, any>` | No |  |
+| `complements` | `Record<string, any>` | No |  |
 | `date_creation` | `string` | No |  |
 | `date_fermeture` | `string` | No |  |
 | `date_mise_a_jour` | `string` | No |  |
 | `date_mise_a_jour_insee` | `string` | No |  |
 | `date_mise_a_jour_rne` | `string` | No |  |
-| `dirigeant` | `any[]` | No |  |
+| `dirigeants` | `any[]` | No |  |
 | `etat_administratif` | `string` | No |  |
-| `finance` | `Record<string, any>` | No |  |
-| `matching_etablissement` | `any[]` | No |  |
+| `finances` | `Record<string, any>` | No |  |
+| `matching_etablissements` | `any[]` | No |  |
 | `nature_juridique` | `string` | No |  |
 | `nom_complet` | `string` | No |  |
 | `nom_raison_sociale` | `string` | No |  |
-| `nombre_etablissement` | `number` | No |  |
-| `nombre_etablissements_ouvert` | `number` | No |  |
+| `nombre_etablissements` | `number` | No |  |
+| `nombre_etablissements_ouverts` | `number` | No |  |
 | `section_activite_principale` | `string` | No |  |
 | `siege` | `Record<string, any>` | No |  |
 | `sigle` | `string` | No |  |
@@ -210,21 +210,21 @@ const search = client.Search()
 | `annee_tranche_effectif_salarie` | `string` | No |  |
 | `caractere_employeur` | `string` | No |  |
 | `categorie_entreprise` | `string` | No |  |
-| `complement` | `Record<string, any>` | No |  |
+| `complements` | `Record<string, any>` | No |  |
 | `date_creation` | `string` | No |  |
 | `date_fermeture` | `string` | No |  |
 | `date_mise_a_jour` | `string` | No |  |
 | `date_mise_a_jour_insee` | `string` | No |  |
 | `date_mise_a_jour_rne` | `string` | No |  |
-| `dirigeant` | `any[]` | No |  |
+| `dirigeants` | `any[]` | No |  |
 | `etat_administratif` | `string` | No |  |
-| `finance` | `Record<string, any>` | No |  |
-| `matching_etablissement` | `any[]` | No |  |
+| `finances` | `Record<string, any>` | No |  |
+| `matching_etablissements` | `any[]` | No |  |
 | `nature_juridique` | `string` | No |  |
 | `nom_complet` | `string` | No |  |
 | `nom_raison_sociale` | `string` | No |  |
-| `nombre_etablissement` | `number` | No |  |
-| `nombre_etablissements_ouvert` | `number` | No |  |
+| `nombre_etablissements` | `number` | No |  |
+| `nombre_etablissements_ouverts` | `number` | No |  |
 | `section_activite_principale` | `string` | No |  |
 | `siege` | `Record<string, any>` | No |  |
 | `sigle` | `string` | No |  |

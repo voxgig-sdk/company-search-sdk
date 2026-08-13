@@ -23,8 +23,8 @@ module CompanySearchTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("COMPANYSEARCH_TEST_LIVE")
-    override = getenv("COMPANYSEARCH_TEST_OVERRIDE")
+    live = getenv("COMPANY_SEARCH_TEST_LIVE")
+    override = getenv("COMPANY_SEARCH_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module CompanySearchTestRunner
       end
     end
 
-    explain = getenv("COMPANYSEARCH_TEST_EXPLAIN")
-    m["COMPANYSEARCH_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("COMPANY_SEARCH_TEST_EXPLAIN")
+    m["COMPANY_SEARCH_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

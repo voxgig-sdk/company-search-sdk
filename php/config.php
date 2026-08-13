@@ -75,7 +75,7 @@ class CompanySearchConfig
             ],
             [
               'active' => true,
-              'name' => 'complement',
+              'name' => 'complements',
               'req' => false,
               'type' => '`$OBJECT`',
               'index$' => 6,
@@ -117,7 +117,7 @@ class CompanySearchConfig
             ],
             [
               'active' => true,
-              'name' => 'dirigeant',
+              'name' => 'dirigeants',
               'req' => false,
               'type' => '`$ARRAY`',
               'index$' => 12,
@@ -131,14 +131,14 @@ class CompanySearchConfig
             ],
             [
               'active' => true,
-              'name' => 'finance',
+              'name' => 'finances',
               'req' => false,
               'type' => '`$OBJECT`',
               'index$' => 14,
             ],
             [
               'active' => true,
-              'name' => 'matching_etablissement',
+              'name' => 'matching_etablissements',
               'req' => false,
               'type' => '`$ARRAY`',
               'index$' => 15,
@@ -166,14 +166,14 @@ class CompanySearchConfig
             ],
             [
               'active' => true,
-              'name' => 'nombre_etablissement',
+              'name' => 'nombre_etablissements',
               'req' => false,
               'type' => '`$INTEGER`',
               'index$' => 19,
             ],
             [
               'active' => true,
-              'name' => 'nombre_etablissements_ouvert',
+              'name' => 'nombre_etablissements_ouverts',
               'req' => false,
               'type' => '`$INTEGER`',
               'index$' => 20,
@@ -337,6 +337,7 @@ class CompanySearchConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/near_point',
                   'parts' => [
@@ -360,7 +361,7 @@ class CompanySearchConfig
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.results`',
                   ],
                   'index$' => 0,
                 ],
@@ -418,7 +419,7 @@ class CompanySearchConfig
             ],
             [
               'active' => true,
-              'name' => 'complement',
+              'name' => 'complements',
               'req' => false,
               'type' => '`$OBJECT`',
               'index$' => 6,
@@ -460,7 +461,7 @@ class CompanySearchConfig
             ],
             [
               'active' => true,
-              'name' => 'dirigeant',
+              'name' => 'dirigeants',
               'req' => false,
               'type' => '`$ARRAY`',
               'index$' => 12,
@@ -474,14 +475,14 @@ class CompanySearchConfig
             ],
             [
               'active' => true,
-              'name' => 'finance',
+              'name' => 'finances',
               'req' => false,
               'type' => '`$OBJECT`',
               'index$' => 14,
             ],
             [
               'active' => true,
-              'name' => 'matching_etablissement',
+              'name' => 'matching_etablissements',
               'req' => false,
               'type' => '`$ARRAY`',
               'index$' => 15,
@@ -509,14 +510,14 @@ class CompanySearchConfig
             ],
             [
               'active' => true,
-              'name' => 'nombre_etablissement',
+              'name' => 'nombre_etablissements',
               'req' => false,
               'type' => '`$INTEGER`',
               'index$' => 19,
             ],
             [
               'active' => true,
-              'name' => 'nombre_etablissements_ouvert',
+              'name' => 'nombre_etablissements_ouverts',
               'req' => false,
               'type' => '`$INTEGER`',
               'index$' => 20,
@@ -1028,6 +1029,7 @@ class CompanySearchConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/search',
                   'parts' => [
@@ -1092,7 +1094,7 @@ class CompanySearchConfig
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.results`',
                   ],
                   'index$' => 0,
                 ],

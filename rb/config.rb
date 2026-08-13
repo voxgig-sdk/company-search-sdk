@@ -70,7 +70,7 @@ module CompanySearchConfig
             },
             {
               "active" => true,
-              "name" => "complement",
+              "name" => "complements",
               "req" => false,
               "type" => "`$OBJECT`",
               "index$" => 6,
@@ -112,7 +112,7 @@ module CompanySearchConfig
             },
             {
               "active" => true,
-              "name" => "dirigeant",
+              "name" => "dirigeants",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 12,
@@ -126,14 +126,14 @@ module CompanySearchConfig
             },
             {
               "active" => true,
-              "name" => "finance",
+              "name" => "finances",
               "req" => false,
               "type" => "`$OBJECT`",
               "index$" => 14,
             },
             {
               "active" => true,
-              "name" => "matching_etablissement",
+              "name" => "matching_etablissements",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 15,
@@ -161,14 +161,14 @@ module CompanySearchConfig
             },
             {
               "active" => true,
-              "name" => "nombre_etablissement",
+              "name" => "nombre_etablissements",
               "req" => false,
               "type" => "`$INTEGER`",
               "index$" => 19,
             },
             {
               "active" => true,
-              "name" => "nombre_etablissements_ouvert",
+              "name" => "nombre_etablissements_ouverts",
               "req" => false,
               "type" => "`$INTEGER`",
               "index$" => 20,
@@ -332,6 +332,7 @@ module CompanySearchConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/near_point",
                   "parts" => [
@@ -355,7 +356,7 @@ module CompanySearchConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.results`",
                   },
                   "index$" => 0,
                 },
@@ -413,7 +414,7 @@ module CompanySearchConfig
             },
             {
               "active" => true,
-              "name" => "complement",
+              "name" => "complements",
               "req" => false,
               "type" => "`$OBJECT`",
               "index$" => 6,
@@ -455,7 +456,7 @@ module CompanySearchConfig
             },
             {
               "active" => true,
-              "name" => "dirigeant",
+              "name" => "dirigeants",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 12,
@@ -469,14 +470,14 @@ module CompanySearchConfig
             },
             {
               "active" => true,
-              "name" => "finance",
+              "name" => "finances",
               "req" => false,
               "type" => "`$OBJECT`",
               "index$" => 14,
             },
             {
               "active" => true,
-              "name" => "matching_etablissement",
+              "name" => "matching_etablissements",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 15,
@@ -504,14 +505,14 @@ module CompanySearchConfig
             },
             {
               "active" => true,
-              "name" => "nombre_etablissement",
+              "name" => "nombre_etablissements",
               "req" => false,
               "type" => "`$INTEGER`",
               "index$" => 19,
             },
             {
               "active" => true,
-              "name" => "nombre_etablissements_ouvert",
+              "name" => "nombre_etablissements_ouverts",
               "req" => false,
               "type" => "`$INTEGER`",
               "index$" => 20,
@@ -1023,6 +1024,7 @@ module CompanySearchConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/search",
                   "parts" => [
@@ -1087,7 +1089,7 @@ module CompanySearchConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.results`",
                   },
                   "index$" => 0,
                 },

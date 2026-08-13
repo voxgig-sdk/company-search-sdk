@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# CompanySearch SDK exists test
 
 import pytest
 from companysearch_sdk import CompanySearchSDK

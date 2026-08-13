@@ -43,8 +43,8 @@ class CompanySearchTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('COMPANYSEARCH_TEST_LIVE');
-        $override = self::getenv('COMPANYSEARCH_TEST_OVERRIDE');
+        $live = self::getenv('COMPANY_SEARCH_TEST_LIVE');
+        $override = self::getenv('COMPANY_SEARCH_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class CompanySearchTestRunner
             }
         }
 
-        $explain = self::getenv('COMPANYSEARCH_TEST_EXPLAIN');
+        $explain = self::getenv('COMPANY_SEARCH_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['COMPANYSEARCH_TEST_EXPLAIN'] = $explain;
+            $m['COMPANY_SEARCH_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

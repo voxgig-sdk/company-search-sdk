@@ -69,7 +69,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "complement",
+						"name": "complements",
 						"req": false,
 						"type": "`$OBJECT`",
 						"index$": 6,
@@ -111,7 +111,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "dirigeant",
+						"name": "dirigeants",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 12,
@@ -125,14 +125,14 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "finance",
+						"name": "finances",
 						"req": false,
 						"type": "`$OBJECT`",
 						"index$": 14,
 					},
 					map[string]any{
 						"active": true,
-						"name": "matching_etablissement",
+						"name": "matching_etablissements",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 15,
@@ -160,14 +160,14 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "nombre_etablissement",
+						"name": "nombre_etablissements",
 						"req": false,
 						"type": "`$INTEGER`",
 						"index$": 19,
 					},
 					map[string]any{
 						"active": true,
-						"name": "nombre_etablissements_ouvert",
+						"name": "nombre_etablissements_ouverts",
 						"req": false,
 						"type": "`$INTEGER`",
 						"index$": 20,
@@ -331,6 +331,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/near_point",
 								"parts": []any{
@@ -354,12 +355,11 @@ func MakeConfig() map[string]any {
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.results`",
 								},
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{
@@ -412,7 +412,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "complement",
+						"name": "complements",
 						"req": false,
 						"type": "`$OBJECT`",
 						"index$": 6,
@@ -454,7 +454,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "dirigeant",
+						"name": "dirigeants",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 12,
@@ -468,14 +468,14 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "finance",
+						"name": "finances",
 						"req": false,
 						"type": "`$OBJECT`",
 						"index$": 14,
 					},
 					map[string]any{
 						"active": true,
-						"name": "matching_etablissement",
+						"name": "matching_etablissements",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 15,
@@ -503,14 +503,14 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "nombre_etablissement",
+						"name": "nombre_etablissements",
 						"req": false,
 						"type": "`$INTEGER`",
 						"index$": 19,
 					},
 					map[string]any{
 						"active": true,
-						"name": "nombre_etablissements_ouvert",
+						"name": "nombre_etablissements_ouverts",
 						"req": false,
 						"type": "`$INTEGER`",
 						"index$": 20,
@@ -1022,6 +1022,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/search",
 								"parts": []any{
@@ -1086,12 +1087,11 @@ func MakeConfig() map[string]any {
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.results`",
 								},
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{

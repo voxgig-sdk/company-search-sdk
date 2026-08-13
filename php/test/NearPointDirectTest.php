@@ -66,11 +66,11 @@ function near_point_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "COMPANYSEARCH_TEST_NEAR_POINT_ENTID" => [],
-        "COMPANYSEARCH_TEST_LIVE" => "FALSE",
+        "COMPANY_SEARCH_TEST_NEAR_POINT_ENTID" => [],
+        "COMPANY_SEARCH_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["COMPANYSEARCH_TEST_LIVE"] === "TRUE";
+    $live = $env["COMPANY_SEARCH_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
