@@ -69,6 +69,11 @@ main: kit: entity: near_point: {
       name: "dirigeants"
       req: false
       type: "`$ARRAY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 1
+      }
     }
     {
       name: "etat_administratif"

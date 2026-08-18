@@ -40,7 +40,7 @@ class CompanySearchSDK
         $utility = new CompanySearchUtility();
         $this->_utility = $utility;
 
-        $config = CompanySearchConfig::make_config();
+        $config = CompanySearchConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

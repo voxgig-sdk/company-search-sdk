@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://recherche-entreprises.api.gouv.fr',
+    base: "https://recherche-entreprises.api.gouv.fr",
 
     headers: {
       "content-type": "application/json"
@@ -58,193 +58,117 @@ class Config {
     "near_point": {
       "fields": [
         {
-          "active": true,
           "name": "activite_principale",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "activite_principale_naf25",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "annee_categorie_entreprise",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "annee_tranche_effectif_salarie",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "caractere_employeur",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 4
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "categorie_entreprise",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 5
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "complements",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 6
+          "type": "`$OBJECT`"
         },
         {
-          "active": true,
           "name": "date_creation",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 7
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "date_fermeture",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 8
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "date_mise_a_jour",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 9
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "date_mise_a_jour_insee",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 10
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "date_mise_a_jour_rne",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 11
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "dirigeants",
-          "req": false,
           "type": "`$ARRAY`",
-          "index$": 12
+          "union": {
+            "branches": 2,
+            "count": 1,
+            "depth": 1
+          }
         },
         {
-          "active": true,
           "name": "etat_administratif",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 13
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "finances",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 14
+          "type": "`$OBJECT`"
         },
         {
-          "active": true,
           "name": "matching_etablissements",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 15
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "nature_juridique",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 16
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "nom_complet",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 17
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "nom_raison_sociale",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 18
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "nombre_etablissements",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 19
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "nombre_etablissements_ouverts",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 20
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "section_activite_principale",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 21
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "siege",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 22
+          "type": "`$OBJECT`"
         },
         {
-          "active": true,
           "name": "sigle",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 23
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "siren",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 24
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "statut_diffusion",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 25
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "tranche_effectif_salarie",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 26
+          "type": "`$STRING`"
         }
       ],
       "name": "near_point",
@@ -254,29 +178,23 @@ class Config {
           "name": "list",
           "points": [
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "example": "01.12Z,28.15Z",
                     "kind": "query",
                     "name": "activite_principale",
                     "orig": "activite_principale",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": "siege,complements",
                     "kind": "query",
                     "name": "include",
                     "orig": "include",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "lat",
                     "orig": "lat",
@@ -284,16 +202,13 @@ class Config {
                     "type": "`$NUMBER`"
                   },
                   {
-                    "active": true,
                     "example": 10,
                     "kind": "query",
                     "name": "limite_matching_etablissement",
                     "orig": "limite_matching_etablissement",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "long",
                     "orig": "long",
@@ -301,64 +216,50 @@ class Config {
                     "type": "`$NUMBER`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "minimal",
                     "orig": "minimal",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "example": 1,
                     "kind": "query",
                     "name": "page",
                     "orig": "page",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   },
                   {
-                    "active": true,
                     "example": 1,
                     "kind": "query",
                     "name": "page_etablissement",
                     "orig": "page_etablissement",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   },
                   {
-                    "active": true,
                     "example": 10,
                     "kind": "query",
                     "name": "per_page",
                     "orig": "per_page",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   },
                   {
-                    "active": true,
                     "example": 5,
                     "kind": "query",
                     "name": "radius",
                     "orig": "radius",
-                    "reqd": false,
                     "type": "`$NUMBER`"
                   },
                   {
-                    "active": true,
                     "example": "A,J,U",
                     "kind": "query",
                     "name": "section_activite_principale",
                     "orig": "section_activite_principale",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "sort_by_size",
                     "orig": "sort_by_size",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   }
                 ]
@@ -388,11 +289,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.results`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "list"
+          ]
         }
       },
       "relations": {
@@ -402,193 +301,117 @@ class Config {
     "search": {
       "fields": [
         {
-          "active": true,
           "name": "activite_principale",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "activite_principale_naf25",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "annee_categorie_entreprise",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "annee_tranche_effectif_salarie",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "caractere_employeur",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 4
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "categorie_entreprise",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 5
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "complements",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 6
+          "type": "`$OBJECT`"
         },
         {
-          "active": true,
           "name": "date_creation",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 7
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "date_fermeture",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 8
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "date_mise_a_jour",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 9
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "date_mise_a_jour_insee",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 10
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "date_mise_a_jour_rne",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 11
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "dirigeants",
-          "req": false,
           "type": "`$ARRAY`",
-          "index$": 12
+          "union": {
+            "branches": 2,
+            "count": 1,
+            "depth": 1
+          }
         },
         {
-          "active": true,
           "name": "etat_administratif",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 13
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "finances",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 14
+          "type": "`$OBJECT`"
         },
         {
-          "active": true,
           "name": "matching_etablissements",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 15
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "nature_juridique",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 16
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "nom_complet",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 17
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "nom_raison_sociale",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 18
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "nombre_etablissements",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 19
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "nombre_etablissements_ouverts",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 20
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "section_activite_principale",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 21
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "siege",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 22
+          "type": "`$OBJECT`"
         },
         {
-          "active": true,
           "name": "sigle",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 23
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "siren",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 24
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "statut_diffusion",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 25
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "tranche_effectif_salarie",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 26
+          "type": "`$STRING`"
         }
       ],
       "name": "search",
@@ -598,459 +421,352 @@ class Config {
           "name": "list",
           "points": [
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "example": "01.12Z,28.15Z",
                     "kind": "query",
                     "name": "activite_principale",
                     "orig": "activite_principale",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": 100000,
                     "kind": "query",
                     "name": "ca_max",
                     "orig": "ca_max",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   },
                   {
-                    "active": true,
                     "example": 100000,
                     "kind": "query",
                     "name": "ca_min",
                     "orig": "ca_min",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   },
                   {
-                    "active": true,
                     "example": "PME",
                     "kind": "query",
                     "name": "categorie_entreprise",
                     "orig": "categorie_entreprise",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": "75C",
                     "kind": "query",
                     "name": "code_collectivite_territoriale",
                     "orig": "code_collectivite_territoriale",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": "01247,01111",
                     "kind": "query",
                     "name": "code_commune",
                     "orig": "code_commune",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": "38540,38189",
                     "kind": "query",
                     "name": "code_postal",
                     "orig": "code_postal",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "convention_collective_renseignee",
                     "orig": "convention_collective_renseignee",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "example": "1990-01-01",
                     "kind": "query",
                     "name": "date_naissance_personne_max",
                     "orig": "date_naissance_personne_max",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": "1960-01-01",
                     "kind": "query",
                     "name": "date_naissance_personne_min",
                     "orig": "date_naissance_personne_min",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": "02,89",
                     "kind": "query",
                     "name": "departement",
                     "orig": "departement",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "egapro_renseignee",
                     "orig": "egapro_renseignee",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "example": "200058519,248100737",
                     "kind": "query",
                     "name": "epci",
                     "orig": "epci",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "est_achats_responsable",
                     "orig": "est_achats_responsable",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "est_alim_confiance",
                     "orig": "est_alim_confiance",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "est_association",
                     "orig": "est_association",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "est_bio",
                     "orig": "est_bio",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "est_collectivite_territoriale",
                     "orig": "est_collectivite_territoriale",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "est_entrepreneur_individuel",
                     "orig": "est_entrepreneur_individuel",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "est_entrepreneur_spectacle",
                     "orig": "est_entrepreneur_spectacle",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "est_ess",
                     "orig": "est_ess",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "est_finess",
                     "orig": "est_finess",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "est_l100_3",
                     "orig": "est_l100_3",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "est_organisme_formation",
                     "orig": "est_organisme_formation",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "est_patrimoine_vivant",
                     "orig": "est_patrimoine_vivant",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "est_qualiopi",
                     "orig": "est_qualiopi",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "est_rge",
                     "orig": "est_rge",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "est_service_public",
                     "orig": "est_service_public",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "est_siae",
                     "orig": "est_siae",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "est_societe_mission",
                     "orig": "est_societe_mission",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "est_uai",
                     "orig": "est_uai",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "etat_administratif",
                     "orig": "etat_administratif",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": "1090",
                     "kind": "query",
                     "name": "id_convention_collective",
                     "orig": "id_convention_collective",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": "010003853",
                     "kind": "query",
                     "name": "id_finess",
                     "orig": "id_finess",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": "8611M10D109",
                     "kind": "query",
                     "name": "id_rge",
                     "orig": "id_rge",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": "0022004T",
                     "kind": "query",
                     "name": "id_uai",
                     "orig": "id_uai",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": "siege,complements",
                     "kind": "query",
                     "name": "include",
                     "orig": "include",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": 10,
                     "kind": "query",
                     "name": "limite_matching_etablissement",
                     "orig": "limite_matching_etablissement",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "minimal",
                     "orig": "minimal",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "example": "7344,6544",
                     "kind": "query",
                     "name": "nature_juridique",
                     "orig": "nature_juridique",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": "Dupont",
                     "kind": "query",
                     "name": "nom_personne",
                     "orig": "nom_personne",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": 1,
                     "kind": "query",
                     "name": "page",
                     "orig": "page",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   },
                   {
-                    "active": true,
                     "example": 1,
                     "kind": "query",
                     "name": "page_etablissement",
                     "orig": "page_etablissement",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   },
                   {
-                    "active": true,
                     "example": 10,
                     "kind": "query",
                     "name": "per_page",
                     "orig": "per_page",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   },
                   {
-                    "active": true,
                     "example": "Monsieur",
                     "kind": "query",
                     "name": "prenoms_personne",
                     "orig": "prenoms_personne",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "q",
                     "orig": "q",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": "11,76",
                     "kind": "query",
                     "name": "region",
                     "orig": "region",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": 100000,
                     "kind": "query",
                     "name": "resultat_net_max",
                     "orig": "resultat_net_max",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   },
                   {
-                    "active": true,
                     "example": 100000,
                     "kind": "query",
                     "name": "resultat_net_min",
                     "orig": "resultat_net_min",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   },
                   {
-                    "active": true,
                     "example": "A,J,U",
                     "kind": "query",
                     "name": "section_activite_principale",
                     "orig": "section_activite_principale",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "sort_by_size",
                     "orig": "sort_by_size",
-                    "reqd": false,
                     "type": "`$BOOLEAN`"
                   },
                   {
-                    "active": true,
                     "example": "NN,00,01",
                     "kind": "query",
                     "name": "tranche_effectif_salarie",
                     "orig": "tranche_effectif_salarie",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "type_personne",
                     "orig": "type_personne",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -1121,11 +837,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.results`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "list"
+          ]
         }
       },
       "relations": {

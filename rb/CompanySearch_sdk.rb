@@ -28,7 +28,7 @@ class CompanySearchSDK
     utility = CompanySearchUtility.new
     @_utility = utility
 
-    config = CompanySearchConfig.make_config
+    config = CompanySearchConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
