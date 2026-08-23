@@ -238,33 +238,33 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `activite_principale` |  |
-| `activite_principale_naf25` |  |
-| `annee_categorie_entreprise` |  |
-| `annee_tranche_effectif_salarie` |  |
-| `caractere_employeur` |  |
-| `categorie_entreprise` |  |
+| `activite_principale` | Code de l'activité principale exercée (APE) par l'unité légale (source : base SIRENE). |
+| `activite_principale_naf25` | Activité principale de l'unité légale selon la nomenclature NAF 2025 (source : base SIRENE). |
+| `annee_categorie_entreprise` | Année de validité correspondant à la catégorie d'entreprise diffusée (source : base SIRENE). |
+| `annee_tranche_effectif_salarie` | Année de validité de la tranche d'effectif salarié de l'unité légale (source : base SIRENE). |
+| `caractere_employeur` | Caractère employeur de l'unité légale (source : base SIRENE). |
+| `categorie_entreprise` | Catégorie d'entreprise de l'unité légale (source : base SIRENE). |
 | `complements` |  |
-| `date_creation` |  |
-| `date_fermeture` |  |
-| `date_mise_a_jour` |  |
-| `date_mise_a_jour_insee` |  |
-| `date_mise_a_jour_rne` |  |
+| `date_creation` | Date de création de l'unité légale (source : base SIRENE). |
+| `date_fermeture` | Date de fermeture de l'unité légale (source : base historique SIRENE). |
+| `date_mise_a_jour` | Date de la dernière modification d'une variable de niveau unité légale, qu'elle soit historisée ou non (source : base SIRENE). |
+| `date_mise_a_jour_insee` | Date de la dernière mise à jour des données INSEE pour cette unité légale. |
+| `date_mise_a_jour_rne` | Date de la dernière mise à jour des données RNCS pour cette unité légale. |
 | `dirigeants` |  |
-| `etat_administratif` |  |
-| `finances` |  |
-| `matching_etablissements` |  |
-| `nature_juridique` |  |
-| `nom_complet` |  |
-| `nom_raison_sociale` |  |
+| `etat_administratif` | État administratif de l'unité légale (source : base SIRENE). |
+| `finances` | Bilans financiers par année |
+| `matching_etablissements` | Liste des établissements ayant contribué au résultat de la recherche : ceux qui ont « matché » la recherche textuelle ou un filtre sur les établissements. |
+| `nature_juridique` | Catégorie juridique de l'unité légale (source : base SIRENE). |
+| `nom_complet` | Champ construit depuis les champs de dénomination : dénomination de l'unité légale | Nom et prénom | Nom inconnu (dénomination usuelle : Construite en priorité à partir de la dénomination usuelle de l'établissement siège. |
+| `nom_raison_sociale` | La raison sociale pour les personnes morales (source : base SIRENE). |
 | `nombre_etablissements` |  |
 | `nombre_etablissements_ouverts` |  |
-| `section_activite_principale` |  |
+| `section_activite_principale` | Calculée à partir de l'activité principale. |
 | `siege` |  |
-| `sigle` |  |
-| `siren` |  |
-| `statut_diffusion` |  |
-| `tranche_effectif_salarie` |  |
+| `sigle` | Forme réduite de la raison sociale ou de la dénomination d'une personne morale ou d'un organisme public (source : base SIRENE). |
+| `siren` | le numéro unique de l'entreprise |
+| `statut_diffusion` | Statut de diffusion de l'unité légale. |
+| `tranche_effectif_salarie` | Tranche d'effectif salarié de l'unité légale (source : base SIRENE). |
 
 Operations: List.
 
@@ -274,33 +274,33 @@ API path: `/near_point`
 
 | Field | Description |
 | --- | --- |
-| `activite_principale` |  |
-| `activite_principale_naf25` |  |
-| `annee_categorie_entreprise` |  |
-| `annee_tranche_effectif_salarie` |  |
-| `caractere_employeur` |  |
-| `categorie_entreprise` |  |
+| `activite_principale` | Code de l'activité principale exercée (APE) par l'unité légale (source : base SIRENE). |
+| `activite_principale_naf25` | Activité principale de l'unité légale selon la nomenclature NAF 2025 (source : base SIRENE). |
+| `annee_categorie_entreprise` | Année de validité correspondant à la catégorie d'entreprise diffusée (source : base SIRENE). |
+| `annee_tranche_effectif_salarie` | Année de validité de la tranche d'effectif salarié de l'unité légale (source : base SIRENE). |
+| `caractere_employeur` | Caractère employeur de l'unité légale (source : base SIRENE). |
+| `categorie_entreprise` | Catégorie d'entreprise de l'unité légale (source : base SIRENE). |
 | `complements` |  |
-| `date_creation` |  |
-| `date_fermeture` |  |
-| `date_mise_a_jour` |  |
-| `date_mise_a_jour_insee` |  |
-| `date_mise_a_jour_rne` |  |
+| `date_creation` | Date de création de l'unité légale (source : base SIRENE). |
+| `date_fermeture` | Date de fermeture de l'unité légale (source : base historique SIRENE). |
+| `date_mise_a_jour` | Date de la dernière modification d'une variable de niveau unité légale, qu'elle soit historisée ou non (source : base SIRENE). |
+| `date_mise_a_jour_insee` | Date de la dernière mise à jour des données INSEE pour cette unité légale. |
+| `date_mise_a_jour_rne` | Date de la dernière mise à jour des données RNCS pour cette unité légale. |
 | `dirigeants` |  |
-| `etat_administratif` |  |
-| `finances` |  |
-| `matching_etablissements` |  |
-| `nature_juridique` |  |
-| `nom_complet` |  |
-| `nom_raison_sociale` |  |
+| `etat_administratif` | État administratif de l'unité légale (source : base SIRENE). |
+| `finances` | Bilans financiers par année |
+| `matching_etablissements` | Liste des établissements ayant contribué au résultat de la recherche : ceux qui ont « matché » la recherche textuelle ou un filtre sur les établissements. |
+| `nature_juridique` | Catégorie juridique de l'unité légale (source : base SIRENE). |
+| `nom_complet` | Champ construit depuis les champs de dénomination : dénomination de l'unité légale | Nom et prénom | Nom inconnu (dénomination usuelle : Construite en priorité à partir de la dénomination usuelle de l'établissement siège. |
+| `nom_raison_sociale` | La raison sociale pour les personnes morales (source : base SIRENE). |
 | `nombre_etablissements` |  |
 | `nombre_etablissements_ouverts` |  |
-| `section_activite_principale` |  |
+| `section_activite_principale` | Calculée à partir de l'activité principale. |
 | `siege` |  |
-| `sigle` |  |
-| `siren` |  |
-| `statut_diffusion` |  |
-| `tranche_effectif_salarie` |  |
+| `sigle` | Forme réduite de la raison sociale ou de la dénomination d'une personne morale ou d'un organisme public (source : base SIRENE). |
+| `siren` | le numéro unique de l'entreprise |
+| `statut_diffusion` | Statut de diffusion de l'unité légale. |
+| `tranche_effectif_salarie` | Tranche d'effectif salarié de l'unité légale (source : base SIRENE). |
 
 Operations: List.
 
@@ -325,33 +325,33 @@ Create an instance: `near_point = client.NearPoint`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `activite_principale` | `String` |  |
-| `activite_principale_naf25` | `String` |  |
-| `annee_categorie_entreprise` | `String` |  |
-| `annee_tranche_effectif_salarie` | `String` |  |
-| `caractere_employeur` | `String` |  |
-| `categorie_entreprise` | `String` |  |
+| `activite_principale` | `String` | Code de l'activité principale exercée (APE) par l'unité légale (source : base SIRENE). |
+| `activite_principale_naf25` | `String` | Activité principale de l'unité légale selon la nomenclature NAF 2025 (source : base SIRENE). |
+| `annee_categorie_entreprise` | `String` | Année de validité correspondant à la catégorie d'entreprise diffusée (source : base SIRENE). |
+| `annee_tranche_effectif_salarie` | `String` | Année de validité de la tranche d'effectif salarié de l'unité légale (source : base SIRENE). |
+| `caractere_employeur` | `String` | Caractère employeur de l'unité légale (source : base SIRENE). |
+| `categorie_entreprise` | `String` | Catégorie d'entreprise de l'unité légale (source : base SIRENE). |
 | `complements` | `Hash` |  |
-| `date_creation` | `String` |  |
-| `date_fermeture` | `String` |  |
-| `date_mise_a_jour` | `String` |  |
-| `date_mise_a_jour_insee` | `String` |  |
-| `date_mise_a_jour_rne` | `String` |  |
+| `date_creation` | `String` | Date de création de l'unité légale (source : base SIRENE). |
+| `date_fermeture` | `String` | Date de fermeture de l'unité légale (source : base historique SIRENE). |
+| `date_mise_a_jour` | `String` | Date de la dernière modification d'une variable de niveau unité légale, qu'elle soit historisée ou non (source : base SIRENE). |
+| `date_mise_a_jour_insee` | `String` | Date de la dernière mise à jour des données INSEE pour cette unité légale. |
+| `date_mise_a_jour_rne` | `String` | Date de la dernière mise à jour des données RNCS pour cette unité légale. |
 | `dirigeants` | `Array` |  |
-| `etat_administratif` | `String` |  |
-| `finances` | `Hash` |  |
-| `matching_etablissements` | `Array` |  |
-| `nature_juridique` | `String` |  |
-| `nom_complet` | `String` |  |
-| `nom_raison_sociale` | `String` |  |
+| `etat_administratif` | `String` | État administratif de l'unité légale (source : base SIRENE). |
+| `finances` | `Hash` | Bilans financiers par année |
+| `matching_etablissements` | `Array` | Liste des établissements ayant contribué au résultat de la recherche : ceux qui ont « matché » la recherche textuelle ou un filtre sur les établissements. |
+| `nature_juridique` | `String` | Catégorie juridique de l'unité légale (source : base SIRENE). |
+| `nom_complet` | `String` | Champ construit depuis les champs de dénomination : dénomination de l'unité légale | Nom et prénom | Nom inconnu (dénomination usuelle : Construite en priorité à partir de la dénomination usuelle de l'établissement siège. |
+| `nom_raison_sociale` | `String` | La raison sociale pour les personnes morales (source : base SIRENE). |
 | `nombre_etablissements` | `Integer` |  |
 | `nombre_etablissements_ouverts` | `Integer` |  |
-| `section_activite_principale` | `String` |  |
+| `section_activite_principale` | `String` | Calculée à partir de l'activité principale. |
 | `siege` | `Hash` |  |
-| `sigle` | `String` |  |
-| `siren` | `String` |  |
-| `statut_diffusion` | `String` |  |
-| `tranche_effectif_salarie` | `String` |  |
+| `sigle` | `String` | Forme réduite de la raison sociale ou de la dénomination d'une personne morale ou d'un organisme public (source : base SIRENE). |
+| `siren` | `String` | le numéro unique de l'entreprise |
+| `statut_diffusion` | `String` | Statut de diffusion de l'unité légale. |
+| `tranche_effectif_salarie` | `String` | Tranche d'effectif salarié de l'unité légale (source : base SIRENE). |
 
 #### Example: List
 
@@ -375,33 +375,33 @@ Create an instance: `search = client.Search`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `activite_principale` | `String` |  |
-| `activite_principale_naf25` | `String` |  |
-| `annee_categorie_entreprise` | `String` |  |
-| `annee_tranche_effectif_salarie` | `String` |  |
-| `caractere_employeur` | `String` |  |
-| `categorie_entreprise` | `String` |  |
+| `activite_principale` | `String` | Code de l'activité principale exercée (APE) par l'unité légale (source : base SIRENE). |
+| `activite_principale_naf25` | `String` | Activité principale de l'unité légale selon la nomenclature NAF 2025 (source : base SIRENE). |
+| `annee_categorie_entreprise` | `String` | Année de validité correspondant à la catégorie d'entreprise diffusée (source : base SIRENE). |
+| `annee_tranche_effectif_salarie` | `String` | Année de validité de la tranche d'effectif salarié de l'unité légale (source : base SIRENE). |
+| `caractere_employeur` | `String` | Caractère employeur de l'unité légale (source : base SIRENE). |
+| `categorie_entreprise` | `String` | Catégorie d'entreprise de l'unité légale (source : base SIRENE). |
 | `complements` | `Hash` |  |
-| `date_creation` | `String` |  |
-| `date_fermeture` | `String` |  |
-| `date_mise_a_jour` | `String` |  |
-| `date_mise_a_jour_insee` | `String` |  |
-| `date_mise_a_jour_rne` | `String` |  |
+| `date_creation` | `String` | Date de création de l'unité légale (source : base SIRENE). |
+| `date_fermeture` | `String` | Date de fermeture de l'unité légale (source : base historique SIRENE). |
+| `date_mise_a_jour` | `String` | Date de la dernière modification d'une variable de niveau unité légale, qu'elle soit historisée ou non (source : base SIRENE). |
+| `date_mise_a_jour_insee` | `String` | Date de la dernière mise à jour des données INSEE pour cette unité légale. |
+| `date_mise_a_jour_rne` | `String` | Date de la dernière mise à jour des données RNCS pour cette unité légale. |
 | `dirigeants` | `Array` |  |
-| `etat_administratif` | `String` |  |
-| `finances` | `Hash` |  |
-| `matching_etablissements` | `Array` |  |
-| `nature_juridique` | `String` |  |
-| `nom_complet` | `String` |  |
-| `nom_raison_sociale` | `String` |  |
+| `etat_administratif` | `String` | État administratif de l'unité légale (source : base SIRENE). |
+| `finances` | `Hash` | Bilans financiers par année |
+| `matching_etablissements` | `Array` | Liste des établissements ayant contribué au résultat de la recherche : ceux qui ont « matché » la recherche textuelle ou un filtre sur les établissements. |
+| `nature_juridique` | `String` | Catégorie juridique de l'unité légale (source : base SIRENE). |
+| `nom_complet` | `String` | Champ construit depuis les champs de dénomination : dénomination de l'unité légale | Nom et prénom | Nom inconnu (dénomination usuelle : Construite en priorité à partir de la dénomination usuelle de l'établissement siège. |
+| `nom_raison_sociale` | `String` | La raison sociale pour les personnes morales (source : base SIRENE). |
 | `nombre_etablissements` | `Integer` |  |
 | `nombre_etablissements_ouverts` | `Integer` |  |
-| `section_activite_principale` | `String` |  |
+| `section_activite_principale` | `String` | Calculée à partir de l'activité principale. |
 | `siege` | `Hash` |  |
-| `sigle` | `String` |  |
-| `siren` | `String` |  |
-| `statut_diffusion` | `String` |  |
-| `tranche_effectif_salarie` | `String` |  |
+| `sigle` | `String` | Forme réduite de la raison sociale ou de la dénomination d'une personne morale ou d'un organisme public (source : base SIRENE). |
+| `siren` | `String` | le numéro unique de l'entreprise |
+| `statut_diffusion` | `String` | Statut de diffusion de l'unité légale. |
+| `tranche_effectif_salarie` | `String` | Tranche d'effectif salarié de l'unité légale (source : base SIRENE). |
 
 #### Example: List
 

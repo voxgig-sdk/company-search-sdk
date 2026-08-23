@@ -102,33 +102,33 @@ fmt.Println(nearPoint.GetName()) // "near_point"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `activite_principale` | `string` | No |  |
-| `activite_principale_naf25` | `string` | No |  |
-| `annee_categorie_entreprise` | `string` | No |  |
-| `annee_tranche_effectif_salarie` | `string` | No |  |
-| `caractere_employeur` | `string` | No |  |
-| `categorie_entreprise` | `string` | No |  |
+| `activite_principale` | `string` | No | Code de l'activité principale exercée (APE) par l'unité légale (source : base SIRENE). |
+| `activite_principale_naf25` | `string` | No | Activité principale de l'unité légale selon la nomenclature NAF 2025 (source : base SIRENE). |
+| `annee_categorie_entreprise` | `string` | No | Année de validité correspondant à la catégorie d'entreprise diffusée (source : base SIRENE). |
+| `annee_tranche_effectif_salarie` | `string` | No | Année de validité de la tranche d'effectif salarié de l'unité légale (source : base SIRENE). |
+| `caractere_employeur` | `string` | No | Caractère employeur de l'unité légale (source : base SIRENE). |
+| `categorie_entreprise` | `string` | No | Catégorie d'entreprise de l'unité légale (source : base SIRENE). |
 | `complements` | `map[string]any` | No |  |
-| `date_creation` | `string` | No |  |
-| `date_fermeture` | `string` | No |  |
-| `date_mise_a_jour` | `string` | No |  |
-| `date_mise_a_jour_insee` | `string` | No |  |
-| `date_mise_a_jour_rne` | `string` | No |  |
+| `date_creation` | `string` | No | Date de création de l'unité légale (source : base SIRENE). |
+| `date_fermeture` | `string` | No | Date de fermeture de l'unité légale (source : base historique SIRENE). |
+| `date_mise_a_jour` | `string` | No | Date de la dernière modification d'une variable de niveau unité légale, qu'elle soit historisée ou non (source : base SIRENE). |
+| `date_mise_a_jour_insee` | `string` | No | Date de la dernière mise à jour des données INSEE pour cette unité légale. |
+| `date_mise_a_jour_rne` | `string` | No | Date de la dernière mise à jour des données RNCS pour cette unité légale. |
 | `dirigeants` | `[]any` | No |  |
-| `etat_administratif` | `string` | No |  |
-| `finances` | `map[string]any` | No |  |
-| `matching_etablissements` | `[]any` | No |  |
-| `nature_juridique` | `string` | No |  |
-| `nom_complet` | `string` | No |  |
-| `nom_raison_sociale` | `string` | No |  |
+| `etat_administratif` | `string` | No | État administratif de l'unité légale (source : base SIRENE). |
+| `finances` | `map[string]any` | No | Bilans financiers par année |
+| `matching_etablissements` | `[]any` | No | Liste des établissements ayant contribué au résultat de la recherche : ceux qui ont « matché » la recherche textuelle ou un filtre sur les établissements. |
+| `nature_juridique` | `string` | No | Catégorie juridique de l'unité légale (source : base SIRENE). |
+| `nom_complet` | `string` | No | Champ construit depuis les champs de dénomination : dénomination de l'unité légale | Nom et prénom | Nom inconnu (dénomination usuelle : Construite en priorité à partir de la dénomination usuelle de l'établissement siège. |
+| `nom_raison_sociale` | `string` | No | La raison sociale pour les personnes morales (source : base SIRENE). |
 | `nombre_etablissements` | `int` | No |  |
 | `nombre_etablissements_ouverts` | `int` | No |  |
-| `section_activite_principale` | `string` | No |  |
+| `section_activite_principale` | `string` | No | Calculée à partir de l'activité principale. |
 | `siege` | `map[string]any` | No |  |
-| `sigle` | `string` | No |  |
-| `siren` | `string` | No |  |
-| `statut_diffusion` | `string` | No |  |
-| `tranche_effectif_salarie` | `string` | No |  |
+| `sigle` | `string` | No | Forme réduite de la raison sociale ou de la dénomination d'une personne morale ou d'un organisme public (source : base SIRENE). |
+| `siren` | `string` | No | le numéro unique de l'entreprise |
+| `statut_diffusion` | `string` | No | Statut de diffusion de l'unité légale. |
+| `tranche_effectif_salarie` | `string` | No | Tranche d'effectif salarié de l'unité légale (source : base SIRENE). |
 
 ### Operations
 
@@ -179,33 +179,33 @@ fmt.Println(search.GetName()) // "search"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `activite_principale` | `string` | No |  |
-| `activite_principale_naf25` | `string` | No |  |
-| `annee_categorie_entreprise` | `string` | No |  |
-| `annee_tranche_effectif_salarie` | `string` | No |  |
-| `caractere_employeur` | `string` | No |  |
-| `categorie_entreprise` | `string` | No |  |
+| `activite_principale` | `string` | No | Code de l'activité principale exercée (APE) par l'unité légale (source : base SIRENE). |
+| `activite_principale_naf25` | `string` | No | Activité principale de l'unité légale selon la nomenclature NAF 2025 (source : base SIRENE). |
+| `annee_categorie_entreprise` | `string` | No | Année de validité correspondant à la catégorie d'entreprise diffusée (source : base SIRENE). |
+| `annee_tranche_effectif_salarie` | `string` | No | Année de validité de la tranche d'effectif salarié de l'unité légale (source : base SIRENE). |
+| `caractere_employeur` | `string` | No | Caractère employeur de l'unité légale (source : base SIRENE). |
+| `categorie_entreprise` | `string` | No | Catégorie d'entreprise de l'unité légale (source : base SIRENE). |
 | `complements` | `map[string]any` | No |  |
-| `date_creation` | `string` | No |  |
-| `date_fermeture` | `string` | No |  |
-| `date_mise_a_jour` | `string` | No |  |
-| `date_mise_a_jour_insee` | `string` | No |  |
-| `date_mise_a_jour_rne` | `string` | No |  |
+| `date_creation` | `string` | No | Date de création de l'unité légale (source : base SIRENE). |
+| `date_fermeture` | `string` | No | Date de fermeture de l'unité légale (source : base historique SIRENE). |
+| `date_mise_a_jour` | `string` | No | Date de la dernière modification d'une variable de niveau unité légale, qu'elle soit historisée ou non (source : base SIRENE). |
+| `date_mise_a_jour_insee` | `string` | No | Date de la dernière mise à jour des données INSEE pour cette unité légale. |
+| `date_mise_a_jour_rne` | `string` | No | Date de la dernière mise à jour des données RNCS pour cette unité légale. |
 | `dirigeants` | `[]any` | No |  |
-| `etat_administratif` | `string` | No |  |
-| `finances` | `map[string]any` | No |  |
-| `matching_etablissements` | `[]any` | No |  |
-| `nature_juridique` | `string` | No |  |
-| `nom_complet` | `string` | No |  |
-| `nom_raison_sociale` | `string` | No |  |
+| `etat_administratif` | `string` | No | État administratif de l'unité légale (source : base SIRENE). |
+| `finances` | `map[string]any` | No | Bilans financiers par année |
+| `matching_etablissements` | `[]any` | No | Liste des établissements ayant contribué au résultat de la recherche : ceux qui ont « matché » la recherche textuelle ou un filtre sur les établissements. |
+| `nature_juridique` | `string` | No | Catégorie juridique de l'unité légale (source : base SIRENE). |
+| `nom_complet` | `string` | No | Champ construit depuis les champs de dénomination : dénomination de l'unité légale | Nom et prénom | Nom inconnu (dénomination usuelle : Construite en priorité à partir de la dénomination usuelle de l'établissement siège. |
+| `nom_raison_sociale` | `string` | No | La raison sociale pour les personnes morales (source : base SIRENE). |
 | `nombre_etablissements` | `int` | No |  |
 | `nombre_etablissements_ouverts` | `int` | No |  |
-| `section_activite_principale` | `string` | No |  |
+| `section_activite_principale` | `string` | No | Calculée à partir de l'activité principale. |
 | `siege` | `map[string]any` | No |  |
-| `sigle` | `string` | No |  |
-| `siren` | `string` | No |  |
-| `statut_diffusion` | `string` | No |  |
-| `tranche_effectif_salarie` | `string` | No |  |
+| `sigle` | `string` | No | Forme réduite de la raison sociale ou de la dénomination d'une personne morale ou d'un organisme public (source : base SIRENE). |
+| `siren` | `string` | No | le numéro unique de l'entreprise |
+| `statut_diffusion` | `string` | No | Statut de diffusion de l'unité légale. |
+| `tranche_effectif_salarie` | `string` | No | Tranche d'effectif salarié de l'unité légale (source : base SIRENE). |
 
 ### Operations
 

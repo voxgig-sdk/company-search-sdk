@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "CompanySearch",
+			"slug": "company-search",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -34,26 +37,32 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "activite_principale",
+						"short": "Code de l'activité principale exercée (APE) par l'unité légale (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "activite_principale_naf25",
+						"short": "Activité principale de l'unité légale selon la nomenclature NAF 2025 (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "annee_categorie_entreprise",
+						"short": "Année de validité correspondant à la catégorie d'entreprise diffusée (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "annee_tranche_effectif_salarie",
+						"short": "Année de validité de la tranche d'effectif salarié de l'unité légale (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "caractere_employeur",
+						"short": "Caractère employeur de l'unité légale (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "categorie_entreprise",
+						"short": "Catégorie d'entreprise de l'unité légale (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -62,22 +71,27 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "date_creation",
+						"short": "Date de création de l'unité légale (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "date_fermeture",
+						"short": "Date de fermeture de l'unité légale (source : base historique SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "date_mise_a_jour",
+						"short": "Date de la dernière modification d'une variable de niveau unité légale, qu'elle soit historisée ou non (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "date_mise_a_jour_insee",
+						"short": "Date de la dernière mise à jour des données INSEE pour cette unité légale.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "date_mise_a_jour_rne",
+						"short": "Date de la dernière mise à jour des données RNCS pour cette unité légale.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -91,26 +105,32 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "etat_administratif",
+						"short": "État administratif de l'unité légale (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "finances",
+						"short": "Bilans financiers par année",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "matching_etablissements",
+						"short": "Liste des établissements ayant contribué au résultat de la recherche : ceux qui ont « matché » la recherche textuelle ou un filtre sur les établissements.",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "nature_juridique",
+						"short": "Catégorie juridique de l'unité légale (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "nom_complet",
+						"short": "Champ construit depuis les champs de dénomination : dénomination de l'unité légale | Nom et prénom | Nom inconnu (dénomination usuelle : Construite en priorité à partir de la dénomination usuelle de l'établissement siège.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "nom_raison_sociale",
+						"short": "La raison sociale pour les personnes morales (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -123,6 +143,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "section_activite_principale",
+						"short": "Calculée à partir de l'activité principale.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -131,18 +152,22 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "sigle",
+						"short": "Forme réduite de la raison sociale ou de la dénomination d'une personne morale ou d'un organisme public (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "siren",
+						"short": "le numéro unique de l'entreprise",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "statut_diffusion",
+						"short": "Statut de diffusion de l'unité légale.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "tranche_effectif_salarie",
+						"short": "Tranche d'effectif salarié de l'unité légale (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 				},
@@ -277,26 +302,32 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "activite_principale",
+						"short": "Code de l'activité principale exercée (APE) par l'unité légale (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "activite_principale_naf25",
+						"short": "Activité principale de l'unité légale selon la nomenclature NAF 2025 (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "annee_categorie_entreprise",
+						"short": "Année de validité correspondant à la catégorie d'entreprise diffusée (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "annee_tranche_effectif_salarie",
+						"short": "Année de validité de la tranche d'effectif salarié de l'unité légale (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "caractere_employeur",
+						"short": "Caractère employeur de l'unité légale (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "categorie_entreprise",
+						"short": "Catégorie d'entreprise de l'unité légale (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -305,22 +336,27 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "date_creation",
+						"short": "Date de création de l'unité légale (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "date_fermeture",
+						"short": "Date de fermeture de l'unité légale (source : base historique SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "date_mise_a_jour",
+						"short": "Date de la dernière modification d'une variable de niveau unité légale, qu'elle soit historisée ou non (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "date_mise_a_jour_insee",
+						"short": "Date de la dernière mise à jour des données INSEE pour cette unité légale.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "date_mise_a_jour_rne",
+						"short": "Date de la dernière mise à jour des données RNCS pour cette unité légale.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -334,26 +370,32 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "etat_administratif",
+						"short": "État administratif de l'unité légale (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "finances",
+						"short": "Bilans financiers par année",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "matching_etablissements",
+						"short": "Liste des établissements ayant contribué au résultat de la recherche : ceux qui ont « matché » la recherche textuelle ou un filtre sur les établissements.",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "nature_juridique",
+						"short": "Catégorie juridique de l'unité légale (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "nom_complet",
+						"short": "Champ construit depuis les champs de dénomination : dénomination de l'unité légale | Nom et prénom | Nom inconnu (dénomination usuelle : Construite en priorité à partir de la dénomination usuelle de l'établissement siège.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "nom_raison_sociale",
+						"short": "La raison sociale pour les personnes morales (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -366,6 +408,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "section_activite_principale",
+						"short": "Calculée à partir de l'activité principale.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -374,18 +417,22 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "sigle",
+						"short": "Forme réduite de la raison sociale ou de la dénomination d'une personne morale ou d'un organisme public (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "siren",
+						"short": "le numéro unique de l'entreprise",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "statut_diffusion",
+						"short": "Statut de diffusion de l'unité légale.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "tranche_effectif_salarie",
+						"short": "Tranche d'effectif salarié de l'unité légale (source : base SIRENE).",
 						"type": "`$STRING`",
 					},
 				},
