@@ -43,7 +43,7 @@ error — iterate it directly.
 
 ```python
 try:
-    nearpoints = client.NearPoint().list()
+    nearpoints = client.NearPoint().list({"lat": 1, "long": 1})
     for nearpoint in nearpoints:
         print(nearpoint)
 except Exception as err:
@@ -362,7 +362,7 @@ Create an instance: `near_point = client.NearPoint()`
 #### Example: List
 
 ```python
-near_points = client.NearPoint().list()
+near_points = client.NearPoint().list({"lat": 1, "long": 1})
 ```
 
 
@@ -413,6 +413,29 @@ Create an instance: `search = client.Search()`
 ```python
 searchs = client.Search().list()
 ```
+
+## Features
+
+This SDK ships 1 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
 
 
 ## Advanced
